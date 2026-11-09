@@ -1,0 +1,618 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Titan Gas Fireplace Service &amp; Repair</title>
+<meta name="description" content="Free gas fireplace inspection in Seattle. Repair, service, pilot, ignition, gas valves and wood-to-gas conversions. Call (425) 307-9165 to get on the schedule.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap">
+<meta property="og:title" content="Titan Gas Fireplace Service &amp; Repair">
+<meta property="og:description" content="Free gas fireplace inspection in Seattle. Call (425) 307-9165.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#1d3157">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23d33b2c'/%3E%3Ctext x='16' y='22' font-family='Arial' font-weight='bold' font-size='15' fill='white' text-anchor='middle'%3ETG%3C/text%3E%3C/svg%3E">
+<link rel="preload" as="image" href="img/tech-fireplace.jpg" fetchpriority="high">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-title" content="Titan Gas">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "HomeAndConstructionBusiness", "name": "Titan Gas Fireplace Service & Repair", "telephone": "+1-425-307-9165", "image": ["img/storefront.jpg", "img/team.jpg", "img/tech-fireplace.jpg"], "founder": {"@type": "Person", "name": "Zachary"}, "areaServed": {"@type": "City", "name": "Seattle, WA"}, "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "07:30", "closes": "22:30"}], "description": "Free gas fireplace inspection in Seattle. Gas fireplace repair, service, pilot, ignition, gas valves, wood-to-gas conversions and gas inserts."}</script>
+<style>
+/* Layout: call-only lead page. Photo hero with one big call button, "what happens when you call", problems, services, reviews, crew, owner. No forms. Light theme only, by design. */
+:root{
+  color-scheme:light;
+  --white:#ffffff; --bg:#ffffff; --cream:#faf7f2; --cream-line:#efe8de;
+  --navy:#1d3157; --navy-dark:#14233f; --navy-deep:#101c33; --ink:#1d3157; --text:#4b5563; --muted:#6b7280;
+  --red:#d33b2c; --orange:#ff7a1c; --orange-dark:#ea6a0f;
+  --amber:#ffd690; --amber-line:#f2b64a; --gold:#f5b93d; --star:#f7941d;
+  --pop:#fff5d9; --pop-line:#f0c867; --line:#e6e9ef; --green:#1f9d55;
+  --display:"Anton","Impact","Arial Narrow Bold",sans-serif;
+  --body:"Inter","Helvetica Neue",Arial,sans-serif;
+  --max:1100px; --r:12px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+[id]{scroll-margin-top:84px}
+a,button,summary{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+body{background:var(--bg);color:var(--text);font:400 16px/1.6 var(--body);margin:0}
+a{color:inherit}
+p{margin:0}
+img{max-width:100%;display:block}
+[hidden]{display:none!important}
+h1,h2,h3{font-family:var(--display);font-weight:400;color:var(--ink);margin:0;line-height:1.06;text-wrap:balance;letter-spacing:.005em}
+h2{font-size:clamp(2rem,4.6vw,2.8rem)}
+h3{font-size:1.3rem}
+.wrap{max-width:var(--max);margin:0 auto;padding-inline:20px}
+.eyebrow{font:700 .74rem/1 var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--red)}
+.sec{padding-block:72px}
+.cream{background:var(--cream)}
+.sec-head{display:grid;gap:12px;justify-items:center;text-align:center;max-width:640px;margin:0 auto 40px}
+.sec-head p{color:var(--muted);font-size:1.02rem}
+.ico{width:20px;height:20px;flex:none;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+a:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.stars{color:var(--star);letter-spacing:.12em;white-space:nowrap}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;border:0;cursor:pointer;border-radius:10px;transition:background .15s,transform .15s}
+.btn:active{transform:translateY(1px)}
+.btn-call{background:var(--orange);color:var(--white);font:400 1.35rem/1 var(--display);letter-spacing:.03em;padding:18px 28px;box-shadow:0 12px 26px -12px rgba(255,122,28,.8)}
+.btn-call:hover{background:var(--orange-dark)}
+.btn-big{flex-direction:column;gap:6px;padding:16px 30px}
+.btn-big .l1{display:flex;align-items:center;gap:10px;font:400 1.55rem/1 var(--display);letter-spacing:.03em}
+.btn-big .l1 .ico{width:24px;height:24px}
+.btn-big .l2{font:600 .8rem/1 var(--body);letter-spacing:.02em;opacity:.95}
+.btn-navy{background:var(--navy);color:var(--white);font:600 .95rem/1 var(--body);padding:13px 18px}
+.btn-navy:hover{background:var(--navy-dark)}
+.hours{font-size:.85rem}
+.hours b{font-weight:600}
+
+/* header */
+header.top{background:var(--white);border-bottom:1px solid var(--line);position:sticky;top:env(safe-area-inset-top,0px);z-index:40}
+header.top .bar{max-width:var(--max);margin:0 auto;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;min-width:0}
+.mark{width:40px;height:40px;flex:none;border-radius:8px;background:var(--red);color:var(--white);display:grid;place-items:center;font:400 1.15rem/1 var(--display)}
+.logo b{display:block;font:400 1.3rem/1 var(--display);color:var(--navy);letter-spacing:.01em;white-space:nowrap}
+.logo small{display:block;font:700 .62rem/1.4 var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
+.hdr-proof{display:flex;align-items:center;gap:8px;font:600 .8rem/1.2 var(--body);color:var(--navy)}
+.hdr-call{display:flex;align-items:center;gap:12px;text-decoration:none}
+.hdr-call .lbl{font:600 .7rem/1.3 var(--body);color:var(--muted);text-align:right;text-transform:uppercase;letter-spacing:.08em}
+.hdr-call .btn{font:400 1.15rem/1 var(--display);letter-spacing:.03em;padding:12px 18px;background:var(--orange);color:var(--white)}
+@media (max-width:900px){.hdr-proof,.hdr-call .lbl{display:none}}
+@media (max-width:520px){.logo b{font-size:1.05rem}.logo small{font-size:.56rem}.mark{width:34px;height:34px;font-size:1rem}.hdr-call .btn{padding:11px 13px;font-size:1rem}.hdr-call .num{display:none}}
+@media (min-width:521px){.hdr-call .short{display:none}}
+
+/* hero: photo layer keeps the photo's own 1024x572 shape, so nothing is cut off */
+.hero{position:relative;isolation:isolate;color:var(--white);background:var(--navy-deep);aspect-ratio:1024/572;display:grid;align-items:center}
+.hero::before{content:"";position:absolute;top:0;left:0;right:0;aspect-ratio:1024/572;z-index:-1;background:
+  linear-gradient(180deg,transparent 72%,var(--navy-deep) 100%),
+  linear-gradient(100deg,rgba(16,28,51,.95) 0%,rgba(16,28,51,.84) 42%,rgba(16,28,51,.3) 100%),
+  url("img/tech-fireplace.jpg") center/100% 100% no-repeat}
+.hero .wrap{width:100%;padding-block:48px 52px}
+.hero-copy{display:grid;gap:18px;justify-items:start;min-width:0;max-width:600px}
+.pill{display:inline-flex;align-items:center;gap:8px;background:var(--green);color:var(--white);font:700 .74rem/1.2 var(--body);letter-spacing:.1em;text-transform:uppercase;padding:8px 13px;border-radius:999px}
+.pill .ico{width:15px;height:15px;stroke-width:3}
+.hero h1{color:var(--white);font-size:clamp(2.4rem,5.4vw,3.7rem)}
+.hero h1 em{font-style:normal;color:var(--gold);display:block}
+.hero .lede{font-size:1.08rem;max-width:520px;color:#dfe5f0}
+.hero .lede strong{color:var(--white);display:block;margin-top:4px}
+.hero .lede .ln{display:block}
+.hero .hours{color:#b8c3d8}
+.hero-hours{display:grid;gap:2px}
+.checks{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px 18px}
+.checks li{display:flex;align-items:center;gap:7px;font:600 .9rem/1.2 var(--body);color:var(--white)}
+.checks .ico{width:17px;height:17px;color:var(--gold);stroke-width:3}
+.proof{display:flex;gap:12px;align-items:flex-start;background:rgba(16,28,51,.55);border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:12px 14px;max-width:520px;backdrop-filter:blur(3px)}
+.proof .stars{font-size:1rem;line-height:1.4}
+.proof q{font-style:italic;color:var(--white);font-size:.95rem;quotes:"\201C" "\201D"}
+.proof small{display:block;color:#b8c3d8;font-size:.78rem;margin-top:2px}
+
+/* trust strip */
+.trust{background:var(--white);border-bottom:1px solid var(--line)}
+.trust ul{list-style:none;margin:0 auto;padding:18px 20px;max-width:var(--max);display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media (max-width:820px){.trust ul{grid-template-columns:repeat(2,1fr)}}
+.trust li{display:flex;align-items:center;gap:10px;font:600 .9rem/1.25 var(--body);color:var(--navy)}
+.trust .ib{width:38px;height:38px;flex:none;border-radius:50%;background:#fff1e6;color:var(--orange);display:grid;place-items:center}
+.trust small{display:block;font-weight:500;color:var(--muted);font-size:.76rem}
+
+/* what happens when you call */
+.plan{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:40px;align-items:center}
+@media (max-width:860px){.plan{grid-template-columns:1fr;gap:28px}}
+.plan-steps{list-style:none;margin:0;padding:0;display:grid;gap:14px;counter-reset:p}
+.plan-steps li{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start;background:var(--white);border:1px solid var(--cream-line);border-radius:var(--r);padding:16px 18px}
+.plan-steps li::before{counter-increment:p;content:counter(p);width:44px;height:44px;border-radius:50%;background:var(--orange);color:var(--white);display:grid;place-items:center;font:400 1.3rem/1 var(--display)}
+.plan-steps h3{font-size:1.2rem;margin-bottom:3px}
+.plan-steps p{font-size:.92rem;color:var(--muted)}
+.plan-call{background:var(--navy);color:#d5dcea;border-radius:16px;padding:28px 24px;display:grid;gap:16px;justify-items:center;text-align:center;box-shadow:0 26px 50px -28px rgba(16,28,51,.7)}
+.plan-call h3{color:var(--white);font-size:1.7rem}
+.plan-call .btn-call{width:100%}
+.tip{display:grid;grid-template-columns:22px 1fr;gap:10px;text-align:left;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:12px 14px;font-size:.86rem;line-height:1.55}
+.tip .ico{color:var(--gold);margin-top:2px}
+.tip b{color:var(--white)}
+
+/* amber band */
+.band{background:var(--amber);border-bottom:2px solid var(--amber-line);padding:13px 20px;text-align:center;font-size:.95rem;color:var(--navy)}
+.band strong{color:var(--red)}
+.band a{font:400 1rem/1 var(--display);letter-spacing:.03em;margin-left:6px;white-space:nowrap}
+
+/* problems */
+.probs{display:grid;gap:14px;grid-template-columns:repeat(3,1fr)}
+@media (max-width:860px){.probs{grid-template-columns:repeat(2,1fr)}}
+.prob{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start;background:var(--white);border:1px solid var(--cream-line);border-radius:var(--r);padding:18px;text-decoration:none;transition:border-color .15s,box-shadow .15s}
+.prob:hover{border-color:var(--orange);box-shadow:0 12px 26px -16px rgba(29,49,87,.4)}
+.prob .ib{width:44px;height:44px;border-radius:10px;background:var(--navy);color:var(--white);display:grid;place-items:center}
+.prob h3{font-size:1.15rem;margin-bottom:4px}
+.prob p{font-size:.85rem;color:var(--muted)}
+.prob .go{display:inline-flex;align-items:center;gap:6px;margin-top:8px;font:700 .82rem/1 var(--body);color:var(--orange)}
+.prob .go .ico{width:15px;height:15px}
+.sec-cta{display:flex;justify-content:center;margin-top:32px}
+
+/* services */
+.cards{display:grid;gap:16px;grid-template-columns:repeat(3,1fr)}
+@media (max-width:860px){.cards{grid-template-columns:repeat(2,1fr)}}
+.card{position:relative;background:var(--cream);border:1px solid var(--cream-line);border-radius:var(--r);padding:20px;display:grid;gap:10px;grid-template-rows:auto auto 1fr auto}
+.card.pop{background:var(--pop);border:2px solid var(--pop-line)}
+.popular{position:absolute;top:-11px;right:14px;background:var(--red);color:var(--white);font:700 .62rem/1 var(--body);letter-spacing:.1em;text-transform:uppercase;padding:6px 9px;border-radius:999px}
+.icon-box{width:40px;height:40px;border-radius:9px;background:var(--red);color:var(--white);display:grid;place-items:center}
+.card p{font-size:.88rem;line-height:1.6;color:var(--muted)}
+.card .btn-navy{width:100%}
+
+/* reviews */
+.rev-top{display:flex;align-items:center;justify-content:center;gap:10px;font:600 .95rem/1 var(--body);color:var(--navy)}
+.rev-top .stars{font-size:1.2rem}
+.revs{display:grid;gap:16px;grid-template-columns:repeat(2,1fr)}
+.rcard{background:var(--white);border:1px solid var(--cream-line);border-radius:14px;padding:22px;display:grid;gap:14px;grid-template-rows:auto 1fr auto;box-shadow:0 14px 30px -24px rgba(29,49,87,.35)}
+.rcard blockquote{margin:0;font-size:.95rem;line-height:1.7;color:#374151}
+.who{display:flex;gap:12px;align-items:center;border-top:1px solid var(--line);padding-top:14px}
+.av{width:38px;height:38px;border-radius:50%;background:var(--navy);color:var(--white);display:grid;place-items:center;flex:none}
+.av .ico{width:18px;height:18px}
+.av.c2{background:var(--red)}.av.c3{background:var(--orange)}.av.c4{background:var(--green)}
+.who b{display:block;color:var(--navy);font-size:.9rem}
+.who small{color:var(--muted);font-size:.76rem}
+
+/* photo blocks */
+.photo{margin:0;position:relative}
+.photo img{width:100%;height:auto;border-radius:14px;box-shadow:0 26px 50px -26px rgba(0,0,0,.6)}
+.photo figcaption{position:absolute;left:12px;bottom:12px;background:var(--white);color:var(--navy);font:700 .76rem/1.2 var(--body);padding:7px 12px;border-radius:999px;box-shadow:0 6px 16px -6px rgba(0,0,0,.35)}
+.split{background:var(--navy-deep);color:#d5dcea}
+.split .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:48px;align-items:center;padding-block:64px}
+@media (max-width:820px){.split .wrap{grid-template-columns:1fr;gap:26px;padding-block:44px}}
+.split-txt{display:grid;gap:16px;justify-items:start}
+.split-txt h2{color:var(--white)}
+.split-txt .eyebrow{color:var(--gold)}
+.split-txt ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.split-txt li{display:flex;gap:10px;align-items:flex-start;font-size:.98rem}
+.split-txt li .ico{color:var(--gold);margin-top:3px;stroke-width:3}
+.split-txt .hours{color:#b8c3d8}
+.cta-stack{display:grid;gap:10px;justify-items:center;text-align:center}
+
+/* why */
+.why{display:grid;gap:14px;grid-template-columns:repeat(3,1fr)}
+.why div{background:var(--white);border:1px solid var(--cream-line);border-radius:var(--r);padding:22px 18px;display:grid;gap:8px;justify-items:center;text-align:center}
+.why h3{font-size:1.1rem}
+.why p{font-size:.85rem;color:var(--muted)}
+.circ{width:48px;height:48px;border-radius:50%;background:var(--navy);color:var(--white);display:grid;place-items:center;margin-bottom:2px}
+
+/* owner */
+.owner{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:44px;align-items:center}
+@media (max-width:760px){.owner{grid-template-columns:1fr;gap:24px;text-align:center}}
+.owner-txt{display:grid;gap:14px;justify-items:start}
+@media (max-width:760px){.owner-txt{justify-items:center}}
+.owner-txt p{color:#374151}
+.sig{font:italic 700 1rem/1 var(--body);color:var(--navy)!important}
+
+/* never */
+.deep{background:var(--navy-dark);color:#c9d2e3}
+.deep h2{color:var(--white)}
+.deep .eyebrow{color:var(--gold)}
+.deep .sec-head p{color:#c9d2e3}
+.never{max-width:680px;margin:0 auto;display:grid;gap:12px;padding:0}
+.never li{list-style:none;display:grid;grid-template-columns:28px 1fr;gap:14px;align-items:start;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.13);border-radius:10px;padding:16px 18px}
+.x{width:28px;height:28px;border-radius:50%;background:var(--red);color:var(--white);display:grid;place-items:center;font-size:.72rem;font-weight:700}
+.never strong{display:block;color:var(--white);font-weight:600;font-size:.98rem}
+.never span:not(.x){font-size:.86rem;color:#b9c3d6;line-height:1.7}
+
+/* faq */
+.faq{max-width:720px;margin:0 auto;display:grid}
+details{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:14px;padding:20px 0;font-weight:700;color:var(--navy);font-size:1rem}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--orange);font:300 1.6rem/1 var(--body);flex:none}
+details[open] summary::after{content:"\2013"}
+details p{padding:0 0 20px;font-size:.92rem;color:var(--muted)}
+details p strong{color:var(--navy)}
+
+/* final */
+.final{background:repeating-linear-gradient(135deg,rgba(255,255,255,.02) 0 2px,transparent 2px 7px),var(--navy);color:#d5dcea}
+.final-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:44px;align-items:center}
+@media (max-width:820px){.final-grid{grid-template-columns:1fr;gap:28px}}
+.final-txt{display:grid;gap:16px;justify-items:center;text-align:center}
+.final .eyebrow{color:var(--gold)}
+.final h2{color:var(--white)}
+.final .hours{color:#b8c3d8}
+
+/* footer */
+footer{background:var(--navy-deep);color:#a9b4c9;font-size:.85rem}
+footer .wrap{padding-block:36px 130px;display:grid;gap:22px;grid-template-columns:1.2fr 1fr 1fr}
+@media (max-width:760px){footer .wrap{grid-template-columns:1fr;text-align:center}}
+footer h4{margin:0 0 8px;font:700 .72rem/1 var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+footer .fname{font:400 1.3rem/1.1 var(--display);color:var(--white);letter-spacing:.02em}
+footer a{color:var(--white);text-decoration:none}
+footer .fphone{font:400 1.4rem/1 var(--display);letter-spacing:.02em}
+footer .copy{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.1);padding-top:16px;font-size:.75rem;color:#7f8aa1}
+footer .copy a{color:#a9b4c9}
+
+/* sticky phone call bar */
+.mbar{position:fixed;left:0;right:0;bottom:0;z-index:50;padding:10px 12px calc(10px + env(safe-area-inset-bottom,0px));background:var(--white);border-top:1px solid var(--line);box-shadow:0 -8px 22px rgba(0,0,0,.1)}
+.mbar .btn-call{width:100%;box-shadow:none;padding:12px 16px}
+.mbar .btn-big .l1{font-size:1.35rem}
+@media (min-width:861px){.mbar{display:none}footer .wrap{padding-block:36px}}
+
+/* desktop polish */
+@media (min-width:901px){
+  .card,.why div{transition:transform .2s,box-shadow .2s}
+  .card:hover,.why div:hover{transform:translateY(-3px);box-shadow:0 18px 34px -22px rgba(29,49,87,.45)}
+}
+
+/* ---------- PHONE layout ---------- */
+@media (max-width:640px){
+  .wrap{padding-inline:16px}
+  .sec{padding-block:52px}
+  .sec-head{margin-bottom:26px;gap:10px}
+  h2{font-size:clamp(1.75rem,8vw,2.2rem)}
+
+  /* photo shows clearly up top, text starts where the photo fades out */
+  .hero{aspect-ratio:auto}
+  .hero::before{background:
+    linear-gradient(180deg,rgba(16,28,51,0) 0%,rgba(16,28,51,.15) 45%,var(--navy-deep) 100%),
+    url("img/tech-fireplace.jpg") center/100% 100% no-repeat}
+  .hero .wrap{padding-top:calc(55.86vw - 52px);padding-bottom:30px}
+  .hero-copy{gap:14px;justify-items:center;text-align:center}
+  .hero-hours{justify-items:center}
+  .checks{justify-self:center;align-items:flex-start;text-align:left}
+  .proof{align-items:center;text-align:center}
+  .hero h1{font-size:clamp(2.2rem,10.5vw,2.75rem)}
+  .hero .lede{font-size:clamp(.9rem,4.1vw,1rem)}
+  .btn-big,.hero-copy .btn-call{width:100%}
+  .checks{flex-direction:column;gap:8px}
+  .checks li{font-size:.92rem}
+  .hero .lede strong{margin-top:6px}
+  .proof{padding:12px 14px;flex-direction:column;gap:6px}
+  .proof q{font-size:.9rem}
+
+  .trust ul{padding:18px 16px;gap:16px 10px}
+  .trust li{flex-direction:column;text-align:center;gap:6px;font-size:.88rem}
+  .trust .ib{width:38px;height:38px}
+  .trust small{font-size:.76rem}
+  .band{font-size:.9rem;padding:12px 16px}
+  .band{display:grid;gap:2px;justify-items:center}
+  .band strong,.band span,.band a{display:block}
+  .band a{margin:6px 0 0}
+
+  .plan-steps li{padding:14px;grid-template-columns:38px 1fr;gap:12px}
+  .plan-steps li::before{width:38px;height:38px;font-size:1.15rem}
+  .plan-steps h3{font-size:1.1rem}
+  .plan-steps p{font-size:.88rem}
+  .plan-call{padding:22px 16px}
+
+  .probs{grid-template-columns:1fr 1fr;gap:10px}
+  .prob{grid-template-columns:1fr;gap:8px;padding:14px;align-content:start}
+  .prob .ib{width:38px;height:38px}
+  .prob h3{font-size:1.02rem;margin:0}
+  .prob p{display:none}
+  .prob .go{margin-top:2px;font-size:.78rem}
+
+  /* services: one clean vertical list */
+  .cards{grid-template-columns:1fr;gap:12px}
+  .card{grid-template-columns:40px 1fr;grid-template-rows:auto;column-gap:14px;row-gap:6px;padding:16px;align-items:start}
+  .card .icon-box{grid-row:1 / span 2}
+  .card h3{font-size:1.15rem;align-self:center}
+  .card p{grid-column:2;font-size:.85rem}
+  .card .btn-navy{grid-column:1 / -1;margin-top:6px}
+  .card.pop{margin-top:6px}
+
+  .revs{grid-template-columns:1fr;gap:12px}
+  .rcard{padding:18px}
+  .rcard blockquote{font-size:.9rem}
+  .rev-top{flex-direction:column;gap:6px}
+
+  .split-txt .btn-call{width:100%}
+  .cta-stack{width:100%}
+  .why{grid-template-columns:1fr 1fr;gap:10px}
+  .why div{padding:16px 12px}
+  .why h3{font-size:1rem}
+  .why p{font-size:.8rem}
+  .circ{width:42px;height:42px}
+  .owner{gap:20px}
+  .owner-txt .btn-call,.sec-cta .btn-call,.final .btn-call{width:100%}
+  .never li{padding:14px}
+  summary{padding:18px 0;font-size:.98rem}
+}
+@media (max-width:860px) and (min-width:641px){.why{grid-template-columns:repeat(2,1fr)}.revs{grid-template-columns:1fr}}
+@media (max-width:360px){.probs,.why{grid-template-columns:1fr}.prob{grid-template-columns:38px 1fr}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></symbol>
+  <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0 5 5L21 13l-8 8-3-3 8-8-1.3-1.3a4 4 0 0 1-5-5L13 2l-2 2a4 4 0 0 0 3.7 2.3z"/><path d="m3 21 6-6"/></symbol>
+  <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 22c4 0 7-2.7 7-6.8 0-4.4-3.3-6.9-4.4-11.2-2.6 1.7-3.6 4.2-3.6 6.5-1.4-.8-2.2-2-2.4-3.5C6.6 9 5 11.6 5 15.2 5 19.3 8 22 12 22z"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></symbol>
+  <symbol id="i-off" viewBox="0 0 24 24"><path d="M12 22c4 0 7-2.7 7-6.8 0-1.6-.4-2.9-1-4.1M14.6 4C12 5.7 11 8.2 11 10.5c-1.4-.8-2.2-2-2.4-3.5C6.6 9 5 11.6 5 15.2 5 19.3 8 22 12 22"/><path d="m3 3 18 18"/></symbol>
+  <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M17.5 19H7a5 5 0 1 1 1-9.9A6 6 0 0 1 19.4 11 4 4 0 0 1 17.5 19z"/></symbol>
+  <symbol id="i-fan" viewBox="0 0 24 24"><circle cx="12" cy="12" r="2"/><path d="M12 10c0-4 1-7 4-7s3 4-2 7M14 12c4 0 7 1 7 4s-4 3-7-2M12 14c0 4-1 7-4 7s-3-4 2-7M10 12c-4 0-7-1-7-4s4-3 7 2"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/></symbol>
+  <symbol id="i-swap" viewBox="0 0 24 24"><path d="M4 7h13l-3-3M20 17H7l3 3"/></symbol>
+  <symbol id="i-box" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 16c1.5-2 2.5-2 3.5 0s2 2 3.5 0 2-2 3 0"/></symbol>
+  <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.4 8.3 8 9 4.6-.7 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4M9 13h6M9 17h6"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></symbol>
+  <symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></symbol>
+  <symbol id="i-hand" viewBox="0 0 24 24"><path d="M7 11V6a1.5 1.5 0 0 1 3 0v4m0-1V4.5a1.5 1.5 0 0 1 3 0V10m0-4a1.5 1.5 0 0 1 3 0v5m0-2a1.5 1.5 0 0 1 3 0v4.5c0 4-2.7 6.5-6.5 6.5S7 19 5.5 16.5L3.8 13.3A1.5 1.5 0 0 1 6.3 12L7 13"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+  <symbol id="i-redo" viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></symbol>
+</svg>
+
+<!-- HEADER -->
+<header class="top">
+  <div class="bar">
+    <a class="logo" href="#top"><span class="mark">TG</span><span><b>Titan Gas Fireplace</b><small>Service &amp; Repair · Seattle</small></span></a>
+    <span class="hdr-proof"><span class="stars">★★★★★</span>5-star reviews · Licensed &amp; insured</span>
+    <a class="hdr-call" href="tel:+14253079165"><span class="lbl">Free inspection<br>Call now</span><span class="btn"><svg class="ico"><use href="#i-phone"/></svg><span class="num">(425) 307-9165</span><span class="short">Call</span></span></a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-copy">
+      <span class="pill"><svg class="ico"><use href="#i-check"/></svg>Free gas fireplace inspection</span>
+      <h1>Gas Fireplace Acting Up? <em>Get a Free Inspection.</em></h1>
+      <p class="lede"><span class="ln">Talk to a real person, get on the schedule,</span> <span class="ln">and get honest answers about your fireplace.</span> <strong>No charge and no obligation.</strong></p>
+      <a class="btn btn-call btn-big" href="tel:+14253079165"><span class="l1"><svg class="ico"><use href="#i-phone"/></svg>Call (425) 307-9165</span><span class="l2">Call now to get scheduled</span></a>
+      <p class="hours hero-hours"><span>Phones answered <b>Sun–Fri, 7:30 AM – 10:30 PM</b></span><span>Real person, no call center</span></p>
+      <ul class="checks">
+        <li><svg class="ico"><use href="#i-check"/></svg>Free inspection</li>
+        <li><svg class="ico"><use href="#i-check"/></svg>Written flat-rate price</li>
+        <li><svg class="ico"><use href="#i-check"/></svg>Licensed &amp; insured</li>
+      </ul>
+      <div class="proof">
+        <span class="stars">★★★★★</span>
+        <div><q>They spent an hour inspecting our fireplace, found nothing wrong, and didn't even charge us. Integrity like this is rare.</q><small>Gas fireplace inspection customer</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="trust">
+  <ul>
+    <li><span class="ib"><svg class="ico"><use href="#i-search"/></svg></span><span>Free inspection<small>No charge, no obligation</small></span></li>
+    <li><span class="ib"><svg class="ico"><use href="#i-doc"/></svg></span><span>Flat-rate price<small>Written, before any work</small></span></li>
+    <li><span class="ib"><svg class="ico"><use href="#i-gear"/></svg></span><span>OEM parts<small>Whenever available</small></span></li>
+    <li><span class="ib"><svg class="ico"><use href="#i-shield"/></svg></span><span>Licensed &amp; insured<small>Full coverage</small></span></li>
+  </ul>
+</div>
+
+<!-- WHAT HAPPENS WHEN YOU CALL -->
+<section class="sec cream" id="call">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">How It Works</span>
+      <h2>Here's What Happens When You Call</h2>
+      <p>One phone call is all it takes to get your free inspection on the schedule.</p>
+    </div>
+    <div class="plan">
+      <ol class="plan-steps">
+        <li><div><h3>A real person answers</h3><p>Tell us what your fireplace is doing. We'll answer your questions right there on the phone.</p></div></li>
+        <li><div><h3>We get you on the schedule</h3><p>Pick a time that works for you. Your free inspection is booked before you hang up.</p></div></li>
+        <li><div><h3>We inspect it and walk you through it</h3><p>Our tech checks your fireplace, shows you what he finds, and gives you a written flat-rate price. You decide what to do.</p></div></li>
+      </ol>
+      <div class="plan-call">
+        <h3>Book Your Free Inspection</h3>
+        <a class="btn btn-call btn-big" href="tel:+14253079165"><span class="l1"><svg class="ico"><use href="#i-phone"/></svg>(425) 307-9165</span><span class="l2">Call now to get scheduled</span></a>
+        <p class="hours">Sun–Fri, 7:30 AM – 10:30 PM</p>
+        <div class="tip"><svg class="ico"><use href="#i-users"/></svg><span><b>Make the visit count:</b> if someone else in the home helps make decisions, try to have them there or on the phone during the inspection. You'll get every answer in one visit.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEMS -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Sound Familiar?</span>
+      <h2>Tap Your Problem to Call Us</h2>
+      <p>These are the gas fireplace problems we fix most. Every one starts with a free inspection.</p>
+    </div>
+    <div class="probs">
+      <a class="prob" href="tel:+14253079165"><span class="ib"><svg class="ico"><use href="#i-off"/></svg></span><div><h3>Won't turn on</h3><p>Switch or remote does nothing, or no flame at all.</p><span class="go">Call about this <svg class="ico"><use href="#i-arrow"/></svg></span></div></a>
+      <a class="prob" href="tel:+14253079165"><span class="ib"><svg class="ico"><use href="#i-flame"/></svg></span><div><h3>Pilot keeps going out</h3><p>Lights, then dies. Often a thermocouple, thermopile, or dirty pilot.</p><span class="go">Call about this <svg class="ico"><use href="#i-arrow"/></svg></span></div></a>
+      <a class="prob" href="tel:+14253079165"><span class="ib"><svg class="ico"><use href="#i-spark"/></svg></span><div><h3>Clicking, no flame</h3><p>Igniter sparks but the burner never catches.</p><span class="go">Call about this <svg class="ico"><use href="#i-arrow"/></svg></span></div></a>
+      <a class="prob" href="tel:+14253079165"><span class="ib"><svg class="ico"><use href="#i-cloud"/></svg></span><div><h3>Soot or yellow flames</h3><p>Black glass, lazy yellow flames, or an odd smell when running.</p><span class="go">Call about this <svg class="ico"><use href="#i-arrow"/></svg></span></div></a>
+      <a class="prob" href="tel:+14253079165"><span class="ib"><svg class="ico"><use href="#i-fan"/></svg></span><div><h3>Remote or blower dead</h3><p>Remote, wall switch, thermostat, or fan stopped working.</p><span class="go">Call about this <svg class="ico"><use href="#i-arrow"/></svg></span></div></a>
+      <a class="prob" href="tel:+14253079165"><span class="ib"><svg class="ico"><use href="#i-cal"/></svg></span><div><h3>Not checked in a year</h3><p>Due for a yearly safety check before you use it again.</p><span class="go">Call about this <svg class="ico"><use href="#i-arrow"/></svg></span></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- AMBER BAND -->
+<div class="band"><strong>Free gas fireplace inspections in Seattle.</strong> <span>Call now to get on the schedule.</span> <a href="tel:+14253079165">Call (425) 307-9165 →</a></div>
+
+<!-- SERVICES -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Our Services</span>
+      <h2>Everything Your Gas Fireplace Needs</h2>
+      <p>It all starts with a free inspection and a written price before any work begins.</p>
+    </div>
+    <div class="cards">
+      <article class="card pop"><span class="popular">Most Called For</span><span class="icon-box"><svg class="ico"><use href="#i-wrench"/></svg></span><h3>Gas Fireplace Repair</h3><p>Pilot assemblies, thermocouples, thermopiles, gas valves, and ignition systems. Fixed with OEM parts whenever they're available.</p><a class="btn btn-navy" href="tel:+14253079165"><svg class="ico"><use href="#i-phone"/></svg>Call About Repair</a></article>
+      <article class="card"><span class="icon-box"><svg class="ico"><use href="#i-gear"/></svg></span><h3>Service &amp; Cleaning</h3><p>Yearly tune-up. We clean the burner, pilot, logs, and glass, check the safety controls, and test everything before we leave.</p><a class="btn btn-navy" href="tel:+14253079165"><svg class="ico"><use href="#i-phone"/></svg>Call About Service</a></article>
+      <article class="card"><span class="icon-box"><svg class="ico"><use href="#i-search"/></svg></span><h3>Free Inspection</h3><p>A full safety and operation check of your gas fireplace. We show you what we find. No charge and no obligation.</p><a class="btn btn-navy" href="tel:+14253079165"><svg class="ico"><use href="#i-phone"/></svg>Book Free Inspection</a></article>
+      <article class="card"><span class="icon-box"><svg class="ico"><use href="#i-swap"/></svg></span><h3>Wood-to-Gas Conversion</h3><p>Turn a wood fireplace into push-button heat. We handle permits, plans, parts, and the full install as one company.</p><a class="btn btn-navy" href="tel:+14253079165"><svg class="ico"><use href="#i-phone"/></svg>Call About Conversion</a></article>
+      <article class="card"><span class="icon-box"><svg class="ico"><use href="#i-box"/></svg></span><h3>Gas Inserts &amp; Installs</h3><p>New gas fireplaces and inserts, venting, and gas line hookup. Code-compliant, tested, and walked through with you.</p><a class="btn btn-navy" href="tel:+14253079165"><svg class="ico"><use href="#i-phone"/></svg>Call About Installs</a></article>
+      <article class="card"><span class="icon-box"><svg class="ico"><use href="#i-sliders"/></svg></span><h3>Logs, Remotes &amp; Blowers</h3><p>Gas log sets, remotes, wall switches, thermostats, and blower fans, repaired or replaced.</p><a class="btn btn-navy" href="tel:+14253079165"><svg class="ico"><use href="#i-phone"/></svg>Call for a Price</a></article>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="sec cream">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Customer Reviews</span>
+      <h2>What Our Customers Say</h2>
+      <div class="rev-top"><span class="stars">★★★★★</span>5-star reviews from real customers</div>
+    </div>
+    <div class="revs">
+      <div class="rcard"><span class="stars">★★★★★</span><blockquote>Thorough, honest, and professional. They spent an hour inspecting our fireplace, found nothing wrong, and didn't even charge us. Integrity like this is rare. Highly recommend!</blockquote><div class="who"><span class="av"><svg class="ico"><use href="#i-search"/></svg></span><div><b>Gas fireplace inspection</b><small>Customer review</small></div></div></div>
+      <div class="rcard"><span class="stars">★★★★★</span><blockquote>Great price, OEM parts, fast service, and excellent communication. Very respectful, clean, and efficient. They even returned promptly for a callback. Highly recommend!</blockquote><div class="who"><span class="av c2"><svg class="ico"><use href="#i-wrench"/></svg></span><div><b>Gas valve &amp; pilot assembly replaced</b><small>Customer review</small></div></div></div>
+      <div class="rcard"><span class="stars">★★★★★</span><blockquote>They refurbished our 37-year-old fireplace, replaced necessary components, cleaned everything, and thoroughly tested it for safety. Excellent workmanship and service!</blockquote><div class="who"><span class="av c3"><svg class="ico"><use href="#i-flame"/></svg></span><div><b>37-year-old gas fireplace restored</b><small>Customer review</small></div></div></div>
+      <div class="rcard"><span class="stars">★★★★★</span><blockquote>They handled our entire wood-to-gas conversion, including permits, plans, parts, and installation. Professional, organized, and great communication throughout. Excellent results!</blockquote><div class="who"><span class="av c4"><svg class="ico"><use href="#i-swap"/></svg></span><div><b>Wood-to-gas conversion</b><small>Customer review</small></div></div></div>
+    </div>
+    <div class="sec-cta"><a class="btn btn-call btn-big" href="tel:+14253079165"><span class="l1"><svg class="ico"><use href="#i-phone"/></svg>Call (425) 307-9165</span><span class="l2">Book your free inspection</span></a></div>
+  </div>
+</section>
+
+<!-- CREW -->
+<section class="split">
+  <div class="wrap">
+    <figure class="photo"><img src="img/team.jpg" alt="The Titan Gas Fireplace crew with service vans in Seattle" loading="lazy" width="1024" height="572"><figcaption>Our Seattle crew</figcaption></figure>
+    <div class="split-txt">
+      <span class="eyebrow">Our Crew</span>
+      <h2>Gas Fireplace Specialists, Not Generalists</h2>
+      <ul>
+        <li><svg class="ico"><use href="#i-check"/></svg>Free inspection, no obligation</li>
+        <li><svg class="ico"><use href="#i-check"/></svg>We show you what we find before we quote</li>
+        <li><svg class="ico"><use href="#i-check"/></svg>Written flat-rate price before any work</li>
+        <li><svg class="ico"><use href="#i-check"/></svg>We come back if anything isn't right</li>
+      </ul>
+      <div class="cta-stack">
+        <a class="btn btn-call btn-big" href="tel:+14253079165"><span class="l1"><svg class="ico"><use href="#i-phone"/></svg>Call (425) 307-9165</span><span class="l2">Call now to get scheduled</span></a>
+        <p class="hours">Sun–Fri, 7:30 AM – 10:30 PM</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Why Seattle Calls Us</span>
+      <h2>Honest Gas Fireplace Work</h2>
+      <p>Six things that hold true on every single job.</p>
+    </div>
+    <div class="why">
+      <div><span class="circ"><svg class="ico"><use href="#i-search"/></svg></span><h3>Free Inspection</h3><p>No charge and no obligation.</p></div>
+      <div><span class="circ"><svg class="ico"><use href="#i-chat"/></svg></span><h3>Real People Answer</h3><p>No call center, no bots, no phone tree.</p></div>
+      <div><span class="circ"><svg class="ico"><use href="#i-doc"/></svg></span><h3>Written Flat-Rate Price</h3><p>You see the price before any work starts.</p></div>
+      <div><span class="circ"><svg class="ico"><use href="#i-gear"/></svg></span><h3>OEM Parts</h3><p>Factory parts whenever they're available.</p></div>
+      <div><span class="circ"><svg class="ico"><use href="#i-hand"/></svg></span><h3>No Pressure</h3><p>If it's fine, we tell you it's fine.</p></div>
+      <div><span class="circ"><svg class="ico"><use href="#i-redo"/></svg></span><h3>We Stand Behind It</h3><p>Something not right? We come back.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- OWNER -->
+<section class="sec cream">
+  <div class="wrap owner">
+    <figure class="photo"><img src="img/storefront.jpg" alt="Zachary, owner of Titan Gas Fireplace, outside the shop" loading="lazy" width="1024" height="572"><figcaption>Zachary, Owner</figcaption></figure>
+    <div class="owner-txt">
+      <span class="eyebrow">From the Owner</span>
+      <h2>Honest Answers About Your Fireplace</h2>
+      <p>I'm Zachary, and I run Titan Gas Fireplace. We focus on gas fireplaces: pilots, valves, ignition, service, conversions, and new installs.</p>
+      <p>Every job starts with a free inspection. We show you what we find and give you a written, flat-rate price before we start. If your fireplace is fine, we tell you it's fine. And if something isn't right after we leave, we come back and make it right.</p>
+      <p class="sig">— Zachary, Owner</p>
+      <a class="btn btn-call btn-big" href="tel:+14253079165"><span class="l1"><svg class="ico"><use href="#i-phone"/></svg>Call (425) 307-9165</span><span class="l2">Talk to us about your fireplace</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- PROMISE -->
+<section class="sec deep">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Our Promise</span>
+      <h2>Things We'll Never Do</h2>
+      <p>Plenty of companies in this trade cut corners. Here's where we draw the line.</p>
+    </div>
+    <ul class="never">
+      <li><span class="x">✕</span><div><strong>We never start without your OK.</strong><span>You get a written price first and decide before any work begins.</span></div></li>
+      <li><span class="x">✕</span><div><strong>We never invent problems.</strong><span>If a part has years left, you'll hear that from us.</span></div></li>
+      <li><span class="x">✕</span><div><strong>We never add surprise fees.</strong><span>The price we quote is the price you pay.</span></div></li>
+      <li><span class="x">✕</span><div><strong>We never push you to decide.</strong><span>Take your time. We'll be here.</span></div></li>
+      <li><span class="x">✕</span><div><strong>We never leave a mess.</strong><span>Floor protection on every job. We leave it cleaner than we found it.</span></div></li>
+    </ul>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Questions</span><h2>Gas Fireplace FAQ</h2></div>
+    <div class="faq">
+      <details><summary>Is the inspection really free?</summary><p>Yes. The inspection is free, with no obligation. We check your fireplace, show you what we find, and give you a written price if anything needs work. <strong>You decide from there.</strong></p></details>
+      <details><summary>How do I get scheduled?</summary><p>Call <strong>(425) 307-9165</strong>. A real person answers, asks a few questions about your fireplace, and books a time that works for you while you're on the phone.</p></details>
+      <details><summary>Who should be home for the visit?</summary><p>Anyone 18 or older can let us in. If someone else in the home helps make decisions, it's best to have them there or available by phone. That way we can walk everyone through what we find and answer pricing questions in one visit.</p></details>
+      <details><summary>Why won't my gas fireplace pilot stay lit?</summary><p>The most common causes are a worn thermocouple or thermopile, a dirty pilot, or a weak gas supply to the pilot. <strong>Call us and we'll find the cause during your free inspection.</strong></p></details>
+      <details><summary>Do you give a price before you start?</summary><p>Yes. You get a written, flat-rate price after the inspection. <strong>Nothing starts until you approve it.</strong></p></details>
+      <details><summary>What parts do you use?</summary><p>We use OEM (factory) parts whenever they're available for your fireplace, so the repair fits and lasts the way the manufacturer intended.</p></details>
+      <details><summary>Can you convert my wood fireplace to gas?</summary><p>Yes. We handle the whole project: permits, plans, parts, gas line, venting, and installation, then test everything before we leave.</p></details>
+      <details><summary>How often should a gas fireplace be serviced?</summary><p>Once a year is the standard recommendation, ideally before the heating season. A yearly service keeps it lighting reliably and lets us catch worn parts early.</p></details>
+      <details><summary>I smell gas. What should I do?</summary><p><strong>Leave the house right away.</strong> Don't flip switches or use the fireplace. Call 911 or your gas company from outside. Once it's safe, call us to find and fix the problem.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="sec final">
+  <div class="wrap final-grid">
+    <figure class="photo"><img src="img/sign.jpg" alt="Titan Gas Fireplace sign" loading="lazy" width="1024" height="572"></figure>
+    <div class="final-txt">
+      <span class="eyebrow">Free Inspection</span>
+      <h2>Call Now to Get Your Free Inspection Scheduled</h2>
+      <p>Real person answers · Written flat-rate price · Licensed &amp; insured</p>
+      <a class="btn btn-call btn-big" href="tel:+14253079165"><span class="l1"><svg class="ico"><use href="#i-phone"/></svg>(425) 307-9165</span><span class="l2">Call now to get scheduled</span></a>
+      <p class="hours">Sun–Fri, 7:30 AM – 10:30 PM · Closed Saturday</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="fname">Titan Gas Fireplace<br>Service &amp; Repair</div>
+      <p style="margin-top:10px">Gas fireplace inspection, repair, service, and conversions in Seattle.</p>
+    </div>
+    <div>
+      <h4>Call us</h4>
+      <a class="fphone" href="tel:+14253079165">(425) 307-9165</a>
+      <p style="margin-top:6px">Owner: Zachary</p>
+    </div>
+    <div>
+      <h4>Hours</h4>
+      <p>Sun–Fri 7:30 AM – 10:30 PM<br>Closed Saturday</p>
+      <h4 style="margin-top:14px">Service area</h4>
+      <p>Seattle and surrounding areas</p>
+    </div>
+    <div class="copy">© Titan Gas Fireplace Service &amp; Repair · <a href="#">Privacy</a> · <a href="#">Terms</a></div>
+  </div>
+</footer>
+
+<!-- STICKY CALL BAR (phones) -->
+<div class="mbar">
+  <a class="btn btn-call btn-big" href="tel:+14253079165"><span class="l1"><svg class="ico"><use href="#i-phone"/></svg>Call Now · Free Inspection</span><span class="l2">(425) 307-9165</span></a>
+</div>
+</body>
+</html>

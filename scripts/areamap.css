@@ -1,0 +1,27 @@
+.amap{width:100%;height:auto;display:block}
+.m-land{fill:#fbf7f0}
+.m-land2{fill:#f3eee3;stroke:#a9c3d6;stroke-width:.8}
+.m-land3{fill:#fbeee2;stroke:#a9c3d6;stroke-width:.6}
+.m-wat{fill:url(#amW)}
+.m-canal{fill:none;stroke:#c6dcea;stroke-width:3.4;stroke-linecap:round}
+.m-area{fill:rgba(255,122,28,.075)}
+.m-area-l{fill:none;stroke:#ff7a1c;stroke-width:1.6;stroke-dasharray:5 6;opacity:.7}
+.m-tree{fill:#8fa98e;opacity:.5}
+.m-rd-c{fill:none;stroke:#fff;stroke-width:6.5;stroke-linecap:round;stroke-linejoin:round}
+.m-rd{fill:none;stroke:#8a96ab;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.m-dot{fill:#fff;stroke:#1d3157;stroke-width:2.2}
+.m-dot.m-big{fill:#1d3157;stroke:#fff;stroke-width:2.6}
+.m-city{font:700 14px var(--body);fill:#1d3157;paint-order:stroke;stroke:#fbf7f0;stroke-width:4px;stroke-linejoin:round}
+.m-city.m-big{font:700 23px var(--display)}
+.m-hood{font:600 10.5px var(--body);fill:#7d879a;letter-spacing:.04em;paint-order:stroke;stroke:#fbf7f0;stroke-width:3px;stroke-linejoin:round}
+.m-water{font:italic 600 15px var(--display);fill:#5f86a3;letter-spacing:.14em}
+.m-water.m-sm{font-size:11px;letter-spacing:.08em}.m-water.m-xs{font-size:10px;letter-spacing:.04em}
+.m-sh path,.m-sh rect{fill:#fff;stroke:#1d3157;stroke-width:1.4}
+.m-sh.i path{fill:#1d3157;stroke:#fff}
+.m-sh text{font:800 9.5px var(--body);fill:#1d3157}.m-sh.i text{fill:#fff}
+.m-rainier path{fill:#9a9cc0}.m-rainier .snow{fill:#fff}
+.m-rainier text{font:700 11.5px var(--body);fill:#5d6680;paint-order:stroke;stroke:#fbf7f0;stroke-width:3px}.m-rainier .m-arrow{font-weight:600;fill:#e0650f}
+.m-n circle{fill:#fff;stroke:#d9dfe8}.m-n path{fill:#1d3157}.m-n text{font:800 10px var(--body);fill:#1d3157}
+.m-job{stroke:#fff;stroke-width:1.1;cursor:pointer}
+.j-duct{fill:#ff7a1c;opacity:.82}.j-chim{fill:#2e7d5b;opacity:.9}.j-other{fill:#f5a35f;opacity:.75}.j-gas{fill:#d33b2c;stroke-width:1.4}
+.m-job.on{stroke:#1d3157;stroke-width:2.4;opacity:1}

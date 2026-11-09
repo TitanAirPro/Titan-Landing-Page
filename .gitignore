@@ -1,0 +1,4 @@
+tmp/
+scripts/__pycache__/
+scripts/map_test.svg
+node_modules/.cache/
