@@ -1,5 +1,6 @@
 {
-  "_note": "Google Ads call tracking for the LIVE build (site/production). Leave both empty and the page has no Google tag. Fill both and run bash build.sh.",
+  "_note": "Google Ads tracking for the LIVE build (site/production). Leave all empty and the page has no Google tag. Fill conversion_id + calls_from_website_label (and optionally click_to_call_label) and run bash build.sh.",
   "conversion_id": "",
-  "calls_from_website_label": ""
+  "calls_from_website_label": "",
+  "click_to_call_label": ""
 }

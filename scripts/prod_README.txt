@@ -22,6 +22,13 @@ GOOGLE ADS
   tel:+14253079165 and shows (425) 307-9165, so Google's forwarding-number
   snippet can swap them all. Count calls of 60 seconds or more.
 - Also set up "Calls from ads" (call assets), counted from 60 seconds.
+- Optional backup conversion "Click to call": create it in Google Ads
+  (Goals > Conversions > + Create conversion action > Website > add manually,
+  category "Phone call lead", Count: One) and send its label to the owner;
+  it gets built into the page. Set it to "Secondary" so bidding uses the real calls.
+- Hosting: turn on gzip or Brotli compression (most hosts have it on already).
+  The page is about 4x smaller compressed, and Google counts speed toward
+  the landing page experience score.
 - City name in the headline: in Google Ads, at the account or campaign level,
   open Settings > Campaign URL options > Final URL suffix and paste exactly:
       loc={loc_physical_ms}&iloc={loc_interest_ms}
