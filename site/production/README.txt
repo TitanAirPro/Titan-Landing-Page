@@ -2,7 +2,7 @@ TITAN GAS FIREPLACE - LANDING PAGE (live version)
 ==================================================
 
 WHAT THIS IS
-The finished landing page for Titan Gas Fireplace Service & Repair.
+The finished gas fireplace landing page for Titan Chimney & Fireplace.
 Upload the whole folder exactly as it is. index.html, the "img" folder
 and the "js" folder must stay together in the same place.
 

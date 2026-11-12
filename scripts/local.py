@@ -226,4 +226,19 @@ rep('\n/* footer */', '''
 .who b{font-size:.95rem}
 .hero-proof cite{font-style:normal;font-weight:700;color:#fff;white-space:nowrap}
 ''' + '\n/* footer */')
+
+# ---------- company name: Titan Chimney & Fireplace (this page = the gas fireplace page) ----------
+rep('<title>Titan Gas Fireplace Service &amp; Repair</title>', '<title>Titan Chimney &amp; Fireplace | Gas Fireplace Service &amp; Repair</title>')
+rep('og:title" content="Titan Gas Fireplace Service &amp; Repair"', 'og:title" content="Titan Chimney &amp; Fireplace | Gas Fireplace Service &amp; Repair"')
+rep('apple-mobile-web-app-title" content="Titan Gas"', 'apple-mobile-web-app-title" content="Titan"')
+rep('"name": "Titan Gas Fireplace Service & Repair"', '"name": "Titan Chimney & Fireplace"')
+rep('<b>Titan Gas Fireplace</b><small>Service &amp; Repair · Seattle</small>', '<b>Titan Chimney &amp; Fireplace</b><small>Gas Fireplace Service &amp; Repair</small>')
+rep('<div class="fname">Titan Gas Fireplace<br>Service &amp; Repair</div>', '<div class="fname">Titan Chimney &amp; Fireplace<br>Gas Fireplace Service &amp; Repair</div>')
+rep('<div class="copy">© Titan Gas Fireplace Service &amp; Repair</div>', '<div class="copy">© Titan Chimney &amp; Fireplace</div>')
+rep("I run Titan Gas Fireplace. We focus on gas fireplaces: pilots, valves, ignition, service, conversions, and new installs.",
+    "I run Titan Chimney &amp; Fireplace. Our gas fireplace work covers pilots, valves, ignition, service, conversions, and new installs.")
+rep('alt="Zachary, owner of Titan Gas Fireplace, outside the shop"', 'alt="Zachary, owner of Titan Chimney &amp; Fireplace, outside the shop"')
+rep('alt="Titan Gas Fireplace sign"', 'alt="Titan sign on the shop wall"')
+# the longer name still fits beside the Call button on small phones
+rep('\n/* footer */', '\n@media (max-width:389px){.logo{gap:7px}.logo b{font-size:.9rem}.logo small{font-size:.5rem;letter-spacing:.04em}.mark{width:34px;height:29px}}\n@media (max-width:350px){.logo{gap:5px}.logo b{font-size:.74rem}.logo small{font-size:.42rem}.mark{width:30px;height:26px}}\n' + '\n/* footer */')
 open(out, 'w').write(h)
