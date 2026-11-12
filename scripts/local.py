@@ -50,6 +50,7 @@ rep('<h2>Hear It From Seattle Homeowners</h2>\n      <p>Real customers, in their
 
 # services: cleaner headline + brands we work on
 rep('<h2>Old, New, or Never Used, We Fix Gas Fireplaces</h2>', '<h2>Old, New, or Never Used. We Fix Gas Fireplaces.</h2>')
+rep('<p>Repairs, yearly service, inserts, and wood-to-gas conversions. It all starts with a free inspection.</p>', '<p>Gas fireplaces are our specialty, and we also take care of what they sit in: the chimney or vent it runs through and the firebox around it. Repairs, yearly service, inserts, and wood-to-gas conversions. It all starts with a free inspection.</p>')
 rep('    <div class="revs revs-tight">',
     '    <div class="brands"><span>Brands we work on</span><p><b>Heat &amp; Glo</b><b>Lennox</b><b>Majestic</b><b>Napoleon</b><b>Regency</b><b>Mendota</b><b>Travis (Lopi, Avalon, FPX)</b><b>Valor</b><b>Heatilator</b><b>Kozy Heat</b><b>and more</b></p></div>\n    <div class="revs revs-tight">')
 

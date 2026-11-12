@@ -45,7 +45,10 @@ Last updated: Nov 12, 2026. Ads are approved, launch is close. The goal now is a
 
 ## 4. Decisions already made
 
-- Separate landing pages per service, not keyword swapping on one page.
+- **Two landing pages only** (Nov 12; replaces the old six-service-page plan). Same name on both: Titan Chimney & Fireplace.
+  1. **Main page: chimney & fireplace.** Focus on chimneys and wood fireplaces, but also covers gas fireplaces, because many gas owners search "fireplace service near me", "chimney service near me" and similar.
+  2. **Gas fireplace page** (this Variation B). People searching "gas fireplace" have one, so no chimney or wood focus. It says gas fireplaces are the specialty and that we also take care of what they sit in (chimney or vent, firebox).
+- No keyword swapping on one page.
 - No made-up data. Map counts come from real job locations (scaled to the 2,012 total you gave).
 - Washington symbols live inside the scenes, not as stickers on sections.
 - "Watch our year" was removed: keep it simple.
@@ -110,7 +113,7 @@ Last updated: Nov 12, 2026. Ads are approved, launch is close. The goal now is a
 
 1. Production build + tracking (sections 6A and 6B): needed before spend.
 2. Promise block + license number + "all services" label (6D).
-3. Six service pages built from Variation B: `/gas-fireplace-repair`, `/pilot-light-repair`, `/gas-fireplace-service`, `/gas-fireplace-inspection`, `/gas-insert-installation`, `/wood-to-gas-conversion`. Each gets its own headline, problems, FAQ and title tag.
+3. The main chimney & fireplace page (see section 4), built from Variation B with its own headline, problems, FAQ and title tag. Variation B stays the gas fireplace page.
 4. Ad copy check against the pages (message match), plus a phone booking script for whoever answers the calls.
 5. After 2 weeks of data: cut keywords with no booked calls and test a second hero headline.
 
