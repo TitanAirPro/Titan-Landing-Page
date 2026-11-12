@@ -114,6 +114,12 @@ Last updated: Nov 12, 2026. Ads are approved, launch is close. The goal now is a
 4. Ad copy check against the pages (message match), plus a phone booking script for whoever answers the calls.
 5. After 2 weeks of data: cut keywords with no booked calls and test a second hero headline.
 
-## 9. Paste this to start the next session
+## 9. Starting a new Claude Code session on this repo
 
-> Continue the Titan Gas Fireplace landing page. I'm attaching titan-build.zip. Read HANDOFF.md inside it first and follow its standing rules. Unzip to /home/claude/titan-build and run `bash build.sh`. It should reproduce the Variation B preview: https://claude.ai/artifact/WJaoKgT5RbftBo6TeX39Lg. Ads are approved and launching soon. Start with the launch checklist in section 6: production build, call tracking, and ads-to-page message match.
+The owner opens this repo in Claude Code and types one line. The session must then:
+1. Read this file and follow section 2 exactly.
+2. Read the full handover doc: https://claude.ai/artifact/JtpmWv8ABmPhiRQYpbffAw (whole history, decisions, competitor findings, learnings).
+3. Run `bash build.sh` and check that `site/variant-built/index.html` still matches the v35 preview and `site/production/` matches the campaigner's zip.
+4. Continue with section 8: call tracking, then the page accuracy items (6D). Ask only for the inputs in section 7 that the next task needs.
+
+Replies to the owner: bottom line first, short plain words, exact button names, one clear path, and end every reply with "What this step does / What actually changes".
