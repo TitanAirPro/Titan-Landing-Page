@@ -11,3 +11,4 @@ python3 "$S/inject.py"  "$T/s3m.html" "$T/s3.html"                    # map libr
 cp "$T/s3.html" "$D/site/variant-src/index.html"
 python3 "$S/build2.py"  "$D/site/variant-src/index.html" "$D/site/variant-built/index.html"   # embeds img/ for the preview
 ls -la "$D/site/variant-built/index.html"
+python3 "$S/prod.py" "$D/site/variant-src" "$D/site/production"
