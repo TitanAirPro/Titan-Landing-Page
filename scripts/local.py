@@ -13,6 +13,18 @@ LIVE = '<span class="live" data-live="short" hidden></span>'
 
 # hero: more local kicker + live phone status
 rep('<p class="kicker">Seattle Gas Fireplace Repair</p>', '<p class="kicker">Seattle-Area Gas Fireplace Repair</p>')
+
+# hero: the visitor's own city from Google Ads (Final URL suffix: loc={loc_physical_ms}&iloc={loc_interest_ms})
+# city_ids.json = Google Ads location IDs for our 60 cities (geotargets-2026-10-06.csv). City name only, no office claims.
+CITY_IDS = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'city_ids.json')))
+assert len(CITY_IDS) == 60
+CITYJS = ('<script>(function(){var C=%s;'
+  'var q=new URLSearchParams(location.search),c=C[q.get("iloc")]||C[q.get("loc")]||"",t=(q.get("city")||"").toLowerCase();'
+  'for(var k in C)if(C[k].toLowerCase()===t)c=C[k];if(!c)return;'
+  'var x="Gas Fireplace Repair in "+c;function set(){var e=document.querySelector(".hero .kicker");if(e)e.textContent=x;}'
+  'set();document.addEventListener("DOMContentLoaded",function(){setTimeout(set,0);var a=window.__titanApply;'
+  'if(a)window.__titanApply=function(){a.apply(this,arguments);set();};});})();</script>') % json.dumps(CITY_IDS, separators=(',', ':'))
+rep('<p class="kicker">Seattle-Area Gas Fireplace Repair</p>', '<p class="kicker">Seattle-Area Gas Fireplace Repair</p>' + CITYJS)
 rep('<p class="cta-note"><span>Free inspection</span><span>A real person answers</span><span>Sun–Fri 7:30 AM – 10:30 PM</span></p>',
     '<p class="cta-note"><span class="live" data-live="long">Sun–Fri 7:30 AM – 10:30 PM</span><span>Free inspection</span><span>A real person answers</span></p>')
 

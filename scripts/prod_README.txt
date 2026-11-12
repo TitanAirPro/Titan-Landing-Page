@@ -22,6 +22,12 @@ GOOGLE ADS
   tel:+14253079165 and shows (425) 307-9165, so Google's forwarding-number
   snippet can swap them all. Count calls of 60 seconds or more.
 - Also set up "Calls from ads" (call assets), counted from 60 seconds.
+- City name in the headline: in Google Ads, at the account or campaign level,
+  open Settings > Campaign URL options > Final URL suffix and paste exactly:
+      loc={loc_physical_ms}&iloc={loc_interest_ms}
+  The page then shows "Gas Fireplace Repair in Kent" (or whichever of our
+  60 cities the click is from). Anyone else sees "Seattle-Area Gas Fireplace
+  Repair". Test: open the page with ?city=Kent at the end of the address.
 - Ad schedule: Sun-Fri 7:30 AM - 10:30 PM only. Closed Saturday.
 - Location: people IN or regularly in the area, Marysville area to Tacoma area
   (60 cities in Snohomish, King and Pierce counties, listed on the page).

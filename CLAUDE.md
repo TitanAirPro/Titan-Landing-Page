@@ -30,7 +30,7 @@ Last updated: Nov 12, 2026. Ads are approved, launch is close. The goal now is a
 - **Header:** logo, "★★★★★ 4.9 from 849 reviews · Licensed & insured" (desktop), call button.
 - **Hero:**
   - 4.9 · 849 reviews badge
-  - "Seattle-Area Gas Fireplace Repair"
+  - "Seattle-Area Gas Fireplace Repair", or "Gas Fireplace Repair in <city>" for ad clicks from our 60 cities (Final URL suffix `loc={loc_physical_ms}&iloc={loc_interest_ms}`; IDs in `scripts/city_ids.json`). City name only: no office claims in any city.
   - "Gas Fireplace Won't Light? Get It Working Again Without a Surprise Bill."
   - call button
   - live "Open now till 10:30 PM" status, in Seattle time
