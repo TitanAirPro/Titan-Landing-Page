@@ -21,16 +21,18 @@ assert len(CITY_IDS) == 60
 CITYJS = ('<script>(function(){var C=%s;'
   'var q=new URLSearchParams(location.search),c=C[q.get("iloc")]||C[q.get("loc")]||"",t=(q.get("city")||"").toLowerCase();'
   'for(var k in C)if(C[k].toLowerCase()===t)c=C[k];if(!c)return;'
-  'var x="Gas Fireplace Repair in "+c;function set(){var e=document.querySelector(".hero .kicker");if(e)e.textContent=x;}'
+  'var x="Gas Fireplace Repair in "+c;function set(){var e=document.querySelector(".hero .kicker");if(e)e.textContent=x;'
+  '[].forEach.call(document.querySelectorAll("[data-city]"),function(d){d.textContent=d.getAttribute("data-city").replace("{c}",c);});}'
   'set();document.addEventListener("DOMContentLoaded",function(){setTimeout(set,0);var a=window.__titanApply;'
   'if(a)window.__titanApply=function(){a.apply(this,arguments);set();};});})();</script>') % json.dumps(CITY_IDS, separators=(',', ':'))
 rep('<p class="kicker">Seattle-Area Gas Fireplace Repair</p>', '<p class="kicker">Seattle-Area Gas Fireplace Repair</p>' + CITYJS)
+rep('<strong>Free gas fireplace inspections in Seattle.</strong>', '<strong>Free gas fireplace inspections <span data-city="in {c}">in the Seattle area</span>.</strong>')
 rep('<p class="cta-note"><span>Free inspection</span><span>A real person answers</span><span>Sun–Fri 7:30 AM – 10:30 PM</span></p>',
     '<p class="cta-note"><span class="live" data-live="long">Sun–Fri 7:30 AM – 10:30 PM</span><span>Free inspection</span><span>A real person answers</span></p>')
 
 # trust strip: local team instead of OEM (OEM stays in services + reviews)
 rep('<li><span class="ib"><svg class="ico"><use href="#i-gear"/></svg></span><span>OEM parts<small>Whenever available</small></span></li>',
-    '<li><span class="ib"><svg class="ico"><use href="#i-pin"/></svg></span><span>Local team<small>Tacoma to Marysville</small></span></li>')
+    '<li><span class="ib"><svg class="ico"><use href="#i-pin"/></svg></span><span>Local team<small data-city="Serving {c}">60 cities, one team</small></span></li>')
 
 # problems: seasonal, local framing
 rep('<p>Tap the one that sounds like yours. We hear every one of these.</p>',
@@ -90,7 +92,7 @@ rep('<!-- OWNER -->', area + '<!-- OWNER -->')
 
 # owner: local, own team
 rep("conversions, and new installs.</p>\n      <p>Every job starts",
-    "conversions, and new installs.</p>\n      <p>We started in Seattle and grew across the metro, from the Marysville area down to the Tacoma area. We're still one company with our own team. When you call (425) 307-9165, you reach us, not a national call center or a lead service.</p>\n      <p>Every job starts")
+    "conversions, and new installs.</p>\n      <p>We started in Seattle and grew across the metro, city by city<span data-city=\", including {c}\"></span>. We're still one company with our own team. When you call (425) 307-9165, you reach us, not a national call center or a lead service.</p>\n      <p>Every job starts")
 
 # FAQ: local questions
 rep('</p></details>\n      <details><summary>Who should be home for the visit?</summary>',
@@ -102,7 +104,7 @@ rep('<details><summary>I smell gas. What should I do?</summary>',
     '<details><summary>Is a smell normal the first time we turn it on in the fall?</summary><p>A light, dusty smell for the first hour of the season is common. It\'s dust burning off the burner. If the smell is strong, keeps coming back, or the glass turns black, have it checked. <strong>If it smells like rotten eggs, that\'s gas. See the next question.</strong></p></details>\n      <details><summary>I smell gas. What should I do?</summary>')
 
 # footer + schema: name the cities
-rep('conversions in Seattle.</p>', 'conversions from the Tacoma area to the Marysville area.</p>')
+rep('conversions in Seattle.</p>', 'conversions.</p>')
 rep('<p>Seattle and surrounding areas</p>', '<p>Tacoma Area to Marysville Area: 60 cities in Snohomish, King, and Pierce counties</p>')
 rep('"areaServed": {"@type": "City", "name": "Seattle, WA"}', '"areaServed": [%s]' % ', '.join('{"@type": "City", "name": "%s, WA"}' % c for c in CITIES))
 
@@ -194,7 +196,7 @@ _a = h.index('<div class="pnw pnw-night"'); _b = h.index('\n</div>', _a)
 h = h[:_b] + '\n  ' + wasym.lighthouse2() + h[_b:]
 rep('<!-- FAQ -->', mural.build() + '<!-- FAQ -->')
 rep('\n/* footer */', mural.CSS + '\n/* footer */')
-rep('conversions from the Tacoma area to the Marysville area.</p>', 'conversions from the Tacoma area to the Marysville area.</p>' + wasym.wa_outline2())
+rep('service, and conversions.</p>', 'service, and conversions.</p>' + wasym.wa_outline2())
 rep('<svg class="ico"><use href="#i-check"/></svg>', '<svg class="ico ev"><use href="#i-tree"/></svg>', 4)
 rep('\n/* footer */', wasym.CSS2 + '\n/* footer */')
 
