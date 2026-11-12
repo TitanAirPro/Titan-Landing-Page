@@ -20,10 +20,10 @@ rep('  .trust .ib{width:38px;height:38px}', '  .trust .ib{width:28px;height:28px
 rep('.prob .ib{width:44px;height:44px;border-radius:10px;background:var(--navy);color:var(--white);display:grid;place-items:center}', '.prob .ib{width:44px;height:44px;color:var(--red);display:grid;place-items:center}.prob .ib .ico{width:32px;height:32px}')
 rep('  .prob .ib{width:38px;height:38px}', '  .prob .ib{width:36px;height:36px}.prob .ib .ico{width:28px;height:28px}')
 rep('.icon-box{width:40px;height:40px;border-radius:9px;background:var(--red);color:var(--white);display:grid;place-items:center}', '.icon-box{width:40px;height:40px;color:var(--red);display:grid;place-items:start}.icon-box .ico{width:34px;height:34px}')
-# logo: flame mark matching the van and shirt branding; new favicon
-rep('<span class="mark">TG</span>', LOGO_FLAME)
-rep('.mark{width:40px;height:40px;flex:none;border-radius:8px;background:var(--red);color:var(--white);display:grid;place-items:center;font:400 1.15rem/1 var(--display)}', '.mark{width:28px;height:33px;flex:none;display:block}')
-rep('.mark{width:34px;height:34px;font-size:1rem}', '.mark{width:24px;height:28px}')
+# logo: the Titan elephant with a flame on its trunk (img/logo.png, made in scripts/logo/); new favicon
+rep('<span class="mark">TG</span>', '<img class="mark" src="img/logo.png" alt="" width="153" height="132">')
+rep('.mark{width:40px;height:40px;flex:none;border-radius:8px;background:var(--red);color:var(--white);display:grid;place-items:center;font:400 1.15rem/1 var(--display)}', '.mark{width:46px;height:40px;flex:none;display:block}')
+rep('.mark{width:34px;height:34px;font-size:1rem}', '.mark{width:39px;height:34px}')
 resub(r'<link rel="icon" href="[^"]*">', '<link rel="icon" href="%s">' % FAVICON)
 # type: Barlow / Barlow Condensed instead of Anton + Inter
 rep('family=Anton&family=Inter:wght@400;500;600;700;800', 'family=Zilla+Slab:wght@600;700&family=Public+Sans:wght@400;500;600;700;800&family=Archivo:wdth,wght@62..100,400..800&family=Schibsted+Grotesk:wght@400..800&family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600;700')
