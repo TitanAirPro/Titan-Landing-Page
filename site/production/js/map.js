@@ -94,10 +94,10 @@ ctl.querySelector('.jfit').onclick=function(){map.flyToBounds(home,{padding:[10,
 ['mousedown','touchstart','wheel'].forEach(function(t){el.addEventListener(t,function(){touched=true;},{passive:true});});ctl.addEventListener('click',function(){touched=true;});
 if(!touch){el.addEventListener('click',function(){map.scrollWheelZoom.enable();});el.addEventListener('mouseleave',function(){map.scrollWheelZoom.disable();});}
 var hint=f.querySelector('.jhint');if(touch){hint.hidden=false;map.once('zoomstart',function(){hint.style.opacity=0;});}
-var idle=f.querySelector('.jidle'),sel=f.querySelector('.jsel');
+var idle=f.querySelector('.jpanel'),sel=f.querySelector('.jsel');
 function paint(){
 markers.forEach(function(m){var e=m.getElement&&m.getElement();if(e&&e.firstChild)e.firstChild.classList.toggle('on',!!city&&m.job.c===city);});
-if(!city){sel.hidden=true;idle.hidden=false;return;}
+if(!city){sel.hidden=true;idle.hidden=true;return;}
 var mine=jobs.filter(function(j){return j.c===city;}),vis=mine.filter(shown),n=vis.reduce(function(a,j){return a+j.w;},0);
 f.querySelector('.jcity').textContent=city;
 f.querySelector('.jcount').textContent=n?(n+' '+(filt==='all'?'':SHORT[filt]+' ')+'job'+(n===1?'':'s')+' in this area'):('No '+SHORT[filt]+' jobs here yet');
@@ -105,7 +105,7 @@ var cnt={},last={};mine.forEach(function(j){cnt[j.k]=(cnt[j.k]||0)+j.w;if(!last[
 f.querySelector('.jbar').innerHTML=ORDER.filter(function(k){return cnt[k];}).map(function(k){return '<i class="j-'+k+'" style="flex:'+cnt[k]+'"></i>';}).join('');
 f.querySelector('.jlist').innerHTML=ORDER.filter(function(k){return cnt[k]&&(filt==='all'||filt===k);}).map(function(k){return '<li><i class="j-'+k+'"></i>'+WORD[k]+'<span>'+cnt[k]+(cnt[k]===1?' job':' jobs')+'</span></li>';}).join('');
 f.querySelector('.jcl2').textContent='Free inspection in '+city;
-idle.hidden=true;sel.hidden=false;
+idle.hidden=false;sel.hidden=false;
 }
 function select(c){city=c;paint();}
 map.on('popupclose',function(){});

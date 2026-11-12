@@ -24,15 +24,13 @@ FIG = '''<figure class="area-mapw">
         <button type="button" data-f="other"><i class="j-other"></i>Other</button>
       </div>
       <div class="jstage"><div id="jmap" aria-label="Map of jobs we've done around Puget Sound"></div><div class="jhint" hidden><span>Pinch or tap + to zoom in</span></div></div>
-      <figcaption class="jpanel">
-        <div class="jidle"><b>Tap a number</b><p>Each number is how many jobs we've done in that area. Tap to zoom in and see the city and the services.</p></div>
+      <figcaption class="jpanel" hidden>
         <div class="jsel" hidden>
           <div class="jsel-h"><div><b class="jcity"></b><span class="jcount"></span></div><button type="button" class="jx" aria-label="Close">×</button></div>
           <div class="jbar"></div>
           <ul class="jlist"></ul>
           <a class="btn btn-call btn-big jcall" href="tel:+14253079165"><span class="l1"><svg class="ico"><use href="#i-phone"/></svg>Call (425) 307-9165</span><span class="l2 jcl2">Free inspection</span></a>
         </div>
-        <small class="jpriv">Area numbers spread our 2,012 jobs by where we've worked, placed by ZIP code, never on a customer's house. No names or addresses are shown. Map data © OpenStreetMap contributors, Natural Earth.</small>
       </figcaption>
     </figure>'''
 
@@ -87,7 +85,6 @@ CSS = LEAFLET_CSS + '''
 .jctl .grp{display:grid;border-radius:10px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.3)}
 .jctl .grp button{border-radius:0;box-shadow:none}.jctl .grp button+button{border-top:1px solid #e8eaed}
 .jctl svg{width:20px;height:20px;fill:none;stroke:#3c4043;stroke-width:2;stroke-linecap:round}
-.jattr{position:absolute;right:6px;bottom:4px;z-index:500;font:500 9.5px/1 var(--body);color:#5f6368;background:rgba(255,255,255,.75);padding:2px 5px;border-radius:4px;pointer-events:none}
 .jscale{position:absolute;left:12px;bottom:10px;z-index:500;font:600 10px/1 var(--body);color:#5f6368}
 /* popup card */
 .leaflet-popup-content-wrapper{border-radius:12px;box-shadow:0 6px 24px rgba(0,0,0,.22);padding:0}
@@ -102,7 +99,8 @@ CSS = LEAFLET_CSS + '''
 .jhint{position:absolute;left:50%;top:12px;transform:translateX(-50%);z-index:600;pointer-events:none;transition:opacity .4s}
 .jhint span{display:inline-flex;align-items:center;gap:8px;background:rgba(32,33,36,.82);color:#fff;font:600 .78rem/1 var(--body);padding:9px 13px;border-radius:999px;white-space:nowrap}
 .jpanel{padding:16px 18px 18px;background:#fff;border-top:1px solid var(--cream-line);display:grid;gap:12px}
-.jidle b{color:var(--navy);font:700 1rem/1.2 var(--display)}.jidle p{margin:4px 0 0;color:var(--text);font-size:.92rem}
+.jpanel[hidden]{display:none}
+.jattr{position:absolute;right:6px;bottom:4px;z-index:500;font:500 9.5px/1 var(--body);color:#5f6368;background:rgba(255,255,255,.75);padding:2px 5px;border-radius:4px;pointer-events:none}
 .jsel{display:grid;gap:12px}
 .jsel-h{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
 .jcity{display:block;color:var(--navy);font:700 1.45rem/1.1 var(--display)}
@@ -115,7 +113,6 @@ CSS = LEAFLET_CSS + '''
 .jlist li:last-child{border-bottom:0}
 .jlist li span{margin-left:auto;color:var(--muted);font-weight:500;font-size:.84rem;white-space:nowrap}
 .jcall{width:100%}
-.jpriv{color:var(--muted);font-size:.74rem}
 '''
 
 def mapdata():
@@ -226,10 +223,10 @@ JS = r'''<script>window.__TITAN_MAPLIB__=1;</script>
   if(!touch){el.addEventListener('click',function(){map.scrollWheelZoom.enable();});el.addEventListener('mouseleave',function(){map.scrollWheelZoom.disable();});}
   var hint=f.querySelector('.jhint');if(touch){hint.hidden=false;map.once('zoomstart',function(){hint.style.opacity=0;});}
   /* panel */
-  var idle=f.querySelector('.jidle'),sel=f.querySelector('.jsel');
+  var idle=f.querySelector('.jpanel'),sel=f.querySelector('.jsel');
   function paint(){
     markers.forEach(function(m){var e=m.getElement&&m.getElement();if(e&&e.firstChild)e.firstChild.classList.toggle('on',!!city&&m.job.c===city);});
-    if(!city){sel.hidden=true;idle.hidden=false;return;}
+    if(!city){sel.hidden=true;idle.hidden=true;return;}
     var mine=jobs.filter(function(j){return j.c===city;}),vis=mine.filter(shown),n=vis.reduce(function(a,j){return a+j.w;},0);
     f.querySelector('.jcity').textContent=city;
     f.querySelector('.jcount').textContent=n?(n+' '+(filt==='all'?'':SHORT[filt]+' ')+'job'+(n===1?'':'s')+' in this area'):('No '+SHORT[filt]+' jobs here yet');
@@ -237,7 +234,7 @@ JS = r'''<script>window.__TITAN_MAPLIB__=1;</script>
     f.querySelector('.jbar').innerHTML=ORDER.filter(function(k){return cnt[k];}).map(function(k){return '<i class="j-'+k+'" style="flex:'+cnt[k]+'"></i>';}).join('');
     f.querySelector('.jlist').innerHTML=ORDER.filter(function(k){return cnt[k]&&(filt==='all'||filt===k);}).map(function(k){return '<li><i class="j-'+k+'"></i>'+WORD[k]+'<span>'+cnt[k]+(cnt[k]===1?' job':' jobs')+'</span></li>';}).join('');
     f.querySelector('.jcl2').textContent='Free inspection in '+city;
-    idle.hidden=true;sel.hidden=false;
+    idle.hidden=false;sel.hidden=false;
   }
   function select(c){city=c;paint();}
   map.on('popupclose',function(){});
