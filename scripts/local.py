@@ -72,7 +72,7 @@ area = '''<!-- WHERE WE WORK -->
   <div class="wrap area-grid">
     <div class="area-head">
       <span class="eyebrow">Where We Work</span>
-      <h2><span data-city="{c} and Nearby">Tacoma Area to Marysville Area</span>. One Local Team.</h2>
+      <h2><span data-city="{c} and Nearby">60 Cities</span>. One Local Team.</h2>
       <p data-city="We work in {c} and nearby {n}." hidden></p>
       <p>We started in Seattle and grew from there, city by city, until we covered the whole metro. We're still one company: one phone number, one office, and the technician at your door works for Titan. No lead sites, no call center passing your number around.</p>
       <p>Same crew whether you're in a Ballard Craftsman, a Sammamish cul-de-sac, or a Tacoma bungalow. Every number on this map is a real job our team has done.</p>
@@ -100,7 +100,7 @@ rep("conversions, and new installs.</p>\n      <p>Every job starts",
 
 # FAQ: local questions
 rep('</p></details>\n      <details><summary>Who should be home for the visit?</summary>',
-    '</p></details>\n      <details><summary>Do you come to my area?</summary><p><span data-city="Yes. We work in {c} and nearby {n}, plus the rest of our 60 cities across Snohomish, King, and Pierce counties.">We cover 60 cities from the Marysville area down to the Tacoma area, across Snohomish, King, and Pierce counties: from Arlington and Lake Stevens through Seattle and the Eastside to Kent, Puyallup, and Gig Harbor.</span> <strong>Not sure? Call and ask.</strong></p></details>'
+    '</p></details>\n      <details><summary>Do you come to my area?</summary><p><span data-city="Yes. We work in {c} and nearby {n}, plus the rest of our 60 cities across Snohomish, King, and Pierce counties.">We cover 60 cities across Snohomish, King, and Pierce counties: from Arlington and Lake Stevens through Seattle and the Eastside to Kent, Puyallup, and Gig Harbor.</span> <strong>Not sure? Call and ask.</strong></p></details>'
     '\n      <details><summary>Are you really a local company?</summary><p>Yes. Titan started in Seattle and grew from there. We\'re one company with our own office, our own team, and one phone number. We don\'t sell your information or pass your call to whoever is free. The person who answers works for Titan, and so does the technician who comes to your home.</p></details>'
     '\n      <details><summary>Do you work on condo and townhome fireplaces?</summary><p>Yes. We work on direct-vent gas fireplaces in condos and townhomes. If your building has rules for contractors, tell us when you call and we\'ll follow them.</p></details>'
     '\n      <details><summary>Who should be home for the visit?</summary>')
@@ -109,7 +109,7 @@ rep('<details><summary>I smell gas. What should I do?</summary>',
 
 # footer + schema: name the cities
 rep('conversions in Seattle.</p>', 'conversions.</p>')
-rep('<p>Seattle and surrounding areas</p>', '<p data-city="{c} and nearby {n}, plus the rest of our 60 cities in Snohomish, King, and Pierce counties">Tacoma Area to Marysville Area: 60 cities in Snohomish, King, and Pierce counties</p>')
+rep('<p>Seattle and surrounding areas</p>', '<p data-city="{c} and nearby {n}, plus the rest of our 60 cities in Snohomish, King, and Pierce counties">60 cities in Snohomish, King, and Pierce counties</p>')
 rep('"areaServed": {"@type": "City", "name": "Seattle, WA"}', '"areaServed": [%s]' % ', '.join('{"@type": "City", "name": "%s, WA"}' % c for c in CITIES))
 
 # sticky bar: show "Open now" when phones are open
@@ -248,4 +248,23 @@ rep('alt="Zachary, owner of Titan Gas Fireplace, outside the shop"', 'alt="Zacha
 rep('alt="Titan Gas Fireplace sign"', 'alt="Titan sign on the shop wall"')
 # the longer name still fits beside the Call button on small phones
 rep('\n/* footer */', '\n@media (max-width:389px){.logo{gap:7px}.logo b{font-size:.9rem}.logo small{font-size:.5rem;letter-spacing:.04em}.mark{width:34px;height:29px}}\n@media (max-width:350px){.logo{gap:5px}.logo b{font-size:.74rem}.logo small{font-size:.42rem}.mark{width:30px;height:26px}}\n' + '\n/* footer */')
+# ---------- one font pair only: Zilla Slab headlines + Public Sans body (owner's pick, Nov 12) ----------
+import re as _re
+h, _k = _re.subn(r' <label style="margin-left:10px">Font: <select onchange="document.documentElement.dataset.font=this.value">.*?</select></label>', '', h, flags=_re.S)
+assert _k == 1, _k
+h, _k = _re.subn(r'https://fonts\.googleapis\.com/css2\?family=Zilla\+Slab[^"]*',
+                 'https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@600;700&amp;family=Public+Sans:wght@400;500;600;700;800&amp;display=swap', h)
+assert _k == 1, _k
+_OTHER = _re.compile(r'html\[data-font="(?:signage|news|current)"\]')
+def _rule(m):
+    sels = [x for x in m.group(1).split(',') if not _OTHER.search(x)]
+    return (','.join(sels) + '{' + m.group(2) + '}') if sels else ''
+def _css(m):
+    return m.group(1) + _re.sub(r'([^{}@]+)\{([^{}]*)\}', _rule, m.group(2)) + m.group(3)
+h = _re.sub(r'(<style>)(.*?)(</style>)', _css, h, flags=_re.S)
+assert not _OTHER.search(h)
+for _a, _b in (('--display:"Barlow Condensed","Arial Narrow",sans-serif;', '--display:"Zilla Slab",Rockwell,Georgia,serif;'),
+               ('--body:"Barlow","Helvetica Neue",Arial,sans-serif;', '--body:"Public Sans","Helvetica Neue",Arial,sans-serif;')):
+    assert h.count(_a) == 1, _a
+    h = h.replace(_a, _b)
 open(out, 'w').write(h)

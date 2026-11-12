@@ -41,7 +41,7 @@ Last updated: Nov 12, 2026. Ads are approved, launch is close. The goal now is a
   - real coastline and highways, zoom and tap, numbers that total **2,012**
   - zoom-out locked to the job area at any screen size
   - the numbers are your 2,012 spread by the locations of 341 jobs in the older data copy (the note under the map saying so was removed Nov 12 at the owner's request)
-- **Type:** Zilla Slab headlines with Public Sans body (default). The preview bar has a font switcher and an ad-version switcher for testing only.
+- **Type:** Zilla Slab headlines with Public Sans body, the only fonts (owner picked them Nov 12; the font switcher and other fonts were removed). The preview bar keeps only the ad-version switcher, for testing.
 
 ## 4. Decisions already made
 
