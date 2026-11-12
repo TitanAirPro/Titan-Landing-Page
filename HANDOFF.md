@@ -1,6 +1,6 @@
 # Titan Gas Fireplace — handoff for the next session
 
-Last updated: Nov 8, 2026. Ads are approved, launch is close. The goal now is ads and a landing page that turn clicks into calls.
+Last updated: Nov 12, 2026. Ads are approved, launch is close. The goal now is ads and a landing page that turn clicks into calls.
 
 ## 1. Where things are
 
@@ -9,6 +9,7 @@ Last updated: Nov 8, 2026. Ads are approved, launch is close. The goal now is ad
 - **This zip (`titan-build.zip`)** holds everything needed to rebuild Variation B from scratch. The build reproduces version 35 byte for byte.
   - `site/original/index.html`: the original page from your first zip (the starting point).
   - `site/variant-src/`: the Variation B page plus `img/` (job photos, testimonial video, poster, reviewer photos).
+  - `site/production/`: the LIVE build (index.html + img/ + js/ + README.txt for the campaigner). Made by `scripts/prod.py` at the end of `build.sh`. Sent to the campaigner as `titan-gas-fireplace-live.zip` on Nov 12, 2026. Private view: https://claude.ai/artifact/VvHwykt9bgp3h3pKUuVVWm
   - `site/variant-built/index.html`: the preview build, with all photos built in (about 11 MB). **Preview only. Do not put this file live.**
   - `scripts/`: the build steps (see section 5).
   - `research/Washington chimney competitor teardown.md`: the competitor report and plan.
@@ -61,7 +62,7 @@ Last updated: Nov 8, 2026. Ads are approved, launch is close. The goal now is ad
 
 **A. The page that goes live**
 1. Pick which version goes live: this chat's Variation B or the other chat's version.
-2. Make a **production build**, not the 11 MB preview:
+2. ~~Make a **production build**~~ DONE Nov 12 (`site/production/`; real PageSpeed score still unchecked until it is live):
    - separate image files, compressed
    - testimonial video loads only when tapped
    - remove the yellow preview bar (font and ad switchers)
