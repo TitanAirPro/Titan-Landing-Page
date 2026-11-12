@@ -30,7 +30,7 @@ Last updated: Nov 12, 2026. Ads are approved, launch is close. The goal now is a
 - **Header:** elephant logo, "Titan Chimney & Fireplace" with "Gas Fireplace Service & Repair" under it (company name is Titan Chimney & Fireplace on every page; the line under it names the page type), "★★★★★ 4.9 from 849 reviews · Licensed & insured" (desktop), call button.
 - **Hero:**
   - 4.9 · 849 reviews badge
-  - "Seattle-Area Gas Fireplace Repair", or "Gas Fireplace Repair in <city>" for ad clicks from our 60 cities (Final URL suffix `loc={loc_physical_ms}&iloc={loc_interest_ms}`; IDs in `scripts/city_ids.json`). City name only: no office claims in any city.
+  - "Seattle-Area Gas Fireplace Repair", or "Gas Fireplace Repair in <city>" for ad clicks from our 60 cities (Final URL suffix `loc={loc_physical_ms}&iloc={loc_interest_ms}`; IDs + 4 nearest cities in `scripts/city_ids.json`). With a known city the whole page follows it: trust strip, orange band, Where We Work heading + "We work in <city> and nearby ...", owner line, FAQ area answer, footer service area, browser title. City name only: no office claims in any city.
   - "Gas Fireplace Won't Light? Get It Working Again Without a Surprise Bill."
   - call button
   - live "Open now till 10:30 PM" status, in Seattle time

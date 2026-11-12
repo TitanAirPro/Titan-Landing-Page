@@ -1,62 +1,545 @@
 {
-"1027503": "Arlington",
-"9191746": "Smokey Point",
-"1027654": "Marysville",
-"1027602": "Granite Falls",
-"1027634": "Lake Stevens",
-"1027753": "Snohomish",
-"1027664": "Monroe",
-"1027583": "Everett",
-"1027672": "Mukilteo",
-"9052439": "Mill Creek",
-"1027647": "Lynnwood",
-"1027576": "Edmonds",
-"1027670": "Mountlake Terrace",
-"9194342": "Brier",
-"9052842": "Shoreline",
-"9191638": "Lake Forest Park",
-"1027621": "Kenmore",
-"1027517": "Bothell",
-"1027809": "Woodinville",
-"1027571": "Duvall",
-"1027627": "Kirkland",
-"1027725": "Redmond",
-"1027741": "Sammamish",
-"1027615": "Issaquah",
-"1027509": "Bellevue",
-"1027662": "Mercer Island",
-"9194364": "Newcastle",
-"1027744": "Seattle",
-"1027726": "Renton",
-"9053013": "Tukwila",
-"9052821": "SeaTac",
-"9051666": "Burien",
-"9192447": "Normandy Park",
-"9051829": "Des Moines",
-"1027623": "Kent",
-"9051783": "Covington",
-"1027653": "Maple Valley",
-"1027515": "Black Diamond",
-"1027505": "Auburn",
-"9193159": "Algona",
-"1027700": "Pacific",
-"1027588": "Federal Way",
-"1027663": "Milton",
-"9051945": "Fife",
-"9051892": "Edgewood",
-"1027771": "Sumner",
-"9051619": "Bonney Lake",
-"1027719": "Puyallup",
-"9052871": "South Hill",
-"9190375": "Frederickson",
-"1027697": "Orting",
-"1027598": "Graham",
-"1027758": "Spanaway",
-"9052640": "Parkland",
-"1027635": "Lakewood",
-"1027787": "University Place",
-"9189198": "Fircrest",
-"1027766": "Steilacoom",
-"1027773": "Tacoma",
-"1027595": "Gig Harbor"
+"_note": "Google Ads location ID -> [city, 4 nearest of our 60 cities]. Coordinates from areamap.py/mapdata/jobs, 13 added by hand.",
+"cities": {
+"1027503": [
+"Arlington",
+[
+"Smokey Point",
+"Marysville",
+"Granite Falls",
+"Lake Stevens"
+]
+],
+"9191746": [
+"Smokey Point",
+[
+"Arlington",
+"Marysville",
+"Lake Stevens",
+"Granite Falls"
+]
+],
+"1027654": [
+"Marysville",
+[
+"Everett",
+"Lake Stevens",
+"Smokey Point",
+"Mukilteo"
+]
+],
+"1027602": [
+"Granite Falls",
+[
+"Lake Stevens",
+"Marysville",
+"Arlington",
+"Smokey Point"
+]
+],
+"1027634": [
+"Lake Stevens",
+[
+"Marysville",
+"Granite Falls",
+"Everett",
+"Snohomish"
+]
+],
+"1027753": [
+"Snohomish",
+[
+"Mill Creek",
+"Everett",
+"Monroe",
+"Lake Stevens"
+]
+],
+"1027664": [
+"Monroe",
+[
+"Snohomish",
+"Duvall",
+"Mill Creek",
+"Woodinville"
+]
+],
+"1027583": [
+"Everett",
+[
+"Marysville",
+"Mukilteo",
+"Snohomish",
+"Lake Stevens"
+]
+],
+"1027672": [
+"Mukilteo",
+[
+"Everett",
+"Mill Creek",
+"Lynnwood",
+"Marysville"
+]
+],
+"9052439": [
+"Mill Creek",
+[
+"Lynnwood",
+"Brier",
+"Snohomish",
+"Bothell"
+]
+],
+"1027647": [
+"Lynnwood",
+[
+"Mountlake Terrace",
+"Brier",
+"Edmonds",
+"Lake Forest Park"
+]
+],
+"1027576": [
+"Edmonds",
+[
+"Mountlake Terrace",
+"Lynnwood",
+"Shoreline",
+"Brier"
+]
+],
+"1027670": [
+"Mountlake Terrace",
+[
+"Brier",
+"Lake Forest Park",
+"Shoreline",
+"Lynnwood"
+]
+],
+"9194342": [
+"Brier",
+[
+"Mountlake Terrace",
+"Lake Forest Park",
+"Kenmore",
+"Lynnwood"
+]
+],
+"9052842": [
+"Shoreline",
+[
+"Mountlake Terrace",
+"Lake Forest Park",
+"Brier",
+"Edmonds"
+]
+],
+"9191638": [
+"Lake Forest Park",
+[
+"Kenmore",
+"Brier",
+"Mountlake Terrace",
+"Shoreline"
+]
+],
+"1027621": [
+"Kenmore",
+[
+"Lake Forest Park",
+"Bothell",
+"Brier",
+"Mountlake Terrace"
+]
+],
+"1027517": [
+"Bothell",
+[
+"Kenmore",
+"Woodinville",
+"Lake Forest Park",
+"Brier"
+]
+],
+"1027809": [
+"Woodinville",
+[
+"Bothell",
+"Kenmore",
+"Lake Forest Park",
+"Brier"
+]
+],
+"1027571": [
+"Duvall",
+[
+"Monroe",
+"Redmond",
+"Woodinville",
+"Sammamish"
+]
+],
+"1027627": [
+"Kirkland",
+[
+"Redmond",
+"Bellevue",
+"Woodinville",
+"Kenmore"
+]
+],
+"1027725": [
+"Redmond",
+[
+"Kirkland",
+"Bellevue",
+"Sammamish",
+"Woodinville"
+]
+],
+"1027741": [
+"Sammamish",
+[
+"Redmond",
+"Issaquah",
+"Bellevue",
+"Newcastle"
+]
+],
+"1027615": [
+"Issaquah",
+[
+"Newcastle",
+"Sammamish",
+"Renton",
+"Mercer Island"
+]
+],
+"1027509": [
+"Bellevue",
+[
+"Mercer Island",
+"Kirkland",
+"Redmond",
+"Newcastle"
+]
+],
+"1027662": [
+"Mercer Island",
+[
+"Bellevue",
+"Newcastle",
+"Seattle",
+"Renton"
+]
+],
+"9194364": [
+"Newcastle",
+[
+"Renton",
+"Mercer Island",
+"Issaquah",
+"Bellevue"
+]
+],
+"1027744": [
+"Seattle",
+[
+"Mercer Island",
+"Bellevue",
+"Kirkland",
+"Burien"
+]
+],
+"1027726": [
+"Renton",
+[
+"Tukwila",
+"Newcastle",
+"SeaTac",
+"Mercer Island"
+]
+],
+"9053013": [
+"Tukwila",
+[
+"Renton",
+"SeaTac",
+"Burien",
+"Normandy Park"
+]
+],
+"9052821": [
+"SeaTac",
+[
+"Normandy Park",
+"Tukwila",
+"Burien",
+"Des Moines"
+]
+],
+"9051666": [
+"Burien",
+[
+"Normandy Park",
+"SeaTac",
+"Tukwila",
+"Des Moines"
+]
+],
+"9192447": [
+"Normandy Park",
+[
+"SeaTac",
+"Burien",
+"Des Moines",
+"Tukwila"
+]
+],
+"9051829": [
+"Des Moines",
+[
+"Normandy Park",
+"SeaTac",
+"Kent",
+"Burien"
+]
+],
+"1027623": [
+"Kent",
+[
+"Des Moines",
+"Auburn",
+"SeaTac",
+"Federal Way"
+]
+],
+"9051783": [
+"Covington",
+[
+"Maple Valley",
+"Kent",
+"Auburn",
+"Black Diamond"
+]
+],
+"1027653": [
+"Maple Valley",
+[
+"Covington",
+"Black Diamond",
+"Kent",
+"Auburn"
+]
+],
+"1027515": [
+"Black Diamond",
+[
+"Maple Valley",
+"Covington",
+"Auburn",
+"Algona"
+]
+],
+"1027505": [
+"Auburn",
+[
+"Algona",
+"Pacific",
+"Federal Way",
+"Edgewood"
+]
+],
+"9193159": [
+"Algona",
+[
+"Pacific",
+"Auburn",
+"Edgewood",
+"Milton"
+]
+],
+"1027700": [
+"Pacific",
+[
+"Algona",
+"Edgewood",
+"Auburn",
+"Milton"
+]
+],
+"1027588": [
+"Federal Way",
+[
+"Auburn",
+"Algona",
+"Pacific",
+"Edgewood"
+]
+],
+"1027663": [
+"Milton",
+[
+"Edgewood",
+"Fife",
+"Pacific",
+"Algona"
+]
+],
+"9051945": [
+"Fife",
+[
+"Milton",
+"Edgewood",
+"Tacoma",
+"Puyallup"
+]
+],
+"9051892": [
+"Edgewood",
+[
+"Milton",
+"Pacific",
+"Algona",
+"Fife"
+]
+],
+"1027771": [
+"Sumner",
+[
+"Puyallup",
+"Bonney Lake",
+"Edgewood",
+"Pacific"
+]
+],
+"9051619": [
+"Bonney Lake",
+[
+"Sumner",
+"South Hill",
+"Puyallup",
+"Orting"
+]
+],
+"1027719": [
+"Puyallup",
+[
+"Sumner",
+"South Hill",
+"Milton",
+"Edgewood"
+]
+],
+"9052871": [
+"South Hill",
+[
+"Puyallup",
+"Sumner",
+"Bonney Lake",
+"Frederickson"
+]
+],
+"9190375": [
+"Frederickson",
+[
+"Spanaway",
+"Graham",
+"South Hill",
+"Parkland"
+]
+],
+"1027697": [
+"Orting",
+[
+"Graham",
+"South Hill",
+"Bonney Lake",
+"Frederickson"
+]
+],
+"1027598": [
+"Graham",
+[
+"Frederickson",
+"Orting",
+"South Hill",
+"Spanaway"
+]
+],
+"1027758": [
+"Spanaway",
+[
+"Parkland",
+"Frederickson",
+"Steilacoom",
+"Lakewood"
+]
+],
+"9052640": [
+"Parkland",
+[
+"Steilacoom",
+"Spanaway",
+"Lakewood",
+"Frederickson"
+]
+],
+"1027635": [
+"Lakewood",
+[
+"Steilacoom",
+"Parkland",
+"Fircrest",
+"University Place"
+]
+],
+"1027787": [
+"University Place",
+[
+"Fircrest",
+"Lakewood",
+"Tacoma",
+"Steilacoom"
+]
+],
+"9189198": [
+"Fircrest",
+[
+"University Place",
+"Tacoma",
+"Lakewood",
+"Steilacoom"
+]
+],
+"1027766": [
+"Steilacoom",
+[
+"Lakewood",
+"Parkland",
+"Fircrest",
+"University Place"
+]
+],
+"1027773": [
+"Tacoma",
+[
+"Fircrest",
+"Fife",
+"University Place",
+"Milton"
+]
+],
+"1027595": [
+"Gig Harbor",
+[
+"University Place",
+"Fircrest",
+"Tacoma",
+"Lakewood"
+]
+]
+}
 }
