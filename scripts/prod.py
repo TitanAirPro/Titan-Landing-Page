@@ -11,7 +11,8 @@ What it changes versus the preview (nothing else):
   - the testimonial video downloads only when it scrolls into view (preload="none"); a smaller re-encode is used only if it is smaller
   - Leaflet + map data + map code move to js/map.js, loaded with defer
   - JPGs re-saved smaller (same pixel size, never cropped), metadata stripped
-  - a marked spot in <head> for the Google tag
+  - the Google tag + "Calls from website" number swap when scripts/tracking.json is filled in,
+    otherwise a marked spot in <head> for it
 """
 import os, re, sys, shutil, subprocess
 from PIL import Image
@@ -55,8 +56,22 @@ js = m.group(1) + '\n;\n' + m.group(2) + '\n;\n' + m.group(3) + '\n'
 open(os.path.join(OUT, 'js', 'map.js'), 'w', encoding='utf-8').write(js)
 s = s[:m.start()] + '<script src="js/map.js" defer></script>' + s[m.end():]
 
-# 6. marked spot for the Google tag
-s, k = re.subn(r'(<meta name="viewport"[^>]*>)', r'\1\n<!-- GOOGLE TAG: paste the Google Ads / Google tag (gtag.js) snippet here, right after this line -->', s, count=1)
+# 6. Google tag + "Calls from website" number swap (from tracking.json), else a marked spot for it
+import json
+T = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'tracking.json'), encoding='utf-8'))
+aw, label = T.get('conversion_id', '').strip(), T.get('calls_from_website_label', '').strip()
+if aw or label:
+    if not re.fullmatch(r'AW-\d{6,12}', aw) or not re.fullmatch(r'[A-Za-z0-9_-]{6,40}', label):
+        sys.exit('tracking.json: conversion_id must look like AW-123456789 and the label like AbC-D_efG-h12_34-567')
+    # Google swaps every "(425) 307-9165" and tel:+14253079165 on the page for ad visitors; calls from 60 s count
+    tag = ('<!-- Google tag + "Calls from website" -->\n'
+           '<script async src="https://www.googletagmanager.com/gtag/js?id=%s"></script>\n'
+           '<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}'
+           "gtag('js',new Date());gtag('config','%s');"
+           "gtag('config','%s/%s',{'phone_conversion_number':'(425) 307-9165'});</script>") % (aw, aw, aw, label)
+    s, k = re.subn(r'(<meta name="viewport"[^>]*>)', lambda m: m.group(1) + '\n' + tag, s, count=1)
+else:
+    s, k = re.subn(r'(<meta name="viewport"[^>]*>)', r'\1\n<!-- GOOGLE TAG: paste the Google Ads / Google tag (gtag.js) snippet here, right after this line -->', s, count=1)
 assert k == 1
 
 open(os.path.join(OUT, 'index.html'), 'w', encoding='utf-8').write(s)
