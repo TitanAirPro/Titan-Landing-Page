@@ -18,7 +18,7 @@ rep('<p class="cta-note"><span>Free inspection</span><span>A real person answers
 
 # trust strip: local team instead of OEM (OEM stays in services + reviews)
 rep('<li><span class="ib"><svg class="ico"><use href="#i-gear"/></svg></span><span>OEM parts<small>Whenever available</small></span></li>',
-    '<li><span class="ib"><svg class="ico"><use href="#i-pin"/></svg></span><span>Local team<small>Everett to Olympia</small></span></li>')
+    '<li><span class="ib"><svg class="ico"><use href="#i-pin"/></svg></span><span>Local team<small>Tacoma to Marysville</small></span></li>')
 
 # problems: seasonal, local framing
 rep('<p>Tap the one that sounds like yours. We hear every one of these.</p>',
@@ -43,23 +43,24 @@ rep('    <div class="revs revs-tight">',
 
 # NEW: where we work (service-area map)
 GROUPS = [
- ("North End", "Everett, Mukilteo, Mill Creek, Lynnwood, Edmonds, Mountlake Terrace, Shoreline, Lake Forest Park, Kenmore, Bothell, Woodinville"),
- ("Seattle", "Ballard, Fremont, Wallingford, Green Lake, Queen Anne, Magnolia, Capitol Hill, Madison Park, Laurelhurst, Ravenna, Wedgwood, Lake City, Northgate, West Seattle, Beacon Hill, Columbia City"),
- ("Eastside", "Kirkland, Redmond, Bellevue, Mercer Island, Newcastle, Sammamish, Issaquah"),
- ("South Sound", "Renton, Tukwila, Burien, SeaTac, Des Moines, Kent, Auburn, Federal Way, Fife, Tacoma, University Place, Lakewood, Puyallup, DuPont, Lacey, Tumwater, Olympia"),
+ ("Snohomish County", "Arlington, Smokey Point, Marysville, Granite Falls, Lake Stevens, Snohomish, Monroe, Everett, Mukilteo, Mill Creek, Lynnwood, Edmonds, Mountlake Terrace, Brier"),
+ ("King County", "Shoreline, Lake Forest Park, Kenmore, Bothell, Woodinville, Duvall, Kirkland, Redmond, Sammamish, Issaquah, Bellevue, Mercer Island, Newcastle, Seattle, Renton, Tukwila, SeaTac, Burien, Normandy Park, Des Moines, Kent, Covington, Maple Valley, Black Diamond, Auburn, Algona, Pacific, Federal Way"),
+ ("Pierce County", "Milton, Fife, Edgewood, Sumner, Bonney Lake, Puyallup, South Hill, Frederickson, Orting, Graham, Spanaway, Parkland, Lakewood, University Place, Fircrest, Steilacoom, Tacoma, Gig Harbor"),
 ]
-CITIES = ["Seattle"] + [c for g, l in GROUPS if g != "Seattle" for c in l.split(", ")]
+CITIES = [c for g, l in GROUPS for c in l.split(", ")]
+assert len(CITIES) == 60, len(CITIES)
 area = '''<!-- WHERE WE WORK -->
 <section class="sec area" id="area">
   <div class="wrap area-grid">
     <div class="area-head">
       <span class="eyebrow">Where We Work</span>
-      <h2>Everett to Olympia. One Local Team.</h2>
-      <p>Same number, same crew, whether you're in a Ballard Craftsman, a Sammamish cul-de-sac, or a Tacoma bungalow. Every dot on this map is a real job our crew has done.</p>
+      <h2>Tacoma Area to Marysville Area. One Local Team.</h2>
+      <p>We started in Seattle and grew from there, city by city, until we covered the whole metro. We're still one company: one phone number, one office, and the technician at your door works for Titan. No lead sites, no call center passing your number around.</p>
+      <p>Same crew whether you're in a Ballard Craftsman, a Sammamish cul-de-sac, or a Tacoma bungalow. Every number on this map is a real job our team has done.</p>
     </div>
     %s
     <div class="area-rest">
-      <details class="cities"><summary>See every city we serve</summary><div class="cities-in">%s</div></details>
+      <details class="cities"><summary>See all 60 cities we serve</summary><div class="cities-in">%s</div></details>
       <div><h3 class="homes-h">The fireplaces we see around here</h3>
       <ul class="homes">
         <li><svg class="ico"><use href="#i-building"/></svg><div><b>Condos and townhomes</b><span>Direct-vent gas fireplaces from Capitol Hill to downtown Bellevue.</span></div></li>
@@ -76,19 +77,20 @@ rep('<!-- OWNER -->', area + '<!-- OWNER -->')
 
 # owner: local, own team
 rep("conversions, and new installs.</p>\n      <p>Every job starts",
-    "conversions, and new installs.</p>\n      <p>We're based right here in the Seattle area. When you call (425) 307-9165, you reach our own team, not a national call center.</p>\n      <p>Every job starts")
+    "conversions, and new installs.</p>\n      <p>We started in Seattle and grew across the metro, from the Marysville area down to the Tacoma area. We're still one company with our own team. When you call (425) 307-9165, you reach us, not a national call center or a lead service.</p>\n      <p>Every job starts")
 
 # FAQ: local questions
 rep('</p></details>\n      <details><summary>Who should be home for the visit?</summary>',
-    '</p></details>\n      <details><summary>Do you come to my area?</summary><p>We cover the Puget Sound area from Everett to Olympia: the North End, Seattle, the Eastside, and the South Sound, including Tacoma. <strong>Not sure? Call and ask.</strong></p></details>'
+    '</p></details>\n      <details><summary>Do you come to my area?</summary><p>We cover 60 cities from the Marysville area down to the Tacoma area, across Snohomish, King, and Pierce counties: from Arlington and Lake Stevens through Seattle and the Eastside to Kent, Puyallup, and Gig Harbor. <strong>Not sure? Call and ask.</strong></p></details>'
+    '\n      <details><summary>Are you really a local company?</summary><p>Yes. Titan started in Seattle and grew from there. We\'re one company with our own office, our own team, and one phone number. We don\'t sell your information or pass your call to whoever is free. The person who answers works for Titan, and so does the technician who comes to your home.</p></details>'
     '\n      <details><summary>Do you work on condo and townhome fireplaces?</summary><p>Yes. We work on direct-vent gas fireplaces in condos and townhomes. If your building has rules for contractors, tell us when you call and we\'ll follow them.</p></details>'
     '\n      <details><summary>Who should be home for the visit?</summary>')
 rep('<details><summary>I smell gas. What should I do?</summary>',
     '<details><summary>Is a smell normal the first time we turn it on in the fall?</summary><p>A light, dusty smell for the first hour of the season is common. It\'s dust burning off the burner. If the smell is strong, keeps coming back, or the glass turns black, have it checked. <strong>If it smells like rotten eggs, that\'s gas. See the next question.</strong></p></details>\n      <details><summary>I smell gas. What should I do?</summary>')
 
 # footer + schema: name the cities
-rep('conversions in Seattle.</p>', 'conversions from Everett to Olympia.</p>')
-rep('<p>Seattle and surrounding areas</p>', '<p>Everett to Olympia, including Seattle, Bellevue, and Tacoma</p>')
+rep('conversions in Seattle.</p>', 'conversions from the Tacoma area to the Marysville area.</p>')
+rep('<p>Seattle and surrounding areas</p>', '<p>Tacoma Area to Marysville Area: 60 cities in Snohomish, King, and Pierce counties</p>')
 rep('"areaServed": {"@type": "City", "name": "Seattle, WA"}', '"areaServed": [%s]' % ', '.join('{"@type": "City", "name": "%s, WA"}' % c for c in CITIES))
 
 # sticky bar: show "Open now" when phones are open
@@ -179,7 +181,7 @@ _a = h.index('<div class="pnw pnw-night"'); _b = h.index('\n</div>', _a)
 h = h[:_b] + '\n  ' + wasym.lighthouse2() + h[_b:]
 rep('<!-- FAQ -->', mural.build() + '<!-- FAQ -->')
 rep('\n/* footer */', mural.CSS + '\n/* footer */')
-rep('conversions from Everett to Olympia.</p>', 'conversions from Everett to Olympia.</p>' + wasym.wa_outline2())
+rep('conversions from the Tacoma area to the Marysville area.</p>', 'conversions from the Tacoma area to the Marysville area.</p>' + wasym.wa_outline2())
 rep('<svg class="ico"><use href="#i-check"/></svg>', '<svg class="ico ev"><use href="#i-tree"/></svg>', 4)
 rep('\n/* footer */', wasym.CSS2 + '\n/* footer */')
 

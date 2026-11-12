@@ -78,7 +78,7 @@ Last updated: Nov 12, 2026. Ads are approved, launch is close. The goal now is a
 
 **C. Ads that match the page**
 1. Ad schedule: Sun–Fri 7:30 AM – 10:30 PM only. Calls outside those hours are wasted money.
-2. Location: "Presence: people in or regularly in" your area, Everett to Olympia.
+2. Location: "Presence: people in or regularly in" your area, Marysville area to Tacoma area (the 60 cities on the page).
 3. Every ad group's headlines should use the words its landing page uses: free inspection, written price, the problem (won't light, pilot, clicking, smell). Each service ad group should point to its own service page once those pages exist.
 4. Add call assets, sitelinks to the service pages, callouts (Free inspection, Written price first, 4.9★ from 849 reviews, Licensed & insured) and structured snippets (Services: Repair, Pilot light, Annual service, Inserts, Conversions).
 5. Negative keywords from day one: jobs, salary, DIY, how to, manual, parts, Home Depot, Lowe's, used, for sale, rent, wood stove (if you don't do those) and electric fireplace (if you don't do those).
@@ -101,7 +101,7 @@ Last updated: Nov 12, 2026. Ads are approved, launch is close. The goal now is a
 3. Warranty length on work (the report recommends a written term; most competitors have none).
 4. Can (425) 307-9165 receive texts? (A "call or text" option lifts calls.)
 5. Confirm the review-to-name pairing (Jessica / Mohit / Ashley / Elizabeth).
-6. Confirm the city list and the brands list (Heat & Glo, Lennox, Majestic, Napoleon, Regency, Mendota, Travis, Valor, Heatilator, Kozy Heat).
+6. ~~City list~~ confirmed Nov 12 (60 cities, Snohomish / King / Pierce). Confirm the brands list (Heat & Glo, Lennox, Majestic, Napoleon, Regency, Mendota, Travis, Valor, Heatilator, Kozy Heat).
 7. Google review link (for "See all reviews") and the Google-only count, if you want it shown separately.
 8. The final ad copy and keywords you got approved, so the next session can check that ads and page match.
 9. Optional: a Titan Office backup, to rebuild the map from all 2,012 real jobs. Not required: the current map already totals 2,012.

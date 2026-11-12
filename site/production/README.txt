@@ -23,7 +23,8 @@ GOOGLE ADS
   snippet can swap them all. Count calls of 60 seconds or more.
 - Also set up "Calls from ads" (call assets), counted from 60 seconds.
 - Ad schedule: Sun-Fri 7:30 AM - 10:30 PM only. Closed Saturday.
-- Location: people IN or regularly in the area, Everett to Olympia.
+- Location: people IN or regularly in the area, Marysville area to Tacoma area
+  (60 cities in Snohomish, King and Pierce counties, listed on the page).
 
 RULES FOR THIS PAGE (from the owner - don't change these)
 - Phone calls only. No forms, no "leave your info", no chat widgets.
