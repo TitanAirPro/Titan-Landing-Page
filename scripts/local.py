@@ -243,7 +243,7 @@ rep("I run Titan Gas Fireplace. We focus on gas fireplaces: pilots, valves, igni
 rep('alt="Zachary, owner of Titan Gas Fireplace, outside the shop"', 'alt="Zachary, owner of Titan Chimney &amp; Fireplace, outside the shop"')
 rep('alt="Titan Gas Fireplace sign"', 'alt="Titan sign on the shop wall"')
 # the longer name still fits beside the Call button on small phones
-rep('\n/* footer */', '\n@media (max-width:389px){.logo{gap:7px}.logo b{font-size:.9rem}.logo small{font-size:.5rem;letter-spacing:.04em}.mark{width:34px;height:29px}}\n@media (max-width:350px){.logo{gap:5px}.logo b{font-size:.74rem}.logo small{font-size:.42rem}.mark{width:30px;height:26px}}\n' + '\n/* footer */')
+rep('\n/* footer */', '\n@media (max-width:389px){.logo{gap:7px}.logo b{font-size:.9rem}.logo small{font-size:.5rem;letter-spacing:.04em}.mark{width:34px;height:29px}}\n@media (max-width:350px){.logo{gap:5px}.logo b{font-size:.74rem}.logo small{font-size:.42rem}.mark{width:30px;height:26px}}\n@media (max-width:350px){.mbar a.btn-call.btn-big .l1{font-size:1.08rem}}\n' + '\n/* footer */')
 # footer: no 'Owner: Zachary' line under the phone number (owner asked, Nov 15)
 rep('\n<p style="margin-top:6px">Owner: Zachary</p>', '') if '\n<p style="margin-top:6px">Owner: Zachary</p>' in h else rep('<p style="margin-top:6px">Owner: Zachary</p>', '')
 # ---------- plain words clients use (owner, Nov 15): no industry or marketing talk ----------

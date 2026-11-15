@@ -5,6 +5,10 @@ Last updated: Nov 12, 2026. Ads are approved, launch is close. The goal now is a
 ## 1. Where things are
 
 - **Variation B preview (latest, version 35):** https://claude.ai/artifact/WJaoKgT5RbftBo6TeX39Lg
+- **Main page preview (chimney & fireplace: wood, gas, pellet), built Nov 15:** https://claude.ai/artifact/1QdrGwQS8t4ifzv4LB2w7n
+  - made by `scripts/mainpage.py` from the finished gas page (same design, map, city personalization; own headline, problems, services, FAQ)
+  - files: `site/main-src/` (img is a link to `variant-src/img`), `site/main-built/index.html` (preview), `site/production-main/` (live build)
+  - ASSUMED, owner to confirm: the free inspection also covers chimneys and wood/pellet units. Reviews and photos on it are still the gas page's.
 - **The other chat's preview** is a separate version. Nothing done here touched it.
 - **This zip (`titan-build.zip`)** holds everything needed to rebuild Variation B from scratch. The build reproduces version 35 byte for byte.
   - `site/original/index.html`: the original page from your first zip (the starting point).
@@ -114,7 +118,7 @@ Last updated: Nov 12, 2026. Ads are approved, launch is close. The goal now is a
 
 1. Production build + tracking (sections 6A and 6B): needed before spend.
 2. Promise block + license number + "all services" label (6D).
-3. The main chimney & fireplace page (see section 4), built from Variation B with its own headline, problems, FAQ and title tag. Variation B stays the gas fireplace page.
+3. ~~The main chimney & fireplace page~~ BUILT Nov 15 (`scripts/mainpage.py`). Still needs: owner to confirm the free inspection covers chimneys, chimney reviews, chimney photos.
 4. Ad copy check against the pages (message match), plus a phone booking script for whoever answers the calls.
 5. After 2 weeks of data: cut keywords with no booked calls and test a second hero headline.
 

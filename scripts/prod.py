@@ -28,14 +28,15 @@ def cut(pattern, text, flags=re.S, count=1, need=True):
         sys.exit('pattern not found exactly %d time(s): %s (found %d)' % (count, pattern[:60], k))
     return new
 
+MAIN = len(sys.argv) > 3 and sys.argv[3] == 'main'   # the chimney & fireplace page (already has no preview bar or keyword swap)
 # 1. preview bar + its CSS
-s = cut(r'<div class="pv">.*?</label></div>\s*(?=<header class="top">)', s)
+if not MAIN: s = cut(r'<div class="pv">.*?</label></div>\s*(?=<header class="top">)', s)
 s = cut(r'\.pv\{[^}]*\}', s)
 s = cut(r'\.pv select\{[^}]*\}', s)
 assert 'class="pv"' not in s and '__titanApply(' not in s.replace('window.__titanApply', '')
 
 # 2. keyword-swap script
-s = cut(r'<script>\(function\(\)\{\nvar V=\{\nrepair:.*?\}\)\(\);</script>\s*', s)
+if not MAIN: s = cut(r'<script>\(function\(\)\{\nvar V=\{\nrepair:.*?\}\)\(\);</script>\s*', s)
 assert 'utm_term' not in s
 
 # 3. fonts: only the chosen pair
@@ -131,5 +132,21 @@ for name, w in sorted(PHOTOS.items()):
     im.resize((640, round(im.height * 640 / im.width)), Image.LANCZOS).save(os.path.join(out_img, name + '-640.webp'), 'WEBP', quality=78, method=6)
 im = Image.open(os.path.join(SRC, 'img', 'tech-fireplace.jpg')).convert('RGB')
 im.resize((800, round(im.height * 800 / im.width)), Image.LANCZOS).save(os.path.join(out_img, 'tech-fireplace-800.jpg'), 'JPEG', quality=78, optimize=True, progressive=True)
-shutil.copyfile(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'prod_README.txt'), os.path.join(OUT, 'README.txt'))
+readme = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'prod_README.txt'), encoding='utf-8').read()
+if MAIN:
+    for a, b in (('TITAN GAS FIREPLACE - LANDING PAGE (live version)', 'TITAN CHIMNEY & FIREPLACE - MAIN LANDING PAGE (live version)'),
+                 ('The finished gas fireplace landing page for Titan Chimney & Fireplace.', 'The finished main landing page (chimney + wood, gas and pellet fireplaces) for Titan Chimney & Fireplace.'),
+                 ('https://YOURDOMAIN.com/gas-fireplace/', 'https://YOURDOMAIN.com/chimney-fireplace/'),
+                 ('(in this example: gas-fireplace)', '(in this example: chimney-fireplace)'),
+                 ('Gas Fireplace Repair in Kent', 'Chimney & Fireplace Service in Kent'),
+                 ('"Seattle-Area Gas Fireplace\n  Repair"', '"Seattle-Area Chimney &\n  Fireplace Service"')):
+        assert a in readme, a
+        readme = readme.replace(a, b)
+    i = readme.index('TWO PAGES')
+    readme = readme[:i] + '''TWO PAGES
+This is the MAIN page: chimney sweeping, inspections, and wood, gas and pellet
+fireplaces. Point chimney, fireplace and general "near me" ad groups here.
+Gas-fireplace-only ad groups go to the gas fireplace page (separate zip).
+'''
+open(os.path.join(OUT, 'README.txt'), 'w', encoding='utf-8').write(readme)
 print('index.html %d -> %d bytes; js/map.js %d bytes' % (n0, len(s), len(js)))

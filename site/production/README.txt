@@ -48,7 +48,8 @@ RULES FOR THIS PAGE (from the owner - don't change these)
 - 849 reviews / 4.9 stars and 2,012 jobs are company-wide, all services.
 - Any change to the page goes through the owner first.
 
-ONE PAGE FOR NOW
-This page is the "gas fireplace repair" page (headline: "Gas Fireplace
-Won't Light?"). Separate pages for pilot light, service, inspection,
-inserts and wood-to-gas are coming. Until then, point every ad group here.
+TWO PAGES
+This is the GAS FIREPLACE page (headline: "Gas Fireplace Won't Light?").
+Point gas-fireplace ad groups here. Chimney, wood fireplace and general
+"fireplace / chimney service near me" ad groups go to the main page
+(separate zip).

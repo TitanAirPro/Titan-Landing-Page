@@ -12,3 +12,10 @@ cp "$T/s3.html" "$D/site/variant-src/index.html"
 python3 "$S/build2.py"  "$D/site/variant-src/index.html" "$D/site/variant-built/index.html"   # embeds img/ for the preview
 ls -la "$D/site/variant-built/index.html"
 python3 "$S/prod.py" "$D/site/variant-src" "$D/site/production"
+
+# Main page: chimney & fireplace (wood, gas, pellet), made from the gas page
+mkdir -p "$D/site/main-src" "$D/site/main-built"
+[ -e "$D/site/main-src/img" ] || ln -s ../variant-src/img "$D/site/main-src/img"
+python3 "$S/mainpage.py" "$D/site/variant-src/index.html" "$D/site/main-src/index.html"
+python3 "$S/build2.py"  "$D/site/main-src/index.html" "$D/site/main-built/index.html"       # preview, photos built in
+python3 "$S/prod.py" "$D/site/main-src" "$D/site/production-main" main
