@@ -35,7 +35,9 @@ return casing?{color:'#e7cd8c',weight:3.6,opacity:1}:{color:'#fff1c6',weight:2.2
 var LB=[];function lbl(t,cls,ll,pr){var m=L.marker(ll,{pane:'lbl',interactive:false,keyboard:false,icon:L.divIcon({className:'',html:'<div class="'+cls+'">'+t+'</div>',iconSize:[0,0]})}).addTo(map);LB.push({m:m,p:pr,t:t});return m;}
 var JC={};D.jobs.forEach(function(j){JC[j[4]]=(JC[j[4]]||0)+1;});
 D.water_labels.forEach(function(w){lbl(w[0],'jl w'+(w[3]?' big':' sm'),[w[1],w[2]],w[3]?0:60);});
-D.labels.forEach(function(c){lbl(c[0],'jl t'+c[3],[c[1],c[2]],c[3]===1?1:c[3]===3?80:(40-Math.min(30,JC[c[0]]||0)));});
+var LOC=window.__TITAN_CITY||null,meL=false;
+D.labels.forEach(function(c){var me=!!LOC&&c[0]===LOC.c;if(me)meL=true;lbl(c[0],me?'jl t1 me':'jl t'+c[3],[c[1],c[2]],me?0:c[3]===1?1:c[3]===3?80:(40-Math.min(30,JC[c[0]]||0)));});
+if(LOC&&!meL)lbl(LOC.c,'jl t1 me',LOC.ll,0);
 D.shields.forEach(function(s){var w=10+7*s[0].length,svg=s[3]==='i'?'<svg width="'+(w+2)+'" height="20" viewBox="-1 -1 '+(w+2)+' 20"><path d="M0 0h'+w+'c0 8-2 13-'+w/2+' 18c-'+(w/2-0)+'-5-'+w/2+'-10-'+w/2+'-18z" fill="#1d4f91" stroke="#fff" stroke-width="1.2"/><path d="M0 0h'+w+'v4.5H0z" fill="#c8102e"/><text x="'+w/2+'" y="12.6" text-anchor="middle" font-family="Arial" font-weight="700" font-size="9" fill="#fff">'+s[0]+'</text></svg>':'<svg width="'+(w+2)+'" height="16" viewBox="-1 -1 '+(w+2)+' 16"><rect width="'+w+'" height="14" rx="7" fill="#fff" stroke="#3c4043" stroke-width="1.2"/><text x="'+w/2+'" y="10.4" text-anchor="middle" font-family="Arial" font-weight="700" font-size="9" fill="#3c4043">'+s[0]+'</text></svg>';
 var m=L.marker([s[1],s[2]],{pane:'lbl',interactive:false,keyboard:false,icon:L.divIcon({className:'',html:'<div class="jsh">'+svg+'</div>',iconSize:[0,0]})}).addTo(map);LB.push({m:m,p:50});});
 function declutter(){window.__dc=(window.__dc||0)+1;
@@ -43,7 +45,7 @@ var obs=[].map.call(el.querySelectorAll('.jclu,.jpin'),function(e){return e.getB
 var taken=[];function hits(r,list,pad){return list.some(function(t){return r.left<t.right+pad&&r.right>t.left-pad&&r.top<t.bottom+pad&&r.bottom>t.top-pad;});}
 LB.slice().sort(function(a,b){return a.p-b.p;}).forEach(function(o){var e=o.m.getElement();if(!e||!e.firstChild)return;var c=e.firstChild;c.style.visibility='';c.style.transform='';
 if(getComputedStyle(c).display==='none')return;var r=c.getBoundingClientRect();if(!r.width)return;
-var h=r.height,w=r.width,E=o.t==='Bellevue'?1:-1,cand=o.p<=1?[[E*(w/2+16),0],[E*(w/2+30),0],[E*(w/2+16),-(h+4)],[E*(w/2+16),h+4],[E*(w/2+46),0],[E*(w/2+30),-(h+6)],[E*(w/2+30),h+6],[E*(w/2+62),0],[E*(w/2+46),-(h+8)],[E*(w/2+46),h+8],[E*(w/2+80),0],[E*(w/2+62),h+10],[E*(w/2+62),-(h+10)]]:o.p===50?[[0,0]]:[[0,0],[0,-(h/2+12)],[0,h/2+12]];
+var h=r.height,w=r.width,E=o.t==='Bellevue'?1:-1,cand=o.p<=1?[[E*(w/2+16),0],[E*(w/2+30),0],[E*(w/2+16),-(h+4)],[E*(w/2+16),h+4],[E*(w/2+46),0],[E*(w/2+30),-(h+6)],[E*(w/2+30),h+6],[E*(w/2+62),0],[E*(w/2+46),-(h+8)],[E*(w/2+46),h+8],[E*(w/2+80),0],[E*(w/2+62),h+10],[E*(w/2+62),-(h+10)],[0,-(h/2+16)],[0,h/2+16],[-E*(w/2+16),0],[-E*(w/2+30),0],[0,-(h/2+32)],[0,h/2+32]]:o.p===50?[[0,0]]:[[0,0],[0,-(h/2+12)],[0,h/2+12]];
 if(o.p<=1){var box=el.getBoundingClientRect(),best=null,bs=1e18;
 var ov=function(q,list){return list.reduce(function(a,t){var x=Math.min(q.right,t.right)-Math.max(q.left,t.left),y=Math.min(q.bottom,t.bottom)-Math.max(q.top,t.top);return a+(x>0&&y>0?x*y:0);},0);};
 cand.forEach(function(d,i){var q={left:r.left+d[0],right:r.right+d[0],top:r.top+d[1],bottom:r.bottom+d[1]};
@@ -75,16 +77,32 @@ load();map.addLayer(group);
 function pct(a,p){a=a.slice().sort(function(x,y){return x-y;});return a[Math.min(a.length-1,Math.max(0,Math.round(p*(a.length-1))))];}
 var la=jobs.map(function(j){return j.lat;}),lo=jobs.map(function(j){return j.lng;});
 var home=L.latLngBounds([[pct(la,0),pct(lo,0)],[pct(la,1),pct(lo,1)]]).extend([46.80,-121.76]);
-var touched=false,lastW=0;
+var lastW=0,local=null,flown=false,flying=false;
+if(LOC){
+var dl=.11,dg=.15;LOC.pts.forEach(function(q){dl=Math.max(dl,Math.abs(q[0]-LOC.ll[0])*1.2);dg=Math.max(dg,Math.abs(q[1]-LOC.ll[1])*1.2);});
+local=L.latLngBounds([[LOC.ll[0]-dl,LOC.ll[1]-dg],[LOC.ll[0]+dl,LOC.ll[1]+dg]]);  
+var nloc=jobs.reduce(function(a,j){return a+(local.contains([j.lat,j.lng])?j.w:0);},0);
+f.querySelector('.jtop b').textContent='Our Jobs in and Around '+LOC.c;
+if(nloc)f.querySelector('.jtop span').textContent=nloc.toLocaleString('en-US')+' fireplace & chimney jobs in this area since 2025.';
+}
 map.fitBounds(home,{padding:[14,14]});var z0=map.getZoom();
 function fit(){
-if(el.clientWidth<200||el.clientHeight<200)return;
+if(el.clientWidth<200||el.clientHeight<200||flying)return;
 map.invalidateSize();
-var z=Math.max(7,Math.min(11,map.getBoundsZoom(home,false,L.point(20,20))));
-map.setMinZoom(z);z0=z;
-if(!touched||map.getZoom()<z)map.fitBounds(home,{padding:[10,10],animate:false});
+var T=local&&flown?local:home;
+var zr=Math.max(7,Math.min(11,map.getBoundsZoom(home,false,L.point(20,20)))),z=Math.max(7,Math.min(12,map.getBoundsZoom(T,false,L.point(20,20))));
+map.setMinZoom(Math.min(zr,z));z0=z;
+map.fitBounds(T,{padding:[10,10],animate:false});
 map.setMaxBounds(home.pad(.45));if(el.clientWidth!==lastW){lastW=el.clientWidth;load();}zc();requestAnimationFrame(declutter);}
-setTimeout(fit,0);if(window.IntersectionObserver){var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){fit();io.disconnect();}});io.observe(el);}
+function flyIn(){
+if(!local||flown)return;flown=true;
+if(still){fit();return;}
+flying=true;
+setTimeout(function(){map.once('moveend',function(){flying=false;fit();});map.flyToBounds(local,{padding:[10,10],duration:1.6,easeLinearity:.2});},400);
+}
+setTimeout(fit,0);
+if(window.IntersectionObserver){var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){fit();flyIn();io.disconnect();}},{threshold:.35});io.observe(el);}
+else{flown=true;setTimeout(fit,0);}
 function zc(){var z=Math.floor(map.getZoom());el.className=el.className.replace(/\bz\d+\b/g,'').trim()+' z'+z;}
 map.on('zoomend',zc);zc();map.on('zoomend moveend',function(){requestAnimationFrame(declutter);});group.on('animationend',function(){requestAnimationFrame(declutter);});
 var at=document.createElement('div');at.className='jattr';at.textContent='© OpenStreetMap · Natural Earth';f.querySelector('.jstage').appendChild(at);

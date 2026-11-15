@@ -1,5 +1,5 @@
 {
-"_note": "Google Ads location ID -> [city, 4 nearest of our 60 cities]. Coordinates from areamap.py/mapdata/jobs, 13 added by hand.",
+"_note": "Google Ads location ID -> [city, 4 nearest of our 60 cities, lat, lon]. Coordinates from areamap.py/mapdata/jobs, 13 added by hand.",
 "cities": {
 "1027503": [
 "Arlington",
@@ -8,7 +8,9 @@
 "Marysville",
 "Granite Falls",
 "Lake Stevens"
-]
+],
+48.199,
+-122.125
 ],
 "9191746": [
 "Smokey Point",
@@ -17,7 +19,9 @@
 "Marysville",
 "Lake Stevens",
 "Granite Falls"
-]
+],
+48.152,
+-122.183
 ],
 "1027654": [
 "Marysville",
@@ -26,7 +30,9 @@
 "Lake Stevens",
 "Smokey Point",
 "Mukilteo"
-]
+],
+48.052,
+-122.177
 ],
 "1027602": [
 "Granite Falls",
@@ -35,7 +41,9 @@
 "Marysville",
 "Arlington",
 "Smokey Point"
-]
+],
+48.084,
+-121.968
 ],
 "1027634": [
 "Lake Stevens",
@@ -44,7 +52,9 @@
 "Granite Falls",
 "Everett",
 "Snohomish"
-]
+],
+48.015,
+-122.064
 ],
 "1027753": [
 "Snohomish",
@@ -53,7 +63,9 @@
 "Everett",
 "Monroe",
 "Lake Stevens"
-]
+],
+47.913,
+-122.098
 ],
 "1027664": [
 "Monroe",
@@ -62,7 +74,9 @@
 "Duvall",
 "Mill Creek",
 "Woodinville"
-]
+],
+47.855,
+-121.971
 ],
 "1027583": [
 "Everett",
@@ -71,7 +85,9 @@
 "Mukilteo",
 "Snohomish",
 "Lake Stevens"
-]
+],
+47.979,
+-122.202
 ],
 "1027672": [
 "Mukilteo",
@@ -80,7 +96,9 @@
 "Mill Creek",
 "Lynnwood",
 "Marysville"
-]
+],
+47.945,
+-122.304
 ],
 "9052439": [
 "Mill Creek",
@@ -89,7 +107,9 @@
 "Brier",
 "Snohomish",
 "Bothell"
-]
+],
+47.86,
+-122.204
 ],
 "1027647": [
 "Lynnwood",
@@ -98,7 +118,9 @@
 "Brier",
 "Edmonds",
 "Lake Forest Park"
-]
+],
+47.828,
+-122.3
 ],
 "1027576": [
 "Edmonds",
@@ -107,7 +129,9 @@
 "Lynnwood",
 "Shoreline",
 "Brier"
-]
+],
+47.811,
+-122.377
 ],
 "1027670": [
 "Mountlake Terrace",
@@ -116,7 +140,9 @@
 "Lake Forest Park",
 "Shoreline",
 "Lynnwood"
-]
+],
+47.788,
+-122.308
 ],
 "9194342": [
 "Brier",
@@ -125,7 +151,9 @@
 "Lake Forest Park",
 "Kenmore",
 "Lynnwood"
-]
+],
+47.785,
+-122.274
 ],
 "9052842": [
 "Shoreline",
@@ -134,7 +162,9 @@
 "Lake Forest Park",
 "Brier",
 "Edmonds"
-]
+],
+47.756,
+-122.341
 ],
 "9191638": [
 "Lake Forest Park",
@@ -143,7 +173,9 @@
 "Brier",
 "Mountlake Terrace",
 "Shoreline"
-]
+],
+47.757,
+-122.28
 ],
 "1027621": [
 "Kenmore",
@@ -152,7 +184,9 @@
 "Bothell",
 "Brier",
 "Mountlake Terrace"
-]
+],
+47.757,
+-122.244
 ],
 "1027517": [
 "Bothell",
@@ -161,7 +195,9 @@
 "Woodinville",
 "Lake Forest Park",
 "Brier"
-]
+],
+47.762,
+-122.205
 ],
 "1027809": [
 "Woodinville",
@@ -170,7 +206,9 @@
 "Kenmore",
 "Lake Forest Park",
 "Brier"
-]
+],
+47.754,
+-122.163
 ],
 "1027571": [
 "Duvall",
@@ -179,7 +217,9 @@
 "Redmond",
 "Woodinville",
 "Sammamish"
-]
+],
+47.742,
+-121.986
 ],
 "1027627": [
 "Kirkland",
@@ -188,7 +228,9 @@
 "Bellevue",
 "Woodinville",
 "Kenmore"
-]
+],
+47.677,
+-122.206
 ],
 "1027725": [
 "Redmond",
@@ -197,7 +239,9 @@
 "Bellevue",
 "Sammamish",
 "Woodinville"
-]
+],
+47.674,
+-122.121
 ],
 "1027741": [
 "Sammamish",
@@ -206,7 +250,9 @@
 "Issaquah",
 "Bellevue",
 "Newcastle"
-]
+],
+47.616,
+-122.036
 ],
 "1027615": [
 "Issaquah",
@@ -215,7 +261,9 @@
 "Sammamish",
 "Renton",
 "Mercer Island"
-]
+],
+47.53,
+-122.033
 ],
 "1027509": [
 "Bellevue",
@@ -224,7 +272,9 @@
 "Kirkland",
 "Redmond",
 "Newcastle"
-]
+],
+47.61,
+-122.194
 ],
 "1027662": [
 "Mercer Island",
@@ -233,7 +283,9 @@
 "Newcastle",
 "Seattle",
 "Renton"
-]
+],
+47.571,
+-122.222
 ],
 "9194364": [
 "Newcastle",
@@ -242,7 +294,9 @@
 "Mercer Island",
 "Issaquah",
 "Bellevue"
-]
+],
+47.53,
+-122.155
 ],
 "1027744": [
 "Seattle",
@@ -251,7 +305,9 @@
 "Bellevue",
 "Kirkland",
 "Burien"
-]
+],
+47.606,
+-122.332
 ],
 "1027726": [
 "Renton",
@@ -260,7 +316,9 @@
 "Newcastle",
 "SeaTac",
 "Mercer Island"
-]
+],
+47.482,
+-122.21
 ],
 "9053013": [
 "Tukwila",
@@ -269,7 +327,9 @@
 "SeaTac",
 "Burien",
 "Normandy Park"
-]
+],
+47.474,
+-122.261
 ],
 "9052821": [
 "SeaTac",
@@ -278,7 +338,9 @@
 "Tukwila",
 "Burien",
 "Des Moines"
-]
+],
+47.444,
+-122.297
 ],
 "9051666": [
 "Burien",
@@ -287,7 +349,9 @@
 "SeaTac",
 "Tukwila",
 "Des Moines"
-]
+],
+47.47,
+-122.347
 ],
 "9192447": [
 "Normandy Park",
@@ -296,7 +360,9 @@
 "Burien",
 "Des Moines",
 "Tukwila"
-]
+],
+47.436,
+-122.341
 ],
 "9051829": [
 "Des Moines",
@@ -305,7 +371,9 @@
 "SeaTac",
 "Kent",
 "Burien"
-]
+],
+47.401,
+-122.324
 ],
 "1027623": [
 "Kent",
@@ -314,7 +382,9 @@
 "Auburn",
 "SeaTac",
 "Federal Way"
-]
+],
+47.381,
+-122.235
 ],
 "9051783": [
 "Covington",
@@ -323,7 +393,9 @@
 "Kent",
 "Auburn",
 "Black Diamond"
-]
+],
+47.358,
+-122.122
 ],
 "1027653": [
 "Maple Valley",
@@ -332,7 +404,9 @@
 "Black Diamond",
 "Kent",
 "Auburn"
-]
+],
+47.367,
+-122.044
 ],
 "1027515": [
 "Black Diamond",
@@ -341,7 +415,9 @@
 "Covington",
 "Auburn",
 "Algona"
-]
+],
+47.309,
+-122.003
 ],
 "1027505": [
 "Auburn",
@@ -350,7 +426,9 @@
 "Pacific",
 "Federal Way",
 "Edgewood"
-]
+],
+47.307,
+-122.228
 ],
 "9193159": [
 "Algona",
@@ -359,7 +437,9 @@
 "Auburn",
 "Edgewood",
 "Milton"
-]
+],
+47.279,
+-122.252
 ],
 "1027700": [
 "Pacific",
@@ -368,7 +448,9 @@
 "Edgewood",
 "Auburn",
 "Milton"
-]
+],
+47.265,
+-122.25
 ],
 "1027588": [
 "Federal Way",
@@ -377,7 +459,9 @@
 "Algona",
 "Pacific",
 "Edgewood"
-]
+],
+47.322,
+-122.313
 ],
 "1027663": [
 "Milton",
@@ -386,7 +470,9 @@
 "Fife",
 "Pacific",
 "Algona"
-]
+],
+47.248,
+-122.313
 ],
 "9051945": [
 "Fife",
@@ -395,7 +481,9 @@
 "Edgewood",
 "Tacoma",
 "Puyallup"
-]
+],
+47.239,
+-122.357
 ],
 "9051892": [
 "Edgewood",
@@ -404,7 +492,9 @@
 "Pacific",
 "Algona",
 "Fife"
-]
+],
+47.25,
+-122.294
 ],
 "1027771": [
 "Sumner",
@@ -413,7 +503,9 @@
 "Bonney Lake",
 "Edgewood",
 "Pacific"
-]
+],
+47.203,
+-122.24
 ],
 "9051619": [
 "Bonney Lake",
@@ -422,7 +514,9 @@
 "South Hill",
 "Puyallup",
 "Orting"
-]
+],
+47.177,
+-122.186
 ],
 "1027719": [
 "Puyallup",
@@ -431,7 +525,9 @@
 "South Hill",
 "Milton",
 "Edgewood"
-]
+],
+47.185,
+-122.293
 ],
 "9052871": [
 "South Hill",
@@ -440,7 +536,9 @@
 "Sumner",
 "Bonney Lake",
 "Frederickson"
-]
+],
+47.141,
+-122.27
 ],
 "9190375": [
 "Frederickson",
@@ -449,7 +547,9 @@
 "Graham",
 "South Hill",
 "Parkland"
-]
+],
+47.096,
+-122.359
 ],
 "1027697": [
 "Orting",
@@ -458,7 +558,9 @@
 "South Hill",
 "Bonney Lake",
 "Frederickson"
-]
+],
+47.0822,
+-122.186
 ],
 "1027598": [
 "Graham",
@@ -467,7 +569,9 @@
 "Orting",
 "South Hill",
 "Spanaway"
-]
+],
+47.053,
+-122.294
 ],
 "1027758": [
 "Spanaway",
@@ -476,7 +580,9 @@
 "Frederickson",
 "Steilacoom",
 "Lakewood"
-]
+],
+47.104,
+-122.435
 ],
 "9052640": [
 "Parkland",
@@ -485,7 +591,9 @@
 "Spanaway",
 "Lakewood",
 "Frederickson"
-]
+],
+47.155,
+-122.434
 ],
 "1027635": [
 "Lakewood",
@@ -494,7 +602,9 @@
 "Parkland",
 "Fircrest",
 "University Place"
-]
+],
+47.172,
+-122.518
 ],
 "1027787": [
 "University Place",
@@ -503,7 +613,9 @@
 "Lakewood",
 "Tacoma",
 "Steilacoom"
-]
+],
+47.236,
+-122.55
 ],
 "9189198": [
 "Fircrest",
@@ -512,7 +624,9 @@
 "Tacoma",
 "Lakewood",
 "Steilacoom"
-]
+],
+47.232,
+-122.516
 ],
 "1027766": [
 "Steilacoom",
@@ -521,7 +635,9 @@
 "Parkland",
 "Fircrest",
 "University Place"
-]
+],
+47.1677,
+-122.5024
 ],
 "1027773": [
 "Tacoma",
@@ -530,7 +646,9 @@
 "Fife",
 "University Place",
 "Milton"
-]
+],
+47.253,
+-122.444
 ],
 "1027595": [
 "Gig Harbor",
@@ -539,7 +657,9 @@
 "Fircrest",
 "Tacoma",
 "Lakewood"
-]
+],
+47.329,
+-122.58
 ]
 }
 }
