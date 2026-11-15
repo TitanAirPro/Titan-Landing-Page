@@ -29,13 +29,13 @@ CITYJS = ('<script>(function(){var C=%s;'
   'set();document.addEventListener("DOMContentLoaded",function(){setTimeout(set,0);var a=window.__titanApply;'
   'if(a)window.__titanApply=function(){a.apply(this,arguments);set();};});})();</script>') % json.dumps(CITY_IDS, separators=(',', ':'))
 rep('<p class="kicker">Seattle-Area Gas Fireplace Repair</p>', '<p class="kicker">Seattle-Area Gas Fireplace Repair</p>' + CITYJS)
-rep('<strong>Free gas fireplace inspections in Seattle.</strong>', '<strong>Free gas fireplace inspections <span data-city="in {c} and nearby">in the Seattle area</span>.</strong>')
+rep('<strong>Free gas fireplace inspections in Seattle.</strong>', '<strong>Free gas fireplace inspections <span data-city="in {c} and nearby.">in the Seattle area.</span></strong>')
 rep('<p class="cta-note"><span>Free inspection</span><span>A real person answers</span><span>Sun–Fri 7:30 AM – 10:30 PM</span></p>',
     '<p class="cta-note"><span class="live" data-live="long">Sun–Fri 7:30 AM – 10:30 PM</span><span>Free inspection</span><span>A real person answers</span></p>')
 
 # trust strip: local team instead of OEM (OEM stays in services + reviews)
 rep('<li><span class="ib"><svg class="ico"><use href="#i-gear"/></svg></span><span>OEM parts<small>Whenever available</small></span></li>',
-    '<li><span class="ib"><svg class="ico"><use href="#i-pin"/></svg></span><span>Local team<small data-city="{c} &amp; nearby">60 cities, one team</small></span></li>')
+    '<li><span class="ib"><svg class="ico"><use href="#i-pin"/></svg></span><span>Local team<small data-city="{c} &amp; nearby">Our own techs</small></span></li>')
 
 # problems: seasonal, local framing
 rep('<p>Tap the one that sounds like yours. We hear every one of these.</p>',
@@ -72,10 +72,10 @@ area = '''<!-- WHERE WE WORK -->
   <div class="wrap area-grid">
     <div class="area-head">
       <span class="eyebrow">Where We Work</span>
-      <h2><span data-city="{c} and Nearby">60 Cities</span>. One Local Team.</h2>
+      <h2><span data-city="Your {c} Gas Fireplace Team">Your Local Gas Fireplace Team</span>.</h2>
       <p data-city="We work in {c} and nearby {n}." hidden></p>
-      <p>We started in Seattle and grew from there, city by city, until we covered the whole metro. We're still one company: one phone number, one office, and the technician at your door works for Titan. No lead sites, no call center passing your number around.</p>
-      <p>Same crew whether you're in a Ballard Craftsman, a Sammamish cul-de-sac, or a Tacoma bungalow. Every number on this map is a real job our team has done.</p>
+      <p>One phone number, one crew, and the technician at your door works for Titan. No lead sites, no call center passing your number around.</p>
+      <p>Every number on this map is a real job our team has done.</p>
     </div>
     %s
     <div class="area-rest">
@@ -90,12 +90,12 @@ rep('<!-- OWNER -->', area + '<!-- OWNER -->')
 
 # owner: local, own team
 rep("conversions, and new installs.</p>\n      <p>Every job starts",
-    "conversions, and new installs.</p>\n      <p>We started in Seattle and grew across the metro, city by city<span data-city=\", including {c}\"></span>. We're still one company with our own team. When you call (425) 307-9165, you reach us, not a national call center or a lead service.</p>\n      <p>Every job starts")
+    "conversions, and new installs.</p>\n      <p>We're one company with our own team<span data-city=\", working in {c} and nearby\"></span>. When you call (425) 307-9165, you reach us, not a national call center or a lead service.</p>\n      <p>Every job starts")
 
 # FAQ: local questions
 rep('</p></details>\n      <details><summary>Who should be home for the visit?</summary>',
     '</p></details>\n      <details><summary>Do you come to my area?</summary><p><span data-city="Yes. We work in {c} and nearby {n}, plus the rest of our 60 cities across Snohomish, King, and Pierce counties.">We cover 60 cities across Snohomish, King, and Pierce counties: from Arlington and Lake Stevens through Seattle and the Eastside to Kent, Puyallup, and Gig Harbor.</span> <strong>Not sure? Call and ask.</strong></p></details>'
-    '\n      <details><summary>Are you really a local company?</summary><p>Yes. Titan started in Seattle and grew from there. We\'re one company with our own office, our own team, and one phone number. We don\'t sell your information or pass your call to whoever is free. The person who answers works for Titan, and so does the technician who comes to your home.</p></details>'
+    '\n      <details><summary>Are you really a local company?</summary><p><span data-city="Yes. Our team works in {c} and nearby.">Yes.</span> We\'re one company with our own team and one phone number. We don\'t sell your information or pass your call to whoever is free. The person who answers works for Titan, and so does the technician who comes to your home.</p></details>'
     '\n      <details><summary>Do you work on condo and townhome fireplaces?</summary><p>Yes. We work on direct-vent gas fireplaces in condos and townhomes. If your building has rules for contractors, tell us when you call and we\'ll follow them.</p></details>'
     '\n      <details><summary>Who should be home for the visit?</summary>')
 rep('<details><summary>I smell gas. What should I do?</summary>',
