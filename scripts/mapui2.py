@@ -15,7 +15,7 @@ def labels():
     return out
 
 FIG = '''<figure class="area-mapw">
-      <div class="jtop"><div><b>2,012 jobs in <span class="nw">2025–2026</span></b><span>Each number is how many jobs we did in that area</span></div></div>
+      <div class="jtop"><div><b>2,012 Fireplace &amp; Chimney Jobs Since 2025</b><span>Each circle shows our jobs in that area.</span></div></div>
       <div class="jmix" aria-label="Our jobs by service: chimney 54%, gas fireplace 42%, pellet stove 4%">
         <div class="jmix-bar" aria-hidden="true"><i class="m-chim" style="flex:54"></i><i class="m-gas" style="flex:42"></i><i class="m-pel" style="flex:4"></i></div>
         <p><span><i class="m-chim"></i>Chimney <b>54%</b></span><span><i class="m-gas"></i>Gas fireplace <b>42%</b></span><span><i class="m-pel"></i>Pellet stove <b>4%</b></span></p>

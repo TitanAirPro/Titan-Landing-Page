@@ -74,8 +74,7 @@ area = '''<!-- WHERE WE WORK -->
       <span class="eyebrow">Where We Work</span>
       <h2><span data-city="Your {c} Gas Fireplace Team">Your Local Gas Fireplace Team</span>.</h2>
       <p data-city="We work in {c} and nearby {n}." hidden></p>
-      <p>One phone number, one crew, and the technician at your door works for Titan. No lead sites, no call center passing your number around.</p>
-      <p>Every number on this map is a real job our team has done.</p>
+      <p>The technician who comes to your home works for Titan. One phone number, one team.</p>
     </div>
     %s
     <div class="area-rest">
@@ -90,12 +89,12 @@ rep('<!-- OWNER -->', area + '<!-- OWNER -->')
 
 # owner: local, own team
 rep("conversions, and new installs.</p>\n      <p>Every job starts",
-    "conversions, and new installs.</p>\n      <p>We're one company with our own team<span data-city=\", working in {c} and nearby\"></span>. When you call (425) 307-9165, you reach us, not a national call center or a lead service.</p>\n      <p>Every job starts")
+    "conversions, and new installs.</p>\n      <p>We're one company with our own team<span data-city=\", working in {c} and nearby\"></span>. When you call (425) 307-9165, you reach our own office, not a call center.</p>\n      <p>Every job starts")
 
 # FAQ: local questions
 rep('</p></details>\n      <details><summary>Who should be home for the visit?</summary>',
     '</p></details>\n      <details><summary>Do you come to my area?</summary><p><span data-city="Yes. We work in {c} and nearby {n}, plus the rest of our 60 cities across Snohomish, King, and Pierce counties.">We cover 60 cities across Snohomish, King, and Pierce counties: from Arlington and Lake Stevens through Seattle and the Eastside to Kent, Puyallup, and Gig Harbor.</span> <strong>Not sure? Call and ask.</strong></p></details>'
-    '\n      <details><summary>Are you really a local company?</summary><p><span data-city="Yes. Our team works in {c} and nearby.">Yes.</span> We\'re one company with our own team and one phone number. We don\'t sell your information or pass your call to whoever is free. The person who answers works for Titan, and so does the technician who comes to your home.</p></details>'
+    '\n      <details><summary>Are you really a local company?</summary><p><span data-city="Yes. Our team works in {c} and nearby.">Yes.</span> We\'re one company with our own team and one phone number. We never sell your information. The person who answers works for Titan, and so does the technician who comes to your home.</p></details>'
     '\n      <details><summary>Do you work on condo and townhome fireplaces?</summary><p>Yes. We work on direct-vent gas fireplaces in condos and townhomes. If your building has rules for contractors, tell us when you call and we\'ll follow them.</p></details>'
     '\n      <details><summary>Who should be home for the visit?</summary>')
 rep('<details><summary>I smell gas. What should I do?</summary>',
@@ -245,6 +244,26 @@ rep('alt="Titan Gas Fireplace sign"', 'alt="Titan sign on the shop wall"')
 rep('\n/* footer */', '\n@media (max-width:389px){.logo{gap:7px}.logo b{font-size:.9rem}.logo small{font-size:.5rem;letter-spacing:.04em}.mark{width:34px;height:29px}}\n@media (max-width:350px){.logo{gap:5px}.logo b{font-size:.74rem}.logo small{font-size:.42rem}.mark{width:30px;height:26px}}\n' + '\n/* footer */')
 # footer: no 'Owner: Zachary' line under the phone number (owner asked, Nov 15)
 rep('\n<p style="margin-top:6px">Owner: Zachary</p>', '') if '\n<p style="margin-top:6px">Owner: Zachary</p>' in h else rep('<p style="margin-top:6px">Owner: Zachary</p>', '')
+# ---------- plain words clients use (owner, Nov 15): no industry or marketing talk ----------
+for _a, _b, _n in (
+    ('Written flat-rate price', 'Written price up front', 2),
+    ('Flat-rate price', 'Upfront price', 1),
+    ('hands you a written flat-rate price', 'hands you a written price', 1),
+    ('a written, flat-rate price', 'a written price', 2),
+    ('Written, before any work', 'In writing, before any work', 1),
+    ('Our own techs', 'Our own technicians', 1),
+    ('Our tech checks it', 'Our technician checks it', 1),
+    ('Local Techs in Your Home. Not a Call Center.', 'Local Technicians in Your Home. Not a Call Center.', 1),
+    ('Licensed and insured, with real Titan techs', 'Licensed and insured Titan technicians', 1),
+    ('Gas fireplace specialists, not generalists', 'Gas fireplace specialists', 1),
+    ('Black glass or lazy flames', 'Black glass or weak, yellow flames', 1),
+    ("Pilot assemblies, thermocouples, thermopiles, gas valves, and ignition systems. Fixed with OEM parts whenever they're available.",
+     "Pilot lights, gas valves, and ignition parts like thermocouples and thermopiles. Fixed with original manufacturer parts whenever they're available.", 1),
+    ('Code-compliant, tested, and walked through with you.', 'Installed to code, tested, and explained to you.', 1),
+    ('the chimney or vent it runs through and the firebox around it', 'the chimney or vent pipe and the fireplace box around it', 1),
+):
+    assert h.count(_a) == _n, (_a, h.count(_a))
+    h = h.replace(_a, _b)
 # ---------- one font pair only: Zilla Slab headlines + Public Sans body (owner's pick, Nov 12) ----------
 import re as _re
 h, _k = _re.subn(r' <label style="margin-left:10px">Font: <select onchange="document.documentElement.dataset.font=this.value">.*?</select></label>', '', h, flags=_re.S)
