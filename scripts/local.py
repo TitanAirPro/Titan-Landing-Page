@@ -80,12 +80,6 @@ area = '''<!-- WHERE WE WORK -->
     %s
     <div class="area-rest">
       <details class="cities"><summary>See all 60 cities we serve</summary><div class="cities-in">%s</div></details>
-      <div><h3 class="homes-h">The fireplaces we see around here</h3>
-      <ul class="homes">
-        <li><svg class="ico"><use href="#i-building"/></svg><div><b>Condos and townhomes</b><span>Direct-vent gas fireplaces from Capitol Hill to downtown Bellevue.</span></div></li>
-        <li><svg class="ico"><use href="#i-home"/></svg><div><b>Older homes</b><span>Craftsman and mid-century houses in Seattle and Tacoma where the wood fireplace was converted to gas years ago.</span></div></li>
-        <li><svg class="ico"><use href="#i-tree"/></svg><div><b>Suburban builds</b><span>'90s and 2000s builder fireplaces in Mill Creek, Sammamish, and Puyallup that haven't been serviced in years.</span></div></li>
-      </ul></div>
       <div class="area-cta">%s<p class="hours">Not sure you're in our area? Call and ask.</p></div>
     </div>
   </div>
@@ -149,6 +143,7 @@ css = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'areamap.css
 .area-head p{color:var(--muted);font-size:1.02rem;max-width:62ch}
 .area-mapw{grid-area:map;margin:0;border-radius:20px;overflow:hidden;background:#fbf7f0;border:1px solid var(--cream-line);box-shadow:0 34px 60px -36px rgba(29,49,87,.6)}
 .area-rest{grid-area:rest;display:grid;gap:26px}
+@media (min-width:861px){.area-grid{grid-template-rows:auto 1fr}.area-rest{align-self:start}}
 .hoods h3,.homes-h{margin:0 0 12px;font:700 .76rem/1 var(--body);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 .hoods ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:7px}
 .hoods li{font:600 .86rem/1 var(--body);color:var(--navy);background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 12px}
