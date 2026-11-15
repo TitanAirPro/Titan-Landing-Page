@@ -243,6 +243,8 @@ rep('alt="Zachary, owner of Titan Gas Fireplace, outside the shop"', 'alt="Zacha
 rep('alt="Titan Gas Fireplace sign"', 'alt="Titan sign on the shop wall"')
 # the longer name still fits beside the Call button on small phones
 rep('\n/* footer */', '\n@media (max-width:389px){.logo{gap:7px}.logo b{font-size:.9rem}.logo small{font-size:.5rem;letter-spacing:.04em}.mark{width:34px;height:29px}}\n@media (max-width:350px){.logo{gap:5px}.logo b{font-size:.74rem}.logo small{font-size:.42rem}.mark{width:30px;height:26px}}\n' + '\n/* footer */')
+# footer: no 'Owner: Zachary' line under the phone number (owner asked, Nov 15)
+rep('\n<p style="margin-top:6px">Owner: Zachary</p>', '') if '\n<p style="margin-top:6px">Owner: Zachary</p>' in h else rep('<p style="margin-top:6px">Owner: Zachary</p>', '')
 # ---------- one font pair only: Zilla Slab headlines + Public Sans body (owner's pick, Nov 12) ----------
 import re as _re
 h, _k = _re.subn(r' <label style="margin-left:10px">Font: <select onchange="document.documentElement.dataset.font=this.value">.*?</select></label>', '', h, flags=_re.S)
