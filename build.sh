@@ -19,3 +19,7 @@ mkdir -p "$D/site/main-src" "$D/site/main-built"
 python3 "$S/mainpage.py" "$D/site/variant-src/index.html" "$D/site/main-src/index.html"
 python3 "$S/build2.py"  "$D/site/main-src/index.html" "$D/site/main-built/index.html"       # preview, photos built in
 python3 "$S/prod.py" "$D/site/main-src" "$D/site/production-main" main
+
+# DRAFT roofing page (separate company; placeholders in [brackets] until the owner sends real info)
+mkdir -p "$D/site/roofing-built"
+python3 "$S/roofpage.py" "$D/site/main-src/index.html" "$D/site/roofing-built/index.html"

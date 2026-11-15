@@ -9,6 +9,10 @@ Last updated: Nov 12, 2026. Ads are approved, launch is close. The goal now is a
   - made by `scripts/mainpage.py` from the finished gas page (same design, map, city personalization; own headline, problems, services, FAQ)
   - files: `site/main-src/` (img is a link to `variant-src/img`), `site/main-built/index.html` (preview), `site/production-main/` (live build)
   - ASSUMED, owner to confirm: the free inspection also covers chimneys and wood/pellet units. Reviews and photos on it are still the gas page's.
+- **Roofing page DRAFT (a separate roofing company in Washington), built Nov 15:** https://claude.ai/artifact/Vtkv9jxP92K7hMBU4SRFJv
+  - made by `scripts/roofpage.py` from the main page; output `site/roofing-built/index.html` (no live build yet)
+  - all of Titan's proof is removed (reviews, 849/4.9, map, photos, video, owner, phone, hours, logo, cities). Unknown facts show in [brackets]. City personalization is off until the service area is known.
+  - needed from the owner: company name, phone, hours, service area, offer (free roof inspection is ASSUMED), license #, real reviews, photos, logo.
 - **The other chat's preview** is a separate version. Nothing done here touched it.
 - **This zip (`titan-build.zip`)** holds everything needed to rebuild Variation B from scratch. The build reproduces version 35 byte for byte.
   - `site/original/index.html`: the original page from your first zip (the starting point).
