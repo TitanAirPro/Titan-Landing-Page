@@ -5,3 +5,8 @@ Header logo (site/variant-src/img/logo.png)
   Run from this folder:  python3 make.py 6 -78 80  then  node comp.js 3.3 914 220 full.png
   (comp.js needs playwright; then trim, pad 8 px and resize to 132 px tall; a small speck at x 740-860, y 180-245 of full.png was cleared by hand)
 - elephant_flame_full.png: the large version. img/logo.png is it at 132 px tall (3x the header size).
+
+Logo files for other projects (brand/, made Nov 17, 2026)
+- lockup.js makes brand/*.png: elephant + "Titan Chimney & Fireplace" in Zilla Slab 700, navy #1d3157.
+  Run: node scripts/logo/lockup.js <folder with node_modules/@fontsource/zilla-slab> brand
+  (needs: npm install @fontsource/zilla-slab playwright)
