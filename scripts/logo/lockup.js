@@ -8,6 +8,8 @@ html,body{margin:0;background:transparent}#l{display:inline-flex;align-items:cen
 const V={
  'titan-chimney-fireplace-logo-horizontal':`<div id="l" style="gap:70px;color:#1d3157"><img src="${mark}" height="640"><span>Titan Chimney &amp; Fireplace</span></div>`,
  'titan-chimney-fireplace-logo-horizontal-white-text':`<div id="l" style="gap:70px;color:#ffffff"><img src="${mark}" height="640"><span>Titan Chimney &amp; Fireplace</span></div>`,
+ 'titan-chimney-fireplace-logo-centered':`<div id="l" style="flex-direction:column;gap:0;color:#1d3157;text-align:center"><img src="${mark}" height="731"><span style="font-size:400px;margin-top:30px">Titan</span><span style="font-size:170px;margin-top:26px">Chimney &amp; Fireplace</span></div>`,
+ 'titan-chimney-fireplace-logo-centered-white-text':`<div id="l" style="flex-direction:column;gap:0;color:#ffffff;text-align:center"><img src="${mark}" height="731"><span style="font-size:400px;margin-top:30px">Titan</span><span style="font-size:170px;margin-top:26px">Chimney &amp; Fireplace</span></div>`,
  'titan-chimney-fireplace-logo-stacked':`<div id="l" style="flex-direction:column;gap:40px;color:#1d3157;font-size:210px"><img src="${mark}" height="731"><span>Titan Chimney &amp; Fireplace</span></div>`};
 const b=await chromium.launch();const p=await b.newPage({viewport:{width:6000,height:1600}});
 for(const [n,html] of Object.entries(V)){await p.setContent(`<style>${css}</style>${html}`);await p.evaluate(()=>document.fonts.ready);await p.waitForTimeout(300);
