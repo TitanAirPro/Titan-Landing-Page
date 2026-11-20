@@ -47,7 +47,7 @@ rep('<b>Titan Chimney &amp; Fireplace</b><small>Gas Fireplace Service &amp; Repa
 rep('<p class="kicker">Seattle-Area Gas Fireplace Repair</p>', '<p class="kicker">Seattle-Area Chimney &amp; Fireplace Service</p>')
 rep('var x="Gas Fireplace Repair in "+c;', 'var x="Chimney & Fireplace Service in "+c;')
 rep('<span class="h1a">Gas Fireplace Won\'t Light?</span> <span class="h1b">Get It Working Again Without a Surprise Bill.</span>',
-    '<span class="h1a">Chimney or Wood Fireplace Need Attention?</span> <span class="h1b">Get It Cleaned, Checked, and Working Without a Surprise Bill.</span>')
+    '<span class="h1a">Chimney Problems?</span> <span class="h1b">Get It Swept, Inspected, and Fixed Without a Surprise Bill.</span>')
 rep("We show you what's wrong and give you a written price before any work starts. No pressure.</p>",
     "We sweep, inspect, and repair wood-burning chimneys and fireplaces. You get a written price before any work starts. No pressure.</p>")
 
@@ -74,6 +74,11 @@ for ic, t, q in PROBS:
 h = h[:a] + '<div class="probs">\n' + '\n'.join(cards) + '\n' + h[b:]
 
 # ---------- how it works ----------
+# calmer about 'free' on this page (owner, Nov 20): the inspection is free, but the page doesn't shout it
+rep("<h2>Free Means Free. Here's Exactly What Happens.</h2>", "<h2>Here's Exactly What Happens When You Call.</h2>")
+rep('<p>No catch. The inspection costs you nothing, and you never owe us for saying no.</p>', "<p>Three simple steps. The inspection is free, and nothing starts until you approve the price.</p>")
+rep('<h3>Book Your Free Inspection</h3>', '<h3>Book Your Inspection</h3>')
+
 rep('<p>Tell us what your fireplace is doing. We answer your questions right there on the phone.</p>',
     "<p>Tell us what's going on with your chimney or fireplace. We answer your questions right there on the phone.</p>")
 rep("<b>Helpful, not required:</b> the brand name. It's usually on a sticker behind the lower grille.",

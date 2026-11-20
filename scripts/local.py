@@ -266,6 +266,61 @@ for _a, _b, _n in (
 ):
     assert h.count(_a) == _n, (_a, h.count(_a))
     h = h.replace(_a, _b)
+# ---------- call-back form (owner asked Nov 20; calls stay first, the form is the second way in) ----------
+FORM = ('<form class="cb" id="callback" data-endpoint="" novalidate>'
+        '<h4>Can\'t call right now?</h4><p>Leave your number and we\'ll call you back.</p>'
+        '<label>Name<input name="name" autocomplete="name" required></label>'
+        '<label>Phone<input name="phone" type="tel" inputmode="tel" autocomplete="tel" required></label>'
+        '<label>What\'s going on? <i>(optional)</i><textarea name="message" rows="2"></textarea></label>'
+        '<input class="cb-hp" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">'
+        '<button class="btn cb-btn" type="submit">Request a Call Back</button>'
+        '<p class="cb-note" role="status" hidden></p></form>')
+_t = "<b>Helpful, not required:</b> the brand name. It's usually on a sticker behind the lower grille.</span></div>"
+rep(_t, _t + '\n        ' + FORM)
+_c = '<span>Free inspection</span><span>A real person answers</span></p>'
+rep(_c, _c + '\n          <a class="cb-link" href="#callback">Can\'t call now? Request a call back</a>')
+rep('\n/* footer */', """
+/* call-back form */
+.cb{width:100%;display:grid;gap:10px;text-align:left;margin-top:4px;padding-top:18px;border-top:1px solid rgba(255,255,255,.16);scroll-margin-top:90px}
+.cb h4{margin:0;color:#fff;font:700 1.15rem/1.2 var(--display);text-align:center}
+.cb>p{margin:0 0 2px;text-align:center;font-size:.9rem;color:#c9d2e3}
+.cb label{display:grid;gap:5px;font:600 .82rem/1.2 var(--body);color:#dfe5f0}
+.cb label i{font-style:normal;font-weight:400;color:#a9b4ca}
+.cb input,.cb textarea{font:400 1rem/1.3 var(--body);color:#1d3157;background:#fff;border:1px solid #c7cedb;border-radius:9px;padding:11px 12px;width:100%;box-sizing:border-box}
+.cb input:focus,.cb textarea:focus{outline:2px solid var(--orange);outline-offset:1px}
+.cb textarea{resize:vertical}
+.cb .cb-hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.cb-btn{width:100%;justify-content:center;background:#fff;color:var(--navy);border:0;border-radius:10px;padding:13px 16px;font:700 1rem/1 var(--body);cursor:pointer}
+.cb-btn[disabled]{opacity:.6;cursor:default}
+.cb-note{margin:0;text-align:center;font:600 .9rem/1.4 var(--body);color:#8ff0bb}
+.cb-note.err{color:#ffc9b8}
+.cb.done>*:not(.cb-note){display:none}
+.cb-link{display:inline-block;margin-top:2px;font:600 .84rem/1.3 var(--body);color:#dfe5f0;text-decoration:underline;text-underline-offset:3px}
+@media (max-width:640px){.cb-link{align-self:center;text-align:center}}
+""" + '\n/* footer */')
+rep('</body>', """<script>
+(function(){
+  var f=document.getElementById('callback');if(!f)return;
+  var note=f.querySelector('.cb-note'),btn=f.querySelector('.cb-btn');
+  function say(t,err){note.hidden=false;note.textContent=t;note.classList.toggle('err',!!err);}
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var name=f.elements.name.value.trim(),phone=f.elements.phone.value.trim();
+    if(f.elements.company.value)return;
+    if(!name){say('Please add your name.',1);f.elements.name.focus();return;}
+    if(phone.replace(/\\D/g,'').length<10){say('Please add a phone number with area code.',1);f.elements.phone.focus();return;}
+    var ep=f.getAttribute('data-endpoint');
+    if(!ep){say('Preview only: this form is not connected yet.',1);return;}
+    var d=new FormData(f);d.delete('company');d.append('page',document.title);if(window.__TITAN_CITY)d.append('city',window.__TITAN_CITY.c);
+    btn.disabled=true;btn.textContent='Sending...';
+    fetch(ep,{method:'POST',headers:{'Accept':'application/json'},body:d}).then(function(r){
+      if(!r.ok)throw 0;f.classList.add('done');say('Thanks, '+name+'. We will call you back at '+phone+'.');
+    }).catch(function(){btn.disabled=false;btn.textContent='Request a Call Back';say('That did not go through. Please call (425) 307-9165.',1);});
+  });
+})();
+</script>
+</body>""")
+
 # ---------- WA contractor license (from the owner, Nov 20) ----------
 LICENSE = 'TITANAD757LQ'
 rep('<span>Licensed &amp; insured<small>Full coverage</small></span>', '<span>Licensed &amp; insured<small>Lic. %s</small></span>' % LICENSE)

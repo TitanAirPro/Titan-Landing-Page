@@ -1,0 +1,4 @@
+{
+  "_note": "Call-back form on the LIVE builds. 'endpoint' is the address the form posts to (a form service or your own system). Leave it empty and the live builds have NO form (a form that goes nowhere would lose leads). The previews always show the form, marked as not connected.",
+  "endpoint": ""
+}

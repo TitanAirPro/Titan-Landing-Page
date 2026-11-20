@@ -81,6 +81,15 @@ else:
     s, k = re.subn(r'(<meta name="viewport"[^>]*>)', r'\1\n<!-- GOOGLE TAG: paste the Google Ads / Google tag (gtag.js) snippet here, right after this line -->', s, count=1)
 assert k == 1
 
+# 6b. call-back form: connected when scripts/form.json has an endpoint, otherwise left out of the live build
+EP = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'form.json'), encoding='utf-8')).get('endpoint', '').strip()
+if EP:
+    if not re.fullmatch(r'https://[^\s"<>]+', EP): sys.exit('form.json: endpoint must be an https address')
+    s, k = re.subn(r'id="callback" data-endpoint=""', 'id="callback" data-endpoint="%s"' % EP, s); assert k == 1
+else:
+    s, k = re.subn(r'\s*<form class="cb" id="callback".*?</form>', '', s, flags=re.S); assert k == 1
+    s, k = re.subn(r'\s*<a class="cb-link" href="#callback">.*?</a>', '', s, flags=re.S); assert k == 1
+
 # 7. speed: photos load when they scroll near, phones get smaller WebP files, a lighter hero photo on phones
 PHOTOS = {}  # name -> width of the original
 def _photo(m):

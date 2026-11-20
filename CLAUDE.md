@@ -10,6 +10,7 @@ Last updated: Nov 12, 2026. Ads are approved, launch is close. The goal now is a
   - files: `site/main-src/` (img is a link to `variant-src/img`), `site/main-built/index.html` (preview), `site/production-main/` (live build)
   - Nov 20: refocused on wood-burning chimneys and fireplaces (sweeps, inspections, repairs). Gas appears only in a few spots (one problem card, one service card, one FAQ, the conversion card). No gas brand strip, no 'I smell gas' question, no pellet card.
   - Chimney repairs the owner listed Nov 20 (shown in the repair card and a 'Chimney repairs we do' strip): crown, flashing, brickwork, tuckpointing, waterproofing, damper installation, cap replacement, chase covers, storm collars, pipe replacement, new installations, and more.
+  - Nov 20: headline is "Chimney Problems? Get It Swept, Inspected, and Fixed Without a Surprise Bill." The steps section says "Here's Exactly What Happens When You Call." (owner: don't shout 'free' on this page; it attracts price shoppers).
   - CONFIRMED by the owner Nov 20: the inspection is free for chimneys and wood fireplaces too. Reviews and photos on it are still the gas page's.
 - **Roofing page DRAFT (a separate roofing company in Washington), built Nov 15:** https://claude.ai/artifact/Vtkv9jxP92K7hMBU4SRFJv
   - made by `scripts/roofpage.py` from the main page; output `site/roofing-built/index.html` (no live build yet)
@@ -27,7 +28,7 @@ Last updated: Nov 12, 2026. Ads are approved, launch is close. The goal now is a
 ## 2. Standing rules (from you, never break)
 
 1. Treat the current version as exact. Change only what you ask for, keep everything else identical, and update the same preview link.
-2. Phone calls only: no forms, no "leave your info".
+2. Phone calls first. One short call-back form is allowed (owner changed this Nov 20): it sits in the booking box under the call button, with a small link under the hero button. It is in the live builds only when `scripts/form.json` has an endpoint; the previews show it as "not connected". No other forms, no chat widgets.
 3. Offer: free inspection (gas fireplaces on the gas page; chimneys and wood fireplaces on the main page). CTA: "Call now to get scheduled".
 4. No timing promises (no "same-day", no "within days").
 5. Phone (425) 307-9165. Hours Sun–Fri 7:30 AM – 10:30 PM, closed Saturday. Owner: Zachary.
