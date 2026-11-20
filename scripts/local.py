@@ -266,6 +266,12 @@ for _a, _b, _n in (
 ):
     assert h.count(_a) == _n, (_a, h.count(_a))
     h = h.replace(_a, _b)
+# ---------- WA contractor license (from the owner, Nov 20) ----------
+LICENSE = 'TITANAD757LQ'
+rep('<span>Licensed &amp; insured<small>Full coverage</small></span>', '<span>Licensed &amp; insured<small>Lic. %s</small></span>' % LICENSE)
+rep('<div class="copy">© Titan Chimney &amp; Fireplace</div>', '<div class="copy">© Titan Chimney &amp; Fireplace · WA Contractor License %s</div>' % LICENSE)
+rep('</svg>Licensed and insured Titan technicians</li>', '</svg>Licensed and insured Titan technicians (WA License %s)</li>' % LICENSE)
+
 # ---------- one font pair only: Zilla Slab headlines + Public Sans body (owner's pick, Nov 12) ----------
 import re as _re
 h, _k = _re.subn(r' <label style="margin-left:10px">Font: <select onchange="document.documentElement.dataset.font=this.value">.*?</select></label>', '', h, flags=_re.S)

@@ -55,6 +55,10 @@ h = h.replace('Sun–Fri, 7:30 AM – 10:30 PM', '[Your hours]')
 h = h.replace('Sun–Fri 7:30 AM – 10:30 PM<br>Closed Saturday', '[Your hours]')
 rep('<p class="cta-note"><span>Free inspection</span>', '<p class="cta-note"><span>Free roof inspection</span>')
 
+# Titan's license number must not appear on another company's page
+h = h.replace('Lic. TITANAD757LQ', '[License #]').replace(' (WA License TITANAD757LQ)', '').replace(' · WA Contractor License TITANAD757LQ', '')
+assert 'TITANAD' not in h
+
 # ---------- draft bar ----------
 rep('<header class="top">', '<div class="pv">DRAFT roofing page. Anything in [brackets] needs your real info. No reviews, numbers or photos are shown until you send real ones.</div>\n<header class="top">')
 rep('</style>', '.pv{background:#fff6d6;border-bottom:1px solid #f0c867;font:600 .8rem/1.35 var(--body);color:#1d3157;padding:8px 16px;text-align:center}\n</style>', h.count('</style>'))

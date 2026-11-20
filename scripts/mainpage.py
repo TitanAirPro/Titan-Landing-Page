@@ -60,7 +60,7 @@ PROBS = [
     ('cloud', 'Smoke comes back into the room', 'When we light a fire, smoke comes out the front.'),
     ('home',  'We just bought the house', 'Is the chimney and fireplace safe to use?'),
     ('alert', 'A smell from the fireplace', "A smoky or damp smell, even when it's not in use."),
-    ('flame', 'We have a gas fireplace', "It won't light, or it hasn't been serviced in years."),
+    ('flame', 'We need help with a gas fireplace', "It won't light, or it hasn't been serviced in years."),
     ('search', "Something doesn't look right", 'Stains, cracks, or loose bricks we want checked.'),
 ]
 a = h.index('<div class="probs">'); b = h.index('</div>\n</div>\n</section>', a)

@@ -111,7 +111,7 @@ Last updated: Nov 12, 2026. Ads are approved, launch is close. The goal now is a
 ## 7. Inputs still needed from you
 
 1. Domain and hosting for the live site.
-2. WA L&I contractor license number.
+2. ~~WA L&I contractor license number~~ TITANAD757LQ (from the owner, Nov 20). On both Titan pages: trust strip, crew list, footer. Never on the roofing draft.
 3. Warranty length on work (the report recommends a written term; most competitors have none).
 4. Can (425) 307-9165 receive texts? (A "call or text" option lifts calls.)
 5. Confirm the review-to-name pairing (Jessica / Mohit / Ashley / Elizabeth).
