@@ -114,6 +114,7 @@ sub(r'<b>Helpful, not required:</b>[^<]*', '<b>Helpful, not required:</b> about 
 cut(r'<div class="spot(?: spot-dark)?"><div class="rcard">.*?</div></div></div></div>', 2)
 cut(r'<div class="revs revs-tight">.*?</div></div></div></div>(?=\n</div>\n</section>)')
 cut(r'<section class="sec vid" id="video">.*?</section>\s*')
+cut(r'<div class="brands">.*?</p></div>\s*')
 cut(r'<section class="split">.*?</section>\s*')
 cut(r'<figure class="area-mapw">.*?</figure>\s*')
 cut(r'<details class="cities">.*?</details>\s*')

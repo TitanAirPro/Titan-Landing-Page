@@ -9,6 +9,7 @@ Last updated: Nov 12, 2026. Ads are approved, launch is close. The goal now is a
   - made by `scripts/mainpage.py` from the finished gas page (same design, map, city personalization; own headline, problems, services, FAQ)
   - files: `site/main-src/` (img is a link to `variant-src/img`), `site/main-built/index.html` (preview), `site/production-main/` (live build)
   - Nov 20: refocused on wood-burning chimneys and fireplaces (sweeps, inspections, repairs). Gas appears only in a few spots (one problem card, one service card, one FAQ, the conversion card). No gas brand strip, no 'I smell gas' question, no pellet card.
+  - Chimney repairs the owner listed Nov 20 (shown in the repair card and a 'Chimney repairs we do' strip): crown, flashing, brickwork, tuckpointing, waterproofing, damper installation, cap replacement, chase covers, storm collars, pipe replacement, new installations, and more.
   - CONFIRMED by the owner Nov 20: the inspection is free for chimneys and wood fireplaces too. Reviews and photos on it are still the gas page's.
 - **Roofing page DRAFT (a separate roofing company in Washington), built Nov 15:** https://claude.ai/artifact/Vtkv9jxP92K7hMBU4SRFJv
   - made by `scripts/roofpage.py` from the main page; output `site/roofing-built/index.html` (no live build yet)

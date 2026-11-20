@@ -97,7 +97,7 @@ CARDS = [
      'Yearly tune-up. We clean the burner, pilot, logs, and glass, check the safety controls, and test everything before we leave.',
      'Call About Service',
      'Chimney Repair',
-     'We fix the problems an inspection finds, so your chimney is safe to use again. Written price first.',
+     'Crowns, flashing, brickwork, tuckpointing, dampers, caps, and more. We fix what the inspection finds, with a written price first.',
      'Call About a Repair'),
     ('Free Inspection',
      'A full safety and operation check of your gas fireplace. We show you what we find. No charge and no obligation.',
@@ -160,6 +160,7 @@ rep('asks a few questions about your fireplace, and books', 'asks a few question
 NEWQ = ('<details><summary>How often should a chimney be cleaned?</summary><p>The national fire safety standard (NFPA 211) says chimneys, fireplaces, and vents should be inspected at least once a year and cleaned when needed. <strong>If you burn wood often, have it checked before each season.</strong></p></details>\n'
     '<details><summary>What is creosote, and why does it matter?</summary><p>Creosote is the black, tar-like buildup that wood smoke leaves inside a chimney. It can catch fire, which is why chimneys need regular sweeping.</p></details>\n'
     '<details><summary>Why does smoke come back into the room?</summary><p>The most common causes are a dirty or blocked chimney, a damper that is closed or stuck, or a draft problem. <strong>We\'ll find the cause during your free inspection.</strong></p></details>\n'
+    '<details><summary>Water is getting in around my chimney. Can you fix it?</summary><p>Yes. Leaks usually come from the crown, the flashing, the cap, or the brickwork. We find where the water gets in and give you a written price to fix it.</p></details>\n'
     '<details><summary>Will the cleaning make a mess?</summary><p>No. Floor protection goes down before we start, and we leave the area cleaner than we found it.</p></details>\n'
     '<details><summary>Do you work on gas fireplaces too?</summary><p>Yes. We repair and service gas fireplaces and check their vents.</p></details>\n')
 # gas-only questions from the gas page come out; the new wood questions go in their place
@@ -169,7 +170,11 @@ for q in ('Do you work on condo and townhome fireplaces?', "Why won't my gas fir
     h = h[:a] + (NEWQ if q.startswith('Why') else '') + h[b:].lstrip('\n') if q.startswith('Why') else h[:a] + h[b:].lstrip('\n')
 
 # gas-only pieces that stay on the gas page: the gas brand strip and the 'I smell gas' question
-cut(r'<div class="brands">.*?</p></div>\s*')
+# the gas brand strip becomes the list of chimney repairs (owner's list, Nov 20)
+REPAIRS = ['Crown repair', 'Flashing', 'Brickwork', 'Tuckpointing', 'Waterproofing', 'Damper installation', 'Cap replacement',
+           'Chase covers', 'Storm collars', 'Pipe replacement', 'New installations', 'and more']
+h, k = re.subn(r'<div class="brands">.*?</p></div>', lambda m: '<div class="brands"><span>Chimney repairs we do</span><p>' + ''.join('<b>%s</b>' % x for x in REPAIRS) + '</p></div>', h, flags=re.S)
+assert k == 1
 cut(r'<details><summary>I smell gas\. What should I do\?</summary>.*?</details>\s*')
 
 # ---------- footer ----------
