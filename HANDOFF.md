@@ -9,7 +9,7 @@ Last updated: Nov 12, 2026. Ads are approved, launch is close. The goal now is a
   - made by `scripts/mainpage.py` from the finished gas page (same design, map, city personalization; own headline, problems, services, FAQ)
   - files: `site/main-src/` (img is a link to `variant-src/img`), `site/main-built/index.html` (preview), `site/production-main/` (live build)
   - Nov 20: refocused on wood-burning chimneys and fireplaces (sweeps, inspections, repairs). Gas appears only in a few spots (one problem card, one service card, one FAQ, the conversion card). No gas brand strip, no 'I smell gas' question, no pellet card.
-  - ASSUMED, owner to confirm: the free inspection also covers chimneys and wood/pellet units. Reviews and photos on it are still the gas page's.
+  - CONFIRMED by the owner Nov 20: the inspection is free for chimneys and wood fireplaces too. Reviews and photos on it are still the gas page's.
 - **Roofing page DRAFT (a separate roofing company in Washington), built Nov 15:** https://claude.ai/artifact/Vtkv9jxP92K7hMBU4SRFJv
   - made by `scripts/roofpage.py` from the main page; output `site/roofing-built/index.html` (no live build yet)
   - all of Titan's proof is removed (reviews, 849/4.9, map, photos, video, owner, phone, hours, logo, cities). Unknown facts show in [brackets]. City personalization is off until the service area is known.
@@ -27,7 +27,7 @@ Last updated: Nov 12, 2026. Ads are approved, launch is close. The goal now is a
 
 1. Treat the current version as exact. Change only what you ask for, keep everything else identical, and update the same preview link.
 2. Phone calls only: no forms, no "leave your info".
-3. Offer: free gas fireplace inspection. CTA: "Call now to get scheduled".
+3. Offer: free inspection (gas fireplaces on the gas page; chimneys and wood fireplaces on the main page). CTA: "Call now to get scheduled".
 4. No timing promises (no "same-day", no "within days").
 5. Phone (425) 307-9165. Hours Sun–Fri 7:30 AM – 10:30 PM, closed Saturday. Owner: Zachary.
 6. Phone-first layout. The hero is centered on phones and left-aligned on desktop.
@@ -123,7 +123,7 @@ Last updated: Nov 12, 2026. Ads are approved, launch is close. The goal now is a
 
 1. Production build + tracking (sections 6A and 6B): needed before spend.
 2. Promise block + license number + "all services" label (6D).
-3. ~~The main chimney & fireplace page~~ BUILT Nov 15 (`scripts/mainpage.py`). Still needs: owner to confirm the free inspection covers chimneys, chimney reviews, chimney photos.
+3. ~~The main chimney & fireplace page~~ BUILT Nov 15 (`scripts/mainpage.py`). Free chimney inspection confirmed Nov 20. Still needs: chimney reviews, chimney photos.
 4. Ad copy check against the pages (message match), plus a phone booking script for whoever answers the calls.
 5. After 2 weeks of data: cut keywords with no booked calls and test a second hero headline.
 

@@ -6,7 +6,7 @@ Same design, map, city personalization, reviews and offer structure as the gas p
 Only the words change: headline, problems, services, FAQ, titles. No preview bar and no
 keyword-swap script on this page.
 
-ASSUMED (owner to confirm): the free inspection also covers chimneys and wood/pellet units.
+Confirmed by the owner (Nov 20): the free inspection also covers chimneys and wood fireplaces.
 Services named here are only ones the job mix shows (chimney, gas fireplace, pellet stove)
 plus what the gas page already says (conversions, inserts).
 """
