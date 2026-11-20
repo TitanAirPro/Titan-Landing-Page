@@ -6,7 +6,7 @@ Same design, map, city personalization, reviews and offer structure as the gas p
 Only the words change: headline, problems, services, FAQ, titles. No preview bar and no
 keyword-swap script on this page.
 
-Confirmed by the owner (Nov 20): the free inspection also covers chimneys and wood fireplaces.
+Offer (owner, Nov 20): only the basic visual inspection is free, for chimneys and fireplaces alike; diagnostics and repairs are priced in writing first.
 Services named here are only ones the job mix shows (chimney, gas fireplace, pellet stove)
 plus what the gas page already says (conversions, inserts).
 """
@@ -34,12 +34,9 @@ rep('<title>Titan Chimney &amp; Fireplace | Gas Fireplace Service &amp; Repair</
     '<title>Titan Chimney &amp; Fireplace | Chimney Sweep, Inspection &amp; Fireplace Repair</title>')
 rep('og:title" content="Titan Chimney &amp; Fireplace | Gas Fireplace Service &amp; Repair"',
     'og:title" content="Titan Chimney &amp; Fireplace | Chimney Sweep, Inspection &amp; Fireplace Repair"')
-rep('<meta name="description" content="Free gas fireplace inspection in Seattle. Repair, service, pilot, ignition, gas valves and wood-to-gas conversions. Call (425) 307-9165 to get on the schedule.">',
-    '<meta name="description" content="Chimney sweeping, free inspections, and repairs for wood-burning chimneys and fireplaces in the Seattle area. Call (425) 307-9165 to get on the schedule.">')
-rep('<meta property="og:description" content="Free gas fireplace inspection in Seattle. Call (425) 307-9165.">',
-    '<meta property="og:description" content="Chimney sweeping, free inspections, and fireplace repair in the Seattle area. Call (425) 307-9165.">')
-rep('"description": "Free gas fireplace inspection in Seattle. Gas fireplace repair, service, pilot, ignition, gas valves, wood-to-gas conversions and gas inserts."',
-    '"description": "Chimney sweeping, free inspections, and repairs for wood-burning chimneys and fireplaces in the Seattle area. Gas fireplace service too."')
+h, k = re.subn(r'<meta name="description" content="[^"]*">', '<meta name="description" content="Chimney sweeping, inspections, and repairs for wood-burning chimneys and fireplaces in the Seattle area. Free visual inspection. Call (425) 307-9165 to get on the schedule.">', h); assert k == 1
+h, k = re.subn(r'<meta property="og:description" content="[^"]*">', '<meta property="og:description" content="Chimney sweeping, inspections, and fireplace repair in the Seattle area. Call (425) 307-9165.">', h); assert k == 1
+h, k = re.subn(r'"description": "Gas fireplace repair,[^"]*"', '"description": "Chimney sweeping, inspections, and repairs for wood-burning chimneys and fireplaces in the Seattle area. Gas fireplace service too."', h); assert k == 1
 
 # ---------- header + hero ----------
 rep('<b>Titan Chimney &amp; Fireplace</b><small>Gas Fireplace Service &amp; Repair</small>',
@@ -48,8 +45,7 @@ rep('<p class="kicker">Seattle-Area Gas Fireplace Repair</p>', '<p class="kicker
 rep('var x="Gas Fireplace Repair in "+c;', 'var x="Chimney & Fireplace Service in "+c;')
 rep('<span class="h1a">Gas Fireplace Won\'t Light?</span> <span class="h1b">Get It Working Again Without a Surprise Bill.</span>',
     '<span class="h1a">Chimney Problems?</span> <span class="h1b">Get It Swept, Inspected, and Fixed Without a Surprise Bill.</span>')
-rep("We show you what's wrong and give you a written price before any work starts. No pressure.</p>",
-    "We sweep, inspect, and repair wood-burning chimneys and fireplaces. You get a written price before any work starts. No pressure.</p>")
+h, k = re.subn(r'<p class="lede">.*?</p>', '<p class="lede">One call books your visit. We sweep, inspect, and repair wood-burning chimneys and fireplaces. The visual inspection is free, and you get a written price before any repair. No pressure.</p>', h, flags=re.S); assert k == 1
 
 # ---------- problems ----------
 rep('<h2>What Is Your Fireplace Doing?</h2>', "<h2>What's Going On With Your Chimney or Fireplace?</h2>")
@@ -74,10 +70,6 @@ for ic, t, q in PROBS:
 h = h[:a] + '<div class="probs">\n' + '\n'.join(cards) + '\n' + h[b:]
 
 # ---------- how it works ----------
-# calmer about 'free' on this page (owner, Nov 20): the inspection is free, but the page doesn't shout it
-rep("<h2>Free Means Free. Here's Exactly What Happens.</h2>", "<h2>Here's Exactly What Happens When You Call.</h2>")
-rep('<p>No catch. The inspection costs you nothing, and you never owe us for saying no.</p>', "<p>Three simple steps. The inspection is free, and nothing starts until you approve the price.</p>")
-rep('<h3>Book Your Free Inspection</h3>', '<h3>Book Your Inspection</h3>')
 
 rep('<p>Tell us what your fireplace is doing. We answer your questions right there on the phone.</p>',
     "<p>Tell us what's going on with your chimney or fireplace. We answer your questions right there on the phone.</p>")
@@ -85,12 +77,12 @@ rep("<b>Helpful, not required:</b> the brand name. It's usually on a sticker beh
     '<b>Helpful, not required:</b> tell us when the chimney was last swept, and how often you use the fireplace.')
 
 # ---------- band ----------
-rep('<strong>Free gas fireplace inspections <span', '<strong>Free chimney and fireplace inspections <span')
+rep('<strong>Gas fireplace repair and service <span', '<strong>Chimney and fireplace service <span')
 
 # ---------- services ----------
 rep('<h2>Old, New, or Never Used. We Fix Gas Fireplaces.</h2>', '<h2>Wood-Burning Chimneys and Fireplaces Are What We Do.</h2>')
-rep("<p>Gas fireplaces are our specialty, and we also take care of what they sit in: the chimney or vent pipe and the fireplace box around it. Repairs, yearly service, inserts, and wood-to-gas conversions. It all starts with a free inspection.</p>",
-    '<p>Sweeping, inspections, and repairs for wood-burning chimneys and fireplaces. We service gas fireplaces too. It all starts with a free inspection.</p>')
+rep("<p>Gas fireplaces are our specialty, and we also take care of what they sit in: the chimney or vent pipe and the fireplace box around it. Repairs, yearly service, inserts, and wood-to-gas conversions. It all starts with a free visual inspection.</p>",
+    '<p>Sweeping, inspections, and repairs for wood-burning chimneys and fireplaces. We service gas fireplaces too.</p>')
 CARDS = [
     ('Gas Fireplace Repair',
      "Pilot lights, gas valves, and ignition parts like thermocouples and thermopiles. Fixed with original manufacturer parts whenever they're available.",
@@ -104,12 +96,12 @@ CARDS = [
      'Chimney Repair',
      'Crowns, flashing, brickwork, tuckpointing, dampers, caps, and more. We fix what the inspection finds, with a written price first.',
      'Call About a Repair'),
-    ('Free Inspection',
-     'A full safety and operation check of your gas fireplace. We show you what we find. No charge and no obligation.',
-     'Book Free Inspection',
-     'Free Chimney Inspection',
-     'A full safety check of your chimney and fireplace. We show you what we find. No charge and no obligation.',
-     'Book Free Inspection'),
+    ('Visual Inspection',
+     'We look over your gas fireplace and tell you what we see, at no charge. If it needs testing or diagnostics, you get the price first.',
+     'Book an Inspection',
+     'Chimney Inspection',
+     'We look over your chimney and fireplace and tell you what we see, at no charge. If it needs testing or repair, you get the price first.',
+     'Book an Inspection'),
     ('Wood-to-Gas Conversion',
      'Turn a wood fireplace into push-button heat. We handle permits, plans, parts, and the full install as one company.',
      'Call About Conversion',
@@ -159,12 +151,11 @@ rep('Our gas fireplace work covers pilots, valves, ignition, service, conversion
 rep("If your fireplace is fine, we tell you it's fine. And if something", "If everything is fine, we tell you it's fine. And if something")
 
 # ---------- FAQ ----------
-rep('We check your fireplace, show you what we find,', 'We check your chimney and fireplace, show you what we find,')
-rep('Most people who call us want their fireplace fixed, so', 'Most people who call us want their chimney or fireplace taken care of, so')
+rep('we look over your fireplace and tell you what we see.', 'we look over your chimney and fireplace and tell you what we see.')
 rep('asks a few questions about your fireplace, and books', 'asks a few questions about your chimney or fireplace, and books')
 NEWQ = ('<details><summary>How often should a chimney be cleaned?</summary><p>The national fire safety standard (NFPA 211) says chimneys, fireplaces, and vents should be inspected at least once a year and cleaned when needed. <strong>If you burn wood often, have it checked before each season.</strong></p></details>\n'
     '<details><summary>What is creosote, and why does it matter?</summary><p>Creosote is the black, tar-like buildup that wood smoke leaves inside a chimney. It can catch fire, which is why chimneys need regular sweeping.</p></details>\n'
-    '<details><summary>Why does smoke come back into the room?</summary><p>The most common causes are a dirty or blocked chimney, a damper that is closed or stuck, or a draft problem. <strong>We\'ll find the cause during your free inspection.</strong></p></details>\n'
+    '<details><summary>Why does smoke come back into the room?</summary><p>The most common causes are a dirty or blocked chimney, a damper that is closed or stuck, or a draft problem. <strong>We\'ll find the cause when we come out.</strong></p></details>\n'
     '<details><summary>Water is getting in around my chimney. Can you fix it?</summary><p>Yes. Leaks usually come from the crown, the flashing, the cap, or the brickwork. We find where the water gets in and give you a written price to fix it.</p></details>\n'
     '<details><summary>Will the cleaning make a mess?</summary><p>No. Floor protection goes down before we start, and we leave the area cleaner than we found it.</p></details>\n'
     '<details><summary>Do you work on gas fireplaces too?</summary><p>Yes. We repair and service gas fireplaces and check their vents.</p></details>\n')
@@ -181,6 +172,8 @@ REPAIRS = ['Crown repair', 'Flashing', 'Brickwork', 'Tuckpointing', 'Waterproofi
 h, k = re.subn(r'<div class="brands">.*?</p></div>', lambda m: '<div class="brands"><span>Chimney repairs we do</span><p>' + ''.join('<b>%s</b>' % x for x in REPAIRS) + '</p></div>', h, flags=re.S)
 assert k == 1
 cut(r'<details><summary>I smell gas\. What should I do\?</summary>.*?</details>\s*')
+
+rep('<span class="eyebrow">Gas Fireplace Service</span>', '<span class="eyebrow">Chimney &amp; Fireplace Service</span>')
 
 # ---------- footer ----------
 rep('<div class="fname">Titan Chimney &amp; Fireplace<br>Gas Fireplace Service &amp; Repair</div>',

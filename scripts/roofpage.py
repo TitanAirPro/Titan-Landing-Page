@@ -53,7 +53,7 @@ h = re.sub(r'<span class="live" data-live="(?:short|long)"[^>]*>[^<]*</span>', '
 h = h.replace('Sun–Fri, 7:30 AM – 10:30 PM · Closed Saturday', '[Your hours]')
 h = h.replace('Sun–Fri, 7:30 AM – 10:30 PM', '[Your hours]')
 h = h.replace('Sun–Fri 7:30 AM – 10:30 PM<br>Closed Saturday', '[Your hours]')
-rep('<p class="cta-note"><span>Free inspection</span>', '<p class="cta-note"><span>Free roof inspection</span>')
+rep('<p class="cta-note"><span>Free visual inspection</span>', '<p class="cta-note"><span>Free roof inspection</span>')
 
 # Titan's license number must not appear on another company's page
 h = h.replace('Lic. TITANAD757LQ', '[License #]').replace(' (WA License TITANAD757LQ)', '').replace(' · WA Contractor License TITANAD757LQ', '')
@@ -112,7 +112,7 @@ h = h[:a] + '<div class="probs">\n' + '\n'.join(cards) + '\n' + h[b:]
 
 # ---------- how it works ----------
 sub(r"<p>Tell us what's going on with [^<]*</p>", "<p>Tell us what's going on with your roof. We answer your questions right there on the phone.</p>")
-rep('<h3>We book your free inspection</h3>', '<h3>We book your free roof inspection</h3>')
+rep('<h3>We book your visit</h3>', '<h3>We book your free roof inspection</h3>')
 rep('<p>Our technician checks it, walks you through it, and hands you a written price. If it\'s fine, we tell you it\'s fine.</p>',
     '<p>We check the roof, show you photos of what we find, and hand you a written price. If it\'s fine, we tell you it\'s fine.</p>')
 sub(r'<b>Helpful, not required:</b>[^<]*', '<b>Helpful, not required:</b> about how old the roof is, and where you see the problem.')
@@ -131,7 +131,7 @@ cut(r'<figure class="photo"><img src="img/sign\.jpg"[^>]*></figure>\s*')
 assert 'img/' not in h, re.findall(r'img/[a-z0-9-]+\.[a-z0-9]+', h)[:5]
 
 # ---------- band ----------
-h, k = re.subn(r'<strong>Free chimney and fireplace inspections <span data-city="[^"]*">in the Seattle area\.</span></strong>',
+h, k = re.subn(r'<strong>Chimney and fireplace service <span data-city="[^"]*">in the Seattle area\.</span></strong>',
                '<strong>Free roof inspections in Washington State.</strong>', h); assert k == 1
 
 # ---------- price promises ----------
@@ -173,14 +173,14 @@ FAQ = [
 h = h[:a] + '<div class="faq">\n' + '\n'.join('<details><summary>%s</summary><p>%s</p></details>' % f for f in FAQ) + '\n' + h[b:]
 
 # ---------- final + footer + sticky bar ----------
-rep('<span class="eyebrow">Free Inspection</span>', '<span class="eyebrow">Free Roof Inspection</span>')
+rep('<span class="eyebrow">Chimney &amp; Fireplace Service</span>', '<span class="eyebrow">Free Roof Inspection</span>')
 a = h.index('<footer>'); b = h.index('</footer>') + len('</footer>')
 h = h[:a] + ('<footer>\n<div class="wrap">\n<div>\n<div class="fname">%s<br>Roof Replacement · Repair · Service</div>\n'
              '<p style="margin-top:10px">Roof replacements, repairs, and free roof inspections in Washington State.</p>\n</div>\n'
              '<div>\n<h4>Call us</h4>\n<a class="fphone" href="#top">%s</a>\n</div>\n'
              '<div>\n<h4>Hours</h4>\n<p>[Your hours]</p>\n<h4 style="margin-top:14px">Service area</h4>\n<p>[Your service area]</p>\n</div>\n'
              '<div class="copy">© %s</div>\n</div>\n</footer>') % (NAME, PHONE, NAME) + h[b:]
-rep('Call Now · Free Inspection</span>', 'Call Now · Free Roof Inspection</span>')
+rep('Call Now to Get Scheduled</span>', 'Call Now · Free Roof Inspection</span>')
 
 body = re.sub(r'<(script|style).*?</\1>', '', h, flags=re.S)
 body = re.sub(r'<[^>]+>', ' ', re.sub(r'<svg.*?</svg>', '', body, flags=re.S))   # visible words only

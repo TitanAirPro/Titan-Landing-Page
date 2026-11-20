@@ -327,6 +327,42 @@ rep('<span>Licensed &amp; insured<small>Full coverage</small></span>', '<span>Li
 rep('<div class="copy">© Titan Chimney &amp; Fireplace</div>', '<div class="copy">© Titan Chimney &amp; Fireplace · WA Contractor License %s</div>' % LICENSE)
 rep('</svg>Licensed and insured Titan technicians</li>', '</svg>Licensed and insured Titan technicians (WA License %s)</li>' % LICENSE)
 
+import re as _re2
+# ---------- the offer, said accurately (owner, Nov 20) ----------
+# Only the basic VISUAL inspection is free. Diagnostics, testing and repairs cost money, priced in writing first.
+# "Free" is no longer the loud selling point (it attracts price shoppers): no "Free Means Free", no "What's the catch?".
+for _a, _b, _n in (
+    ("<h2>Free Means Free. Here's Exactly What Happens.</h2>", "<h2>Here's Exactly What Happens When You Call.</h2>", 1),
+    ('<p>No catch. The inspection costs you nothing, and you never owe us for saying no.</p>',
+     '<p>Three simple steps. The visual inspection is free. If it needs testing or repair, you get the price in writing first.</p>', 1),
+    ('<h3>We book your free inspection</h3>', '<h3>We book your visit</h3>', 1),
+    ('<h3>Book Your Free Inspection</h3>', '<h3>Book Your Visit</h3>', 1),
+    ("One call books your <b>free inspection</b>. We show you what's wrong and give you a written price before any work starts. No pressure.",
+     'One call books your visit. We look it over for free, and you get a written price before any testing or repair. No pressure.', 2),
+    ('<span>Free inspection</span><span>A real person answers</span>', '<span>Free visual inspection</span><span>A real person answers</span>', 1),
+    ('<span class="lbl">Free inspection<br>Call now</span>', '<span class="lbl">Call now<br>to get scheduled</span>', 1),
+    ('<span>Free inspection<small>No charge, no obligation</small></span>', '<span>Free visual inspection<small>Written price for anything more</small></span>', 1),
+    ('<strong>Free gas fireplace inspections <span', '<strong>Gas fireplace repair and service <span', 1),
+    ('It all starts with a free inspection.</p>', 'It all starts with a free visual inspection.</p>', 1),
+    ('<h3>Free Inspection</h3><p>A full safety and operation check of your gas fireplace. We show you what we find. No charge and no obligation.</p>',
+     '<h3>Visual Inspection</h3><p>We look over your gas fireplace and tell you what we see, at no charge. If it needs testing or diagnostics, you get the price first.</p>', 1),
+    ('</svg>Book Free Inspection</a>', '</svg>Book an Inspection</a>', 1),
+    ('Every job starts with a free inspection. We show you what we find and give you a written price before we start.',
+     'Every job starts with a free visual inspection. If it needs diagnostics or repair, you get a written price before we start.', 1),
+    ('<summary>Is the inspection really free?</summary><p>Yes. No charge and no obligation. We check your fireplace, show you what we find, and give you a written price if anything needs work. <strong>You decide from there.</strong></p>',
+     '<summary>Is the inspection free?</summary><p>The visual inspection is free: we look over your fireplace and tell you what we see. Diagnostics, testing, and repairs cost money, and you get the price in writing first. <strong>You decide from there.</strong></p>', 1),
+    ("<strong>We'll find the cause during your free inspection.</strong>", "<strong>We'll find the cause when we come out.</strong>", 1),
+    ('<span class="eyebrow">Free Inspection</span>', '<span class="eyebrow">Gas Fireplace Service</span>', 1),
+    ('Call Now · Free Inspection</span>', 'Call Now to Get Scheduled</span>', 1),
+    ('content="Free gas fireplace inspection in Seattle. Repair, service, pilot, ignition, gas valves and wood-to-gas conversions. Call (425) 307-9165 to get on the schedule."',
+     'content="Gas fireplace repair and service in the Seattle area: pilot, ignition, gas valves and wood-to-gas conversions. Free visual inspection. Call (425) 307-9165 to get on the schedule."', 1),
+    ('content="Free gas fireplace inspection in Seattle. Call (425) 307-9165."', 'content="Gas fireplace repair and service in the Seattle area. Call (425) 307-9165."', 1),
+    ('"description": "Free gas fireplace inspection in Seattle. Gas fireplace repair,', '"description": "Gas fireplace repair,', 1),
+):
+    assert h.count(_a) == _n, (_a[:70], h.count(_a))
+    h = h.replace(_a, _b)
+h, _k = _re2.subn(r'<details><summary>What\'s the catch\?</summary>.*?</details>\s*', '', h, flags=_re2.S); assert _k == 1
+
 # ---------- one font pair only: Zilla Slab headlines + Public Sans body (owner's pick, Nov 12) ----------
 import re as _re
 h, _k = _re.subn(r' <label style="margin-left:10px">Font: <select onchange="document.documentElement.dataset.font=this.value">.*?</select></label>', '', h, flags=_re.S)

@@ -29,7 +29,7 @@ Last updated: Nov 12, 2026. Ads are approved, launch is close. The goal now is a
 
 1. Treat the current version as exact. Change only what you ask for, keep everything else identical, and update the same preview link.
 2. Phone calls first. One short call-back form is allowed (owner changed this Nov 20): it sits in the booking box under the call button, with a small link under the hero button. It is in the live builds only when `scripts/form.json` has an endpoint; the previews show it as "not connected". No other forms, no chat widgets.
-3. Offer: free inspection (gas fireplaces on the gas page; chimneys and wood fireplaces on the main page). CTA: "Call now to get scheduled".
+3. Offer (corrected by the owner Nov 20): only the basic VISUAL inspection is free. Diagnostics, testing and repairs cost money, with the price in writing first. Never write "free inspection" without "visual", never "Free Means Free", "no catch" or "full safety check at no charge". "Free" is not the loud selling point (it attracts price shoppers). CTA: "Call now to get scheduled".
 4. No timing promises (no "same-day", no "within days").
 5. Phone (425) 307-9165. Hours Sun–Fri 7:30 AM – 10:30 PM, closed Saturday. Owner: Zachary.
 6. Phone-first layout. The hero is centered on phones and left-aligned on desktop.
