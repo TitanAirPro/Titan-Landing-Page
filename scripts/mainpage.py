@@ -35,11 +35,11 @@ rep('<title>Titan Chimney &amp; Fireplace | Gas Fireplace Service &amp; Repair</
 rep('og:title" content="Titan Chimney &amp; Fireplace | Gas Fireplace Service &amp; Repair"',
     'og:title" content="Titan Chimney &amp; Fireplace | Chimney Sweep, Inspection &amp; Fireplace Repair"')
 rep('<meta name="description" content="Free gas fireplace inspection in Seattle. Repair, service, pilot, ignition, gas valves and wood-to-gas conversions. Call (425) 307-9165 to get on the schedule.">',
-    '<meta name="description" content="Chimney sweeping, free inspections, and fireplace repair for wood, gas, and pellet in the Seattle area. Call (425) 307-9165 to get on the schedule.">')
+    '<meta name="description" content="Chimney sweeping, free inspections, and repairs for wood-burning chimneys and fireplaces in the Seattle area. Call (425) 307-9165 to get on the schedule.">')
 rep('<meta property="og:description" content="Free gas fireplace inspection in Seattle. Call (425) 307-9165.">',
     '<meta property="og:description" content="Chimney sweeping, free inspections, and fireplace repair in the Seattle area. Call (425) 307-9165.">')
 rep('"description": "Free gas fireplace inspection in Seattle. Gas fireplace repair, service, pilot, ignition, gas valves, wood-to-gas conversions and gas inserts."',
-    '"description": "Chimney sweeping, free chimney and fireplace inspections, and repair and service for wood, gas, and pellet fireplaces in the Seattle area."')
+    '"description": "Chimney sweeping, free inspections, and repairs for wood-burning chimneys and fireplaces in the Seattle area. Gas fireplace service too."')
 
 # ---------- header + hero ----------
 rep('<b>Titan Chimney &amp; Fireplace</b><small>Gas Fireplace Service &amp; Repair</small>',
@@ -47,9 +47,9 @@ rep('<b>Titan Chimney &amp; Fireplace</b><small>Gas Fireplace Service &amp; Repa
 rep('<p class="kicker">Seattle-Area Gas Fireplace Repair</p>', '<p class="kicker">Seattle-Area Chimney &amp; Fireplace Service</p>')
 rep('var x="Gas Fireplace Repair in "+c;', 'var x="Chimney & Fireplace Service in "+c;')
 rep('<span class="h1a">Gas Fireplace Won\'t Light?</span> <span class="h1b">Get It Working Again Without a Surprise Bill.</span>',
-    '<span class="h1a">Chimney or Fireplace Need Attention?</span> <span class="h1b">Get It Cleaned, Checked, and Working Without a Surprise Bill.</span>')
+    '<span class="h1a">Chimney or Wood Fireplace Need Attention?</span> <span class="h1b">Get It Cleaned, Checked, and Working Without a Surprise Bill.</span>')
 rep("We show you what's wrong and give you a written price before any work starts. No pressure.</p>",
-    "Wood, gas, or pellet: we show you what we find and give you a written price before any work starts. No pressure.</p>")
+    "We sweep, inspect, and repair wood-burning chimneys and fireplaces. You get a written price before any work starts. No pressure.</p>")
 
 # ---------- problems ----------
 rep('<h2>What Is Your Fireplace Doing?</h2>', "<h2>What's Going On With Your Chimney or Fireplace?</h2>")
@@ -60,7 +60,7 @@ PROBS = [
     ('cloud', 'Smoke comes back into the room', 'When we light a fire, smoke comes out the front.'),
     ('home',  'We just bought the house', 'Is the chimney and fireplace safe to use?'),
     ('alert', 'A smell from the fireplace', "A smoky or damp smell, even when it's not in use."),
-    ('flame', "The gas fireplace won't light", 'It clicks, the pilot goes out, or nothing happens.'),
+    ('flame', 'We have a gas fireplace', "It won't light, or it hasn't been serviced in years."),
     ('search', "Something doesn't look right", 'Stains, cracks, or loose bricks we want checked.'),
 ]
 a = h.index('<div class="probs">'); b = h.index('</div>\n</div>\n</section>', a)
@@ -77,15 +77,15 @@ h = h[:a] + '<div class="probs">\n' + '\n'.join(cards) + '\n' + h[b:]
 rep('<p>Tell us what your fireplace is doing. We answer your questions right there on the phone.</p>',
     "<p>Tell us what's going on with your chimney or fireplace. We answer your questions right there on the phone.</p>")
 rep("<b>Helpful, not required:</b> the brand name. It's usually on a sticker behind the lower grille.",
-    '<b>Helpful, not required:</b> tell us if it burns wood, gas, or pellets, and when it was last cleaned.')
+    '<b>Helpful, not required:</b> tell us when the chimney was last swept, and how often you use the fireplace.')
 
 # ---------- band ----------
 rep('<strong>Free gas fireplace inspections <span', '<strong>Free chimney and fireplace inspections <span')
 
 # ---------- services ----------
-rep('<h2>Old, New, or Never Used. We Fix Gas Fireplaces.</h2>', '<h2>Wood, Gas, or Pellet. One Team for All of It.</h2>')
+rep('<h2>Old, New, or Never Used. We Fix Gas Fireplaces.</h2>', '<h2>Wood-Burning Chimneys and Fireplaces Are What We Do.</h2>')
 rep("<p>Gas fireplaces are our specialty, and we also take care of what they sit in: the chimney or vent pipe and the fireplace box around it. Repairs, yearly service, inserts, and wood-to-gas conversions. It all starts with a free inspection.</p>",
-    '<p>Chimney sweeping, inspections, and fireplace repair and service. It all starts with a free inspection.</p>')
+    '<p>Sweeping, inspections, and repairs for wood-burning chimneys and fireplaces. We service gas fireplaces too. It all starts with a free inspection.</p>')
 CARDS = [
     ('Gas Fireplace Repair',
      "Pilot lights, gas valves, and ignition parts like thermocouples and thermopiles. Fixed with original manufacturer parts whenever they're available.",
@@ -96,31 +96,31 @@ CARDS = [
     ('Service &amp; Cleaning',
      'Yearly tune-up. We clean the burner, pilot, logs, and glass, check the safety controls, and test everything before we leave.',
      'Call About Service',
-     'Wood Fireplace Service',
-     'Cleaning and a safety check for wood-burning fireplaces, so you can light a fire without worrying about it.',
-     'Call About Wood Fireplaces'),
+     'Chimney Repair',
+     'We fix the problems an inspection finds, so your chimney is safe to use again. Written price first.',
+     'Call About a Repair'),
     ('Free Inspection',
      'A full safety and operation check of your gas fireplace. We show you what we find. No charge and no obligation.',
      'Book Free Inspection',
-     'Free Inspection',
+     'Free Chimney Inspection',
      'A full safety check of your chimney and fireplace. We show you what we find. No charge and no obligation.',
      'Book Free Inspection'),
     ('Wood-to-Gas Conversion',
      'Turn a wood fireplace into push-button heat. We handle permits, plans, parts, and the full install as one company.',
      'Call About Conversion',
-     'Gas Fireplace Repair &amp; Service',
-     "Won't light, pilot keeps going out, or clicking? We repair and service gas fireplaces and inserts, with original manufacturer parts whenever they're available.",
-     'Call About Gas Fireplaces'),
+     'Wood Fireplace Service &amp; Repair',
+     'Cleaning, a safety check, and repairs for wood-burning fireplaces, so you can light a fire without worrying about it.',
+     'Call About Your Fireplace'),
     ('Gas Inserts &amp; Installs',
      'New gas fireplaces and inserts, venting, and gas line hookup. Installed to code, tested, and explained to you.',
      'Call About Installs',
-     'Pellet Stove Service',
-     'Cleaning and service for pellet stoves, so they feed, light, and burn the way they should.',
-     'Call About Pellet Stoves'),
+     'Gas Fireplaces Too',
+     "Have a gas fireplace that won't light or needs service? We repair and service those as well.",
+     'Call About Gas Fireplaces'),
     ('Logs, Remotes &amp; Blowers',
      'Gas log sets, remotes, wall switches, thermostats, and blower fans, repaired or replaced.',
      'Call for a Price',
-     'Wood-to-Gas Conversion &amp; Inserts',
+     'Wood-to-Gas Conversion',
      'Turn a wood fireplace into push-button heat. We handle permits, plans, parts, and the full install as one company.',
      'Call About Conversion'),
 ]
@@ -144,33 +144,39 @@ new = [by[k] for k in order]
 new[0] = new[0].replace('class="slide"', 'class="slide is-on"')
 h = h[:a] + '\n'.join(new) + h[b:]
 
-rep('</svg>Gas fireplace specialists</li>', '</svg>Chimney, wood, gas, and pellet: one team</li>')
+rep('</svg>Gas fireplace specialists</li>', '</svg>Chimney and wood fireplace specialists</li>')
 
 # ---------- where we work + owner ----------
 rep('<span data-city="Your {c} Gas Fireplace Team">Your Local Gas Fireplace Team</span>',
     '<span data-city="Your {c} Chimney &amp; Fireplace Team">Your Local Chimney &amp; Fireplace Team</span>')
 rep('Our gas fireplace work covers pilots, valves, ignition, service, conversions, and new installs.</p>',
-    'We sweep and inspect chimneys, and we repair and service wood, gas, and pellet fireplaces.</p>')
+    'We sweep, inspect, and repair wood-burning chimneys and fireplaces, and we service gas fireplaces too.</p>')
 rep("If your fireplace is fine, we tell you it's fine. And if something", "If everything is fine, we tell you it's fine. And if something")
 
 # ---------- FAQ ----------
 rep('We check your fireplace, show you what we find,', 'We check your chimney and fireplace, show you what we find,')
 rep('Most people who call us want their fireplace fixed, so', 'Most people who call us want their chimney or fireplace taken care of, so')
 rep('asks a few questions about your fireplace, and books', 'asks a few questions about your chimney or fireplace, and books')
-rep('<details><summary>Why won\'t my gas fireplace pilot stay lit?</summary>',
-    '<details><summary>How often should a chimney be cleaned?</summary><p>The national fire safety standard (NFPA 211) says chimneys, fireplaces, and vents should be inspected at least once a year and cleaned when needed. <strong>If you burn wood often, have it checked before each season.</strong></p></details>\n'
+NEWQ = ('<details><summary>How often should a chimney be cleaned?</summary><p>The national fire safety standard (NFPA 211) says chimneys, fireplaces, and vents should be inspected at least once a year and cleaned when needed. <strong>If you burn wood often, have it checked before each season.</strong></p></details>\n'
+    '<details><summary>What is creosote, and why does it matter?</summary><p>Creosote is the black, tar-like buildup that wood smoke leaves inside a chimney. It can catch fire, which is why chimneys need regular sweeping.</p></details>\n'
+    '<details><summary>Why does smoke come back into the room?</summary><p>The most common causes are a dirty or blocked chimney, a damper that is closed or stuck, or a draft problem. <strong>We\'ll find the cause during your free inspection.</strong></p></details>\n'
     '<details><summary>Will the cleaning make a mess?</summary><p>No. Floor protection goes down before we start, and we leave the area cleaner than we found it.</p></details>\n'
-    '<details><summary>Does a gas fireplace need its chimney or vent checked too?</summary><p>Yes. Gas burns cleaner than wood, but the vent or chimney can still get blocked or wear out. We check it as part of the free inspection.</p></details>\n'
-    '<details><summary>Do you work on pellet stoves?</summary><p>Yes. We clean and service pellet stoves.</p></details>\n'
-    '<details><summary>Why won\'t my gas fireplace pilot stay lit?</summary>')
-rep('<summary>Is a smell normal the first time we turn it on in the fall?</summary><p>A light, dusty smell',
-    '<summary>Is a smell normal the first time we turn on the gas fireplace in the fall?</summary><p>A light, dusty smell')
+    '<details><summary>Do you work on gas fireplaces too?</summary><p>Yes. We repair and service gas fireplaces and check their vents.</p></details>\n')
+# gas-only questions from the gas page come out; the new wood questions go in their place
+for q in ('Do you work on condo and townhome fireplaces?', "Why won't my gas fireplace pilot stay lit?", 'Is a smell normal the first time we turn it on in the fall?'):
+    k = h.count('<details><summary>%s</summary>' % q); assert k == 1, q
+    a = h.index('<details><summary>%s</summary>' % q); b = h.index('</details>', a) + len('</details>')
+    h = h[:a] + (NEWQ if q.startswith('Why') else '') + h[b:].lstrip('\n') if q.startswith('Why') else h[:a] + h[b:].lstrip('\n')
+
+# gas-only pieces that stay on the gas page: the gas brand strip and the 'I smell gas' question
+cut(r'<div class="brands">.*?</p></div>\s*')
+cut(r'<details><summary>I smell gas\. What should I do\?</summary>.*?</details>\s*')
 
 # ---------- footer ----------
 rep('<div class="fname">Titan Chimney &amp; Fireplace<br>Gas Fireplace Service &amp; Repair</div>',
     '<div class="fname">Titan Chimney &amp; Fireplace<br>Sweep · Inspection · Repair</div>')
 rep('Gas fireplace inspection, repair, service, and conversions.</p>',
-    'Chimney sweeping, inspections, and fireplace repair for wood, gas, and pellet.</p>')
+    'Sweeping, inspections, and repairs for wood-burning chimneys and fireplaces.</p>')
 
 assert 'Gas Fireplace Service &amp; Repair' not in h
 open(out, 'w', encoding='utf-8').write(h)

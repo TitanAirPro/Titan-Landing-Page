@@ -19,6 +19,12 @@ def rep(a, b, n=1):
     assert h.count(a) == n, (h.count(a), a[:90])
     h = h.replace(a, b)
 
+def sub(pattern, new, flags=re.S):
+    # structural replace: does not depend on the main page's exact words
+    global h
+    h, k = re.subn(pattern, lambda m: new, h, flags=flags)
+    assert k == 1, (k, pattern[:70])
+
 def cut(pattern, n=1, flags=re.S):
     global h
     h, k = re.subn(pattern, '', h, flags=flags)
@@ -70,18 +76,14 @@ rep('</style>', '@media (max-width:640px){html .hero .wrap{padding-top:34px}}\n<
 i = h.index('<b>Helpful, not required:</b>'); j = h.rfind('#i-flame', 0, i); assert i - j < 200
 h = h[:j] + '#i-search' + h[j + len('#i-flame'):]
 rep('<p class="kicker">Seattle-Area Chimney &amp; Fireplace Service</p>', '<p class="kicker">Washington State Roof Replacement &amp; Repair</p>')
-rep('<span class="h1a">Chimney or Fireplace Need Attention?</span> <span class="h1b">Get It Cleaned, Checked, and Working Without a Surprise Bill.</span>',
-    '<span class="h1a">Roof Leaking or Worn Out?</span> <span class="h1b">Get It Repaired or Replaced Without a Surprise Bill.</span>')
-rep("One call books your <b>free inspection</b>. Wood, gas, or pellet: we show you what we find and give you a written price before any work starts. No pressure.",
-    "One call books your <b>free roof inspection</b>. We show you what we find and give you a written price before any work starts. No pressure.")
+sub(r'<span class="h1a">.*?</span> <span class="h1b">.*?</span>', '<span class="h1a">Roof Leaking or Worn Out?</span> <span class="h1b">Get It Repaired or Replaced Without a Surprise Bill.</span>')
+sub(r'<p class="lede">.*?</p>', '<p class="lede">One call books your <b>free roof inspection</b>. We show you what we find and give you a written price before any work starts. No pressure.</p>')
 
 # ---------- trust strip ----------
 rep('<small data-city="{c} &amp; nearby">Our own technicians</small>', '<small>Our own crew</small>')
 
 # ---------- problems ----------
-rep("<h2>What's Going On With Your Chimney or Fireplace?</h2>", "<h2>What's Going On With Your Roof?</h2>")
-rep('<p>The first cold, wet nights of the season are when chimneys and fireplaces act up. Tap the one that sounds like yours.</p>',
-    '<p>Washington rain finds every weak spot. Tap the one that sounds like yours.</p>')
+sub(r'(?<=<div class="sec-head">\n)<h2>What\'s Going On[^<]*</h2>\n<p>[^<]*</p>', "<h2>What's Going On With Your Roof?</h2>\n<p>Washington rain finds every weak spot. Tap the one that sounds like yours.</p>")
 PROBS = [
     ('cloud', 'The roof is leaking', 'Water stains on the ceiling, or drips when it rains.'),
     ('alert', 'Shingles are missing or damaged', 'Some blew off, or they look cracked and curled.'),
@@ -102,19 +104,16 @@ for ic, t, q in PROBS:
 h = h[:a] + '<div class="probs">\n' + '\n'.join(cards) + '\n' + h[b:]
 
 # ---------- how it works ----------
-rep("<p>Tell us what's going on with your chimney or fireplace. We answer your questions right there on the phone.</p>",
-    "<p>Tell us what's going on with your roof. We answer your questions right there on the phone.</p>")
+sub(r"<p>Tell us what's going on with [^<]*</p>", "<p>Tell us what's going on with your roof. We answer your questions right there on the phone.</p>")
 rep('<h3>We book your free inspection</h3>', '<h3>We book your free roof inspection</h3>')
 rep('<p>Our technician checks it, walks you through it, and hands you a written price. If it\'s fine, we tell you it\'s fine.</p>',
     '<p>We check the roof, show you photos of what we find, and hand you a written price. If it\'s fine, we tell you it\'s fine.</p>')
-rep('<b>Helpful, not required:</b> tell us if it burns wood, gas, or pellets, and when it was last cleaned.',
-    '<b>Helpful, not required:</b> about how old the roof is, and where you see the problem.')
+sub(r'<b>Helpful, not required:</b>[^<]*', '<b>Helpful, not required:</b> about how old the roof is, and where you see the problem.')
 
 # ---------- Titan's reviews, video, brands, photos, map, owner: out ----------
 cut(r'<div class="spot(?: spot-dark)?"><div class="rcard">.*?</div></div></div></div>', 2)
 cut(r'<div class="revs revs-tight">.*?</div></div></div></div>(?=\n</div>\n</section>)')
 cut(r'<section class="sec vid" id="video">.*?</section>\s*')
-cut(r'<div class="brands">.*?</p></div>\s*')
 cut(r'<section class="split">.*?</section>\s*')
 cut(r'<figure class="area-mapw">.*?</figure>\s*')
 cut(r'<details class="cities">.*?</details>\s*')
@@ -132,29 +131,20 @@ rep("<span>If a part has years left, you'll hear that from us.</span>", "<span>I
 rep('<span>Floor protection on every job. We leave it cleaner than we found it.</span>', '<span>We clean up the yard and haul away the old roofing.</span>')
 
 # ---------- services ----------
-rep('<h2>Wood, Gas, or Pellet. One Team for All of It.</h2>', '<h2>Replace It, Repair It, or Keep It Going.</h2>')
-rep('<p>Chimney sweeping, inspections, and fireplace repair and service. It all starts with a free inspection.</p>',
-    '<p>Roof replacements, repairs, and upkeep. It all starts with a free roof inspection.</p>')
-CARDS = [
-    ('Chimney Sweep &amp; Cleaning', 'Call About a Sweep',
-     'Roof Replacement', 'A full new roof when repairs no longer make sense. Old roofing removed, new roof installed, yard cleaned up.', 'Call About a New Roof'),
-    ('Wood Fireplace Service', 'Call About Wood Fireplaces',
-     'Roof Repair', 'Missing shingles, worn flashing, and damaged spots fixed, so a small problem stays small.', 'Call About a Repair'),
-    ('Free Inspection', 'Book Free Inspection',
-     'Free Roof Inspection', 'A full check of your roof. We show you photos of what we find. No charge and no obligation.', 'Book Free Inspection'),
-    ('Gas Fireplace Repair &amp; Service', 'Call About Gas Fireplaces',
-     'Leak Repair', 'We find where the water is getting in and fix the cause, not just the stain.', 'Call About a Leak'),
-    ('Pellet Stove Service', 'Call About Pellet Stoves',
-     'Storm &amp; Wind Damage', 'Shingles blown off or a branch came down? We check the damage and repair it.', 'Call About Damage'),
-    ('Wood-to-Gas Conversion &amp; Inserts', 'Call About Conversion',
-     'Roof Maintenance', 'Regular checkups and upkeep that help your roof last longer.', 'Call About Maintenance'),
+sub(r'(?<=<div class="sec-head sec-head-l2">\n)<h2>[^<]*</h2>\n<p>[^<]*</p>', '<h2>Replace It, Repair It, or Keep It Going.</h2>\n<p>Roof replacements, repairs, and upkeep. It all starts with a free roof inspection.</p>')
+CARDS = [  # in page order (data-i 0..5)
+    ('Roof Replacement', 'A full new roof when repairs no longer make sense. Old roofing removed, new roof installed, yard cleaned up.', 'Call About a New Roof'),
+    ('Roof Repair', 'Missing shingles, worn flashing, and damaged spots fixed, so a small problem stays small.', 'Call About a Repair'),
+    ('Free Roof Inspection', 'A full check of your roof. We show you photos of what we find. No charge and no obligation.', 'Book Free Inspection'),
+    ('Leak Repair', 'We find where the water is getting in and fix the cause, not just the stain.', 'Call About a Leak'),
+    ('Storm &amp; Wind Damage', 'Shingles blown off or a branch came down? We check the damage and repair it.', 'Call About Damage'),
+    ('Roof Maintenance', 'Regular checkups and upkeep that help your roof last longer.', 'Call About Maintenance'),
 ]
-for t0, b0, t1, p1, b1 in CARDS:
-    i = h.index('<h3>%s</h3><p>' % t0); j = h.index('</article>', i)
-    seg = h[i:j]
-    seg = re.sub(r'<h3>.*?</h3><p>.*?</p>', lambda _: '<h3>%s</h3><p>%s</p>' % (t1, p1), seg, count=1, flags=re.S)
-    assert seg.count('</svg>' + b0 + '</a>') == 1, b0
-    h = h[:i] + seg.replace('</svg>' + b0 + '</a>', '</svg>' + b1 + '</a>') + h[j:]
+for n, (t1, p1, b1) in enumerate(CARDS):
+    i = h.index('data-i="%d"' % n); j = h.index('</article>', i)
+    seg = re.sub(r'<h3>.*?</h3><p>.*?</p>', lambda _: '<h3>%s</h3><p>%s</p>' % (t1, p1), h[i:j], count=1, flags=re.S)
+    seg, k = re.subn(r'</svg>[^<]*</a>$', lambda _: '</svg>%s</a>' % b1, seg); assert k == 1, n
+    h = h[:i] + seg + h[j:]
 
 # ---------- where we work ----------
 h, k = re.subn(r'<h2><span data-city="[^"]*">Your Local Chimney &amp; Fireplace Team</span>\.</h2>\s*<p data-city="[^"]*" hidden></p>\s*<p>The technician who comes to your home works for Titan\. One phone number, one team\.</p>',
